@@ -4,107 +4,250 @@ HOST: http://api.myre.domain/api/v1/
 # Myre - Web
 
 Myre utilizes JWT Authentication which generates token on user sign in. Token is required for most requests.
-Token can be send as parameter or as header in such format `Authorization: Bearer {Token}`.
+Token can be send as `token` parameter as query string or as header in such format `Authorization: Bearer {system-generated-token}`.
 
-## User Access [/auth]
+When sending request with body of JSON headers should contain `Content-Type: application/json`.
 
+## Group User Access
+## Sign In [/auth/login?{email}{password}]
 ### Sign in [POST]
+Attempt to login and get user token.
 
-**Request:**
-
-+ **name** - (required, string) - Name of user. ex: *Pangeran Diponegoro*
-+ **email** - (required, string) - E-mail address of the user. ex: *diponegoro@riddle.box*
-
-**Response:**
-
-+ **token** - User Token.
-
-+ Request (multipart/form-data; boundary=---BOUNDARY)
-
-        -----BOUNDARY
-        Content-Disposition: form-data; name="name"
-        Le Me
-        -----BOUNDARY
-        Content-Disposition: form-data; name="email"
-        leme@myre.domain
-        -----BOUNDARY
-
-+ Response 200 (application/json)
-
-        {
-            "token": "ABCDEF.12345678.01A"
-        }
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Parameters
+    + email (required, string) - E-mail address of the user. ex: *lesterchan@ownproperty.com*
+    + password (required, string) - User Password. ex: *supersecret*
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "email": "lesterchan@ownproperty.com",
+            "password": "supersecret"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "message": "Login has been successfully.",
+            "data": {
+                "userType": "admin",
+                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL21pZy5teXJlLmFwaVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTQ5ODAxODE4NywiZXhwIjoxNTI3MDQ4NTg3LCJuYmYiOjE0OTgwMTgxODcsImp0aSI6ImhUcnk1eUZDZTc3ZW1VeWEifQ.jWNLMCsmznqXgDSFvDt3P-5qJwZmRbkM1SbmNoX_Dpg",
+                "user": {
+                    "id": 47,
+                    "civility": null,
+                    "lastName": "Chan",
+                    "firstName": "Lester",
+                    "email": "lesterchan@ownproperty.com",
+                    "mobilePhone": null,
+                    "officePhone": null,
+                    "jobTitle": null,
+                    "guest": false,
+                    "customer": false,
+                    "active": true,
+                    "profilPicPath": "http://mig.myre.api/storage/user_profile"
+                },
+                "role": [
+                    "user.create",
+                    "user.read",
+                    "user.delete",
+                    "user.update",
+                    "building.create",
+                    "building.read",
+                    "building.delete",
+                    "building.update",
+                    "role.create",
+                    "role.read",
+                    "role.delete",
+                    "role.update",
+                    "lot.create",
+                    "lot.read",
+                    "lot.delete",
+                    "lot.update",
+                    "bail.create",
+                    "bail.read",
+                    "bail.delete",
+                    "bail.update",
+                    "portofolio.create",
+                    "portofolio.read",
+                    "portofolio.delete",
+                    "portofolio.update",
+                    "admin.read",
+                    "access.create",
+                    "access.update"
+                ]
+            }
+        }
+
++ Response 403 (application/json)
+
+        {
+            "code": 9100,
+            "message": "Invalid email/password",
+            "data": {
+                "email": "lesterchan@ownproperty.com"
+            }
+        }
+
+## Sign Out [/auth/logout]
+### Sign Out [POST]
+Logout and clear registered user token from system.
+
++ Request (application/json)
+
+        {
+            "email": "lesterchan@ownproperty.com",
+            "password": "supersecret"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "message": "Logged out.",
+            "data" : null
+        }
+
+
+## Reset Password [/auth/forgot{email}]
+### Reset User Password [POST]
+Send new password to registered user's email address.
+
++ Response 200 (application/json)
+
+## Group User Resources
+Endpoints to manage User resources.
+
+## List User [/users]
+### List All Users [GET]
+
+Get list of all users.
+
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "message": "Get User Successfully",
+            "data": [
+                {
+                    "id": 7,
+                    "civility": "false",
+                    "lastName": "Gideon",
+                    "firstName": "Jimmy",
+                    "email": "gjimmy@prop.com",
+                    "mobilePhone": null,
+                    "officePhone": null,
+                    "jobTitle": "GM",
+                    "guest": true,
+                    "customer": false,
+                    "active": true,
+                    "profilPicPath": null,
+                    "customers": [],
+                    "access": []
+                },
+                {
+                    "id": 1,
+                    "civility": null,
+                    "lastName": null,
+                    "firstName": null,
+                    "email": "admin@super.com",
+                    "mobilePhone": null,
+                    "officePhone": null,
+                    "jobTitle": null,
+                    "guest": false,
+                    "customer": false,
+                    "active": true,
+                    "profilPicPath": null,
+                    "customers": [],
+                    "access": []
+                }
             ]
         }
 
-+ Response 201 (application/json)
+## Create User [/users?{firstName}&{lastName}&{jobTitle}&{guest}&{active}&{customer}&{civility}&{email}&{role}]
+### Create a New User [POST]
 
-    + Headers
+Create a new User.
 
-            Location: /questions/2
++ Parameters
+    + firstName (string) - firstName
+    + lastName (string) - lastName
+    + jobTitle (string) - jobTitle
+    + guest (string) - guest
+    + active (string) - active
+    + customer (string) - customer
+    + civility (string) - civility
+    + email (string) - email
+    + role (string) - role
 
-    + Body
++ Request (application/json)
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+        {
+            "firstName": "Sam",
+            "lastName": "Fisher",
+            "jobTitle": "Agent",
+            "guest": false,
+            "active": true,
+            "customer": true,
+            "civility": false,
+            "email": "sam.fisher@propagent.com",
+            "role": "asset-manager"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "message": "Add User Successfully",
+            "data": {
+                "user": {
+                    "id": 88,
+                    "civility": null,
+                    "lastName": "Chan",
+                    "firstName": "Lester",
+                    "email": "sam.fisher@propagent.com",
+                    "mobilePhone": null,
+                    "officePhone": null,
+                    "jobTitle": null,
+                    "guest": false,
+                    "customer": true,
+                    "active": true,
+                    "profilPicPath": "http://mig.myre.api/storage/user_profile"
+                }
             }
+        }
+
+## Get User [/users/{id}]
+### Get User Detail [GET]
+
+Get Udser detail.
+
++ Parameters
+    + id (required, number)
+
++ Request
+
+        {
+        }
+
++ Response 200
+
+        {
+        }
+
+## Group User Role
+## Create a Role [/roles]
+### Admin Create a Role [POST]
+
+Super admin can create a new Role.
+
++ Attributes
+
++ Request (application/json)
+
+        {
+        }
+
++ Response 200 (application/json)
+
+        {
+        }
