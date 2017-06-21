@@ -1,0 +1,110 @@
+FORMAT: 1A
+HOST: http://api.myre.domain/api/v1/
+
+# Myre - Web
+
+Myre utilizes JWT Authentication which generates token on user sign in. Token is required for most requests.
+Token can be send as parameter or as header in such format `Authorization: Bearer {Token}`.
+
+## User Access [/auth]
+
+### Sign in [POST]
+
+**Request:**
+
++ **name** - (required, string) - Name of user. ex: *Pangeran Diponegoro*
++ **email** - (required, string) - E-mail address of the user. ex: *diponegoro@riddle.box*
+
+**Response:**
+
++ **token** - User Token.
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+        -----BOUNDARY
+        Content-Disposition: form-data; name="name"
+        Le Me
+        -----BOUNDARY
+        Content-Disposition: form-data; name="email"
+        leme@myre.domain
+        -----BOUNDARY
+
++ Response 200 (application/json)
+
+        {
+            "token": "ABCDEF.12345678.01A"
+        }
+
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
