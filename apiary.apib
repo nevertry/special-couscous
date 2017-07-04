@@ -9,144 +9,141 @@ Token can be send as `token` parameter as query string or as header in such form
 When sending request with body of JSON headers should contain `Content-Type: application/json`.
 
 ## Group User Access
-## Sign In [/auth/login?{email}{password}]
+## Sign In [/auth/login]
 ### Sign in [POST]
 Attempt to login and get user token.
-
-+ Parameters
-    + email (required, string) - E-mail address of the user. ex: *lesterchan@ownproperty.com*
-    + password (required, string) - User Password. ex: *supersecret*
+`token` is NOT required.
 
 + Request (application/json)
 
         {
-            "email": "lesterchan@ownproperty.com",
-            "password": "supersecret"
+            "email": "admin@super.com",
+            "password": "password"
         }
 
 + Response 200 (application/json)
 
-        {
-            "code": 0,
-            "message": "Login has been successfully.",
-            "data": {
-                "userType": "admin",
-                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL21pZy5teXJlLmFwaVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTQ5ODAxODE4NywiZXhwIjoxNTI3MDQ4NTg3LCJuYmYiOjE0OTgwMTgxODcsImp0aSI6ImhUcnk1eUZDZTc3ZW1VeWEifQ.jWNLMCsmznqXgDSFvDt3P-5qJwZmRbkM1SbmNoX_Dpg",
-                "user": {
-                    "id": 47,
-                    "civility": null,
-                    "lastName": "Chan",
-                    "firstName": "Lester",
-                    "email": "lesterchan@ownproperty.com",
-                    "mobilePhone": null,
-                    "officePhone": null,
-                    "jobTitle": null,
-                    "guest": false,
-                    "customer": false,
-                    "active": true,
-                    "profilPicPath": "http://mig.myre.api/storage/user_profile"
-                },
-                "role": [
-                    "user.create",
-                    "user.read",
-                    "user.delete",
-                    "user.update",
-                    "building.create",
-                    "building.read",
-                    "building.delete",
-                    "building.update",
-                    "role.create",
-                    "role.read",
-                    "role.delete",
-                    "role.update",
-                    "lot.create",
-                    "lot.read",
-                    "lot.delete",
-                    "lot.update",
-                    "bail.create",
-                    "bail.read",
-                    "bail.delete",
-                    "bail.update",
-                    "portofolio.create",
-                    "portofolio.read",
-                    "portofolio.delete",
-                    "portofolio.update",
-                    "admin.read",
-                    "access.create",
-                    "access.update"
-                ]
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Login has been successfully.",
+                "data": {
+                    "userType": "admin",
+                    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL21pZy5teXJlLmFwaVwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE0OTkxNDk4ODUsImV4cCI6MTUyODE4MDI4NSwibmJmIjoxNDk5MTQ5ODg1LCJqdGkiOiJmZ0xjTzUyRkJralU4VTk4In0.JCdkONitJsqWtJ1DNmU26evr3xXHBp3UsNDRq9xtpS0",
+                    "user": {
+                        "id": 1,
+                        "civility": false,
+                        "lastName": null,
+                        "firstName": null,
+                        "email": "admin@super.com",
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "role": [
+                        "user.create",
+                        "user.read",
+                        "user.delete",
+                        "user.update",
+                        "building.create",
+                        "building.read",
+                        "building.delete",
+                        "building.update",
+                        "role.create",
+                        "role.read",
+                        "role.delete",
+                        "role.update",
+                        "lot.create",
+                        "lot.read",
+                        "lot.delete",
+                        "lot.update",
+                        "bail.create",
+                        "bail.read",
+                        "bail.delete",
+                        "bail.update",
+                        "portofolio.create",
+                        "portofolio.read",
+                        "portofolio.delete",
+                        "portofolio.update",
+                        "admin.read",
+                        "access.create",
+                        "access.update"
+                    ]
+                }
             }
-        }
-
-+ Response 403 (application/json)
-
-        {
-            "code": 9100,
-            "message": "Invalid email/password",
-            "data": {
-                "email": "lesterchan@ownproperty.com"
-            }
-        }
 
 ## Sign Out [/auth/logout]
-### Sign Out [POST]
-Logout and clear registered user token from system.
+### Sign Out (NOT IMPLEMENTED YET) [POST]
+Log out from application clear token on server
+`token` is NOT required.
+
++ Response 200
+
+        {
+        }
+
+## Reset Password [/auth/reset]
+### Reset Password [POST]
+Reset User Password by e-mail.
+`token` is NOT required.
 
 + Request (application/json)
 
         {
-            "email": "lesterchan@ownproperty.com",
-            "password": "supersecret"
+            "email": "admin@super.com"
         }
 
 + Response 200 (application/json)
 
-        {
-            "code": 0,
-            "message": "Logged out.",
-            "data" : null
-        }
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Reset Password Successfully. The New Password Has Been Sent To Email",
+                "data": {
+                    "email": "admin@super.com"
+                }
+            }
 
 
-## Reset Password [/auth/forgot{email}]
-### Reset User Password [POST]
-Send new password to registered user's email address.
+## Group My / Current Logged User
+
+Resource related to current logged in user.
+`token` is required.
+
+## Profile Detail [/my/profile?]
+### Profile Detail [GET]
+Get Profile detail.
+
++ Request (application/json)
 
 + Response 200 (application/json)
 
-## Group User Resources
-Endpoints to manage User resources.
-
-## List User [/users]
-### List All Users [GET]
-
-Get list of all users.
-
-+ Response 200 (application/json)
-
-        {
-            "code": 0,
-            "message": "Get User Successfully",
-            "data": [
-                {
-                    "id": 7,
-                    "civility": "false",
-                    "lastName": "Gideon",
-                    "firstName": "Jimmy",
-                    "email": "gjimmy@prop.com",
-                    "mobilePhone": null,
-                    "officePhone": null,
-                    "jobTitle": "GM",
-                    "guest": true,
-                    "customer": false,
-                    "active": true,
-                    "profilPicPath": null,
-                    "customers": [],
-                    "access": []
-                },
-                {
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
                     "id": 1,
-                    "civility": null,
+                    "civility": false,
                     "lastName": null,
                     "firstName": null,
                     "email": "admin@super.com",
@@ -157,97 +154,431 @@ Get list of all users.
                     "customer": false,
                     "active": true,
                     "profilPicPath": null,
-                    "customers": [],
-                    "access": []
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
                 }
+            }
+
+
+## Profile Update [/my/profile]
+### Profile Detail [POST]
+Update Profile Detail
+
++ Request (application/json)
+
+        {
+            "civility": "mr",
+            "lastName": "Nom_Adminss",
+            "firstName": "Prenom_Admins",
+            "email": "admin@super.com",
+            "mobilePhone": "4321",
+            "officePhone": "12312",
+            "jobTitle": "Admin"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "civility": true,
+                    "lastName": "Nom_Adminss",
+                    "firstName": "Prenom_Admins",
+                    "email": "admin@super.com",
+                    "mobilePhone": "4321",
+                    "officePhone": "12312",
+                    "jobTitle": "Admin",
+                    "guest": false,
+                    "customer": false,
+                    "active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## Group Users for Super Admin
+
+User resource for super-admin
+`token` is required.
+`role`:super-admin is required.
+
+## User List [/users?]
+### User List [GET]
+Get User list
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 3,
+                        "civility": true,
+                        "lastName": "Sandstorm",
+                        "firstName": "Michael",
+                        "email": "hendy.yanuar+12@wgs.co.id",
+                        "mobilePhone": "09",
+                        "officePhone": "08",
+                        "jobTitle": "Musician",
+                        "guest": true,
+                        "customer": true,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "civility": true,
+                        "lastName": "Careyz",
+                        "firstName": "Jimmy",
+                        "email": "hendy.yanuar+14@wgs.co.id",
+                        "mobilePhone": "9090",
+                        "officePhone": "14045",
+                        "jobTitle": "Comedian",
+                        "guest": true,
+                        "customer": true,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    {
+                        "id": 1,
+                        "civility": true,
+                        "lastName": "Nom_Adminss",
+                        "firstName": "Prenom_Admins",
+                        "email": "admin@super.com",
+                        "mobilePhone": "4321",
+                        "officePhone": "12312",
+                        "jobTitle": "Admin",
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    }
+                ]
+            }
+
+## User Detail [/users/{id}?]
+### User Detail [GET]
+Get User Detail
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "civility": true,
+                    "lastName": "Nom_Adminss",
+                    "firstName": "Prenom_Admins",
+                    "email": "admin@super.com",
+                    "mobilePhone": "4321",
+                    "officePhone": "12312",
+                    "jobTitle": "Admin",
+                    "guest": false,
+                    "customer": false,
+                    "active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## User Create [/users]
+### User Create [POST]
+Create User
+
++ Request (application/json)
+
+        {
+            "guest": true,
+            "is_customer": true,
+            "active": true,
+            "civility": "mr",
+            "firstName": "Jim",
+            "lastName": "Carey",
+            "email": "hendy.yanuar+14@wgs.co.id",
+            "mobilePhone": "09",
+            "officePhone": "08",
+            "company": "9",
+            "customer": [
+                "999"
+            ],
+            "jobTitle": "Comedian",
+            "role": [
+                "1"
             ]
         }
 
-## Create User [/users?{firstName}&{lastName}&{jobTitle}&{guest}&{active}&{customer}&{civility}&{email}&{role}]
-### Create a New User [POST]
-
-Create a new User.
-
-+ Parameters
-    + firstName (string) - firstName
-    + lastName (string) - lastName
-    + jobTitle (string) - jobTitle
-    + guest (string) - guest
-    + active (string) - active
-    + customer (string) - customer
-    + civility (string) - civility
-    + email (string) - email
-    + role (string) - role
-
-+ Request (application/json)
-
-        {
-            "firstName": "Sam",
-            "lastName": "Fisher",
-            "jobTitle": "Agent",
-            "guest": false,
-            "active": true,
-            "customer": true,
-            "civility": false,
-            "email": "sam.fisher@propagent.com",
-            "role": "asset-manager"
-        }
-
 + Response 200 (application/json)
 
-        {
-            "code": 0,
-            "message": "Add User Successfully",
-            "data": {
-                "user": {
-                    "id": 88,
-                    "civility": null,
-                    "lastName": "Chan",
-                    "firstName": "Lester",
-                    "email": "sam.fisher@propagent.com",
-                    "mobilePhone": null,
-                    "officePhone": null,
-                    "jobTitle": null,
-                    "guest": false,
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Carey",
+                    "firstName": "Jim",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "09",
+                    "officePhone": "08",
+                    "jobTitle": "Comedian",
+                    "guest": true,
                     "customer": true,
                     "active": true,
-                    "profilPicPath": "http://mig.myre.api/storage/user_profile"
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
                 }
             }
-        }
 
-## Get User [/users/{id}]
-### Get User Detail [GET]
-
-Get Udser detail.
-
-+ Parameters
-    + id (required, number)
-
-+ Request
-
-        {
-        }
-
-+ Response 200
-
-        {
-        }
-
-## Group User Role
-## Create a Role [/roles]
-### Admin Create a Role [POST]
-
-Super admin can create a new Role.
-
-+ Attributes
+## User Update [/users/{id}]
+### User Update [POST]
+Update User
 
 + Request (application/json)
 
         {
+            "guest": true,
+            "is_customer": true,
+            "active": true,
+            "civility": "mr",
+            "firstName": "Jimmy",
+            "lastName": "Careyz",
+            "email": "hendy.yanuar+14@wgs.co.id",
+            "mobilePhone": "9090",
+            "officePhone": "14045",
+            "company": "9",
+            "customer": [
+                "999"
+            ],
+            "jobTitle": "Comedian",
+            "role": [
+                "1"
+            ]
         }
 
 + Response 200 (application/json)
 
-        {
-        }
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careyz",
+                    "firstName": "Jimmy",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "9090",
+                    "officePhone": "14045",
+                    "jobTitle": "Comedian",
+                    "guest": true,
+                    "customer": true,
+                    "active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## User Delete [/users/{id}/delete]
+### User Delete [POST]
+Delete User
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
+            }
+
+## User Status Active Toggle [/users/{id}/toggle-active]
+### User Status Active Toggle [POST]
+Toggle User Active flag. Inverses current `active` attribute of user.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careyz",
+                    "firstName": "Jimmy",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "9090",
+                    "officePhone": "14045",
+                    "jobTitle": "Comedian",
+                    "guest": true,
+                    "customer": true,
+                    "active": false,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## User Status Customer Toggle [/users/{id}/toggle-customer]
+### User Status Customer Toggle [POST]
+Toggle User Customer flag. Inverses current `customer` attribute of user.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careyz",
+                    "firstName": "Jimmy",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "9090",
+                    "officePhone": "14045",
+                    "jobTitle": "Comedian",
+                    "guest": true,
+                    "customer": false,
+                    "active": false,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
