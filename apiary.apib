@@ -598,3 +598,331 @@ Toggle User Customer flag. Inverses current `customer` attribute of user.
                 "message": "Success",
                 "data": false
             }
+
+## Group Role
+
+User resource for super-admin
+`token` is required.
+`role`:super-admin is required.
+
+## Role List [/roles?]
+### Role List [GET]
+Get Role list
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "Super Admin",
+                        "slug": "super-admin",
+                        "permissions": [
+                            {
+                                "user.create": true
+                            },
+                            {
+                                "user.read": true
+                            },
+                            {
+                                "user.delete": true
+                            },
+                            {
+                                "user.update": true
+                            },
+                            {
+                                "building.create": true
+                            },
+                            {
+                                "building.read": true
+                            },
+                            {
+                                "building.delete": true
+                            },
+                            {
+                                "building.update": true
+                            },
+                            {
+                                "role.create": true
+                            },
+                            {
+                                "role.read": true
+                            },
+                            {
+                                "role.delete": true
+                            },
+                            {
+                                "role.update": true
+                            },
+                            {
+                                "lot.create": true
+                            },
+                            {
+                                "lot.read": true
+                            },
+                            {
+                                "lot.delete": true
+                            },
+                            {
+                                "lot.update": true
+                            },
+                            {
+                                "bail.create": true
+                            },
+                            {
+                                "bail.read": true
+                            },
+                            {
+                                "bail.delete": true
+                            },
+                            {
+                                "bail.update": true
+                            },
+                            {
+                                "portofolio.create": true
+                            },
+                            {
+                                "portofolio.read": true
+                            },
+                            {
+                                "portofolio.delete": true
+                            },
+                            {
+                                "portofolio.update": true
+                            },
+                            {
+                                "admin.read": true
+                            },
+                            {
+                                "access.create": true
+                            },
+                            {
+                                "access.update": true
+                            }
+                        ]
+                    }
+                ]
+            }
+
+## Role Detail [/roles/{id}?]
+### Role Detail [GET]
+Get Role Detail
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "name": "Super Admin",
+                    "slug": "super-admin",
+                    "permissions": [
+                        {
+                            "user.create": true
+                        },
+                        {
+                            "user.read": true
+                        },
+                        {
+                            "user.delete": true
+                        },
+                        {
+                            "user.update": true
+                        },
+                        {
+                            "building.create": true
+                        },
+                        {
+                            "building.read": true
+                        },
+                        {
+                            "building.delete": true
+                        },
+                        {
+                            "building.update": true
+                        },
+                        {
+                            "role.create": true
+                        },
+                        {
+                            "role.read": true
+                        },
+                        {
+                            "role.delete": true
+                        },
+                        {
+                            "role.update": true
+                        },
+                        {
+                            "lot.create": true
+                        },
+                        {
+                            "lot.read": true
+                        },
+                        {
+                            "lot.delete": true
+                        },
+                        {
+                            "lot.update": true
+                        },
+                        {
+                            "bail.create": true
+                        },
+                        {
+                            "bail.read": true
+                        },
+                        {
+                            "bail.delete": true
+                        },
+                        {
+                            "bail.update": true
+                        },
+                        {
+                            "portofolio.create": true
+                        },
+                        {
+                            "portofolio.read": true
+                        },
+                        {
+                            "portofolio.delete": true
+                        },
+                        {
+                            "portofolio.update": true
+                        },
+                        {
+                            "admin.read": true
+                        },
+                        {
+                            "access.create": true
+                        },
+                        {
+                            "access.update": true
+                        }
+                    ]
+                }
+            }
+
+## Role Create [/roles]
+### Role Create [POST]
+Create Role
+
++ Request (application/json)
+
+        {
+            "label": "Admin Client",
+            "description": null,
+            "customer": "8",
+            "permissions": {
+            "user": [
+                "create",
+                "delete",
+                "update",
+                "read"
+            ],
+            "building": [
+                "create",
+                "delete",
+                "update",
+                "read"
+            ]
+            }
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "name": "Admin Client",
+                    "slug": "admin-client",
+                    "permissions": [
+                        "user.create",
+                        "user.delete",
+                        "user.update",
+                        "user.read",
+                        "building.create",
+                        "building.delete",
+                        "building.update",
+                        "building.read"
+                    ]
+                }
+            }
+
+## User Update [/roles/{id}]
+### User Update [POST]
+Update User
+
++ Request (application/json)
+
+        {
+            "label": "Admin Client",
+            "description": null,
+            "customer": "8",
+            "permissions": {
+            "user": [
+                "delete",
+                "update",
+                "read"
+            ],
+            "building": [
+                "create",
+                "delete",
+                "update",
+                "read"
+            ]
+            }
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "name": "Admin Client",
+                    "slug": "admin-client",
+                    "permissions": [
+                        "user.delete",
+                        "user.update",
+                        "user.read",
+                        "building.create",
+                        "building.delete",
+                        "building.update",
+                        "building.read"
+                    ]
+                }
+            }
+
+## Role Delete [/roles/{id}/delete]
+### Role Delete [POST]
+Delete Role
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
+            }
