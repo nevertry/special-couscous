@@ -1329,11 +1329,508 @@ Toggle Customer Active flag.
                 }
             }
 
+## Group Portfolio
+`token` is required.
+`permission:portfolio.*` is required.
+
+
+## Portfolio Detail [/portfolio/{id}?]
+### Portfolio Detail [GET]
+Get a Portfolio Detail.
+`permission:portfolio.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 24,
+                    "customer": {
+                        "id": 36,
+                        "raisonSociale": {
+                            "id": 1,
+                            "code": "M01",
+                            "label": "SOCIETE"
+                        },
+                        "contact": {
+                            "id": 32,
+                            "civility": "Monsieur",
+                            "lastName": "VX",
+                            "firstName": "James",
+                            "email": "hendy.yanuar+jvx@wgs.co.id",
+                            "mobilePhone": "09",
+                            "officePhone": null,
+                            "jobTitle": "DR",
+                            "guest": false,
+                            "customer": true,
+                            "active": true,
+                            "profilPicPath": null,
+                            "company": {
+                                "id": 34,
+                                "fullName": "Nandai Bamco"
+                            }
+                        },
+                        "fullName": "Nandai Bamco",
+                        "tradeName": "Nandai",
+                        "vatOption": true,
+                        "active": true,
+                        "intercommunityVat": "VAT111",
+                        "vat": null,
+                        "siren": null,
+                        "naf": "NAF",
+                        "creationDate": {
+                            "date": "2017-07-03 11:49:57.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        },
+                        "iban": "FR7630001007941234567890185",
+                        "accountName": "IBANK",
+                        "swift": "FRFRFR76300",
+                        "addressOption": false,
+                        "companyId": 34
+                    },
+                    "name": "Master Property Collection",
+                    "isin": "IS2131231231",
+                    "description": "Every stark properties",
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "imageName": "stark.jpg",
+                    "imagePath": "files/portofolio/24/stark.jpg",
+                    "buildings": []
+                }
+            }
+
+## Portfolio Create [/portfolio]
+### Portfolio Create [POST]
+Create Portfolio.
+`permission:portfolio.create` is required.
+
++ Request (application/json)
+
+        {
+            "customer": {
+                "id": 36,
+                "fullName": "Stark Industries"
+            },
+            "name": "Exquisite Properties",
+            "isin": "IS2131231231",
+            "currency": {
+                "id": 2,
+                "code": "$"
+            },
+            "description": "Marvelous properties designed by Andrew Stark.",
+            "imageName": "stark.jpg"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 24,
+                    "customer": {
+                        "id": 36,
+                        "raisonSociale": {
+                            "id": 1,
+                            "code": "M01",
+                            "label": "SOCIETE"
+                        },
+                        "contact": {
+                            "id": 32,
+                            "civility": "Monsieur",
+                            "lastName": "VX",
+                            "firstName": "James",
+                            "email": "hendy.yanuar+jvx@wgs.co.id",
+                            "mobilePhone": "09",
+                            "officePhone": null,
+                            "jobTitle": "DR",
+                            "guest": false,
+                            "customer": true,
+                            "active": true,
+                            "profilPicPath": null,
+                            "company": {
+                                "id": 34,
+                                "fullName": "Nandai Bamco"
+                            }
+                        },
+                        "fullName": "Nandai Bamco",
+                        "tradeName": "Nandai",
+                        "vatOption": true,
+                        "active": true,
+                        "intercommunityVat": "VAT111",
+                        "vat": null,
+                        "siren": null,
+                        "naf": "NAF",
+                        "creationDate": {
+                            "date": "2017-07-03 11:49:57.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        },
+                        "iban": "FR7630001007941234567890185",
+                        "accountName": "IBANK",
+                        "swift": "FRFRFR76300",
+                        "addressOption": false,
+                        "companyId": 34
+                    },
+                    "name": "Master Property Collection",
+                    "isin": "IS2131231231",
+                    "description": "Every stark properties",
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "imageName": "stark.jpg",
+                    "imagePath": "files/portofolio/24/stark.jpg",
+                    "buildings": []
+                }
+            }
+
+## Group Property
+`token` is required.
+`permission:property.*` is required.
+
+## Property Detail [/portfolio/{portfolioId}/property/{id}?]
+### Property Create [GET]
+Create Property.
+`permission:property.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 24,
+                    "name": "Hertz Starks Building",
+                    "floor": 1,
+                    "parkingFloor": 0,
+                    "sdp": 100,
+                    "lots": [
+                        {
+                            "id": 371,
+                            "code": "SP101",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "High density area",
+                            "floor": 0,
+                            "sdp": 5,
+                            "stairs": null,
+                            "surfaceFiscale": 5,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        },
+                        {
+                            "id": 372,
+                            "code": "SP102",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "High density area",
+                            "floor": 0,
+                            "sdp": 5,
+                            "stairs": null,
+                            "surfaceFiscale": 5,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        },
+                        {
+                            "id": 381,
+                            "code": "COM01",
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "Good view",
+                            "floor": 1,
+                            "sdp": 10,
+                            "stairs": "Wooden",
+                            "surfaceFiscale": 1,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        }
+                    ]
+                }
+            }
+
+## Property Create [/portfolio/{portfolioId}/property]
+### Property Create [POST]
+Create Property.
+`permission:property.create` is required.
+
++ Request (application/json)
+
+        {
+            "portofolioId": 24,
+            "numberBatiment": 2,
+            "batimentList": [
+                {
+                    "id": "",
+                    "floor": 1,
+                    "parkingFloor": 0,
+                    "sdp": 200,
+                    "lots": [
+                        {
+                            "floor": 0,
+                            "outdoorParking": false,
+                            "code": "SP101",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "duplicate": false,
+                            "sdp": 5,
+                            "surfaceFiscale": 5,
+                            "tantieme": 1,
+                            "comment": "High density area"
+                        },
+                        {
+                            "floor": 0,
+                            "outdoorParking": false,
+                            "code": "SP102",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "duplicate": false,
+                            "sdp": 5,
+                            "surfaceFiscale": 5,
+                            "tantieme": 1,
+                            "comment": "High density area"
+                        },
+                        {
+                            "floor": 1,
+                            "outdoorParking": false,
+                            "code": "COM01",
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "has_loyer": true
+                            },
+                            "sdp": 10,
+                            "surfaceFiscale": 1,
+                            "stairs": "Wooden",
+                            "tantieme": 20,
+                            "comment": "Good view",
+                            "duplicate": false
+                        }
+                    ],
+                    "availableSpace": 200,
+                    "availableLot": 10,
+                    "name": "Building One"
+                }
+            ],
+            "batimentOption": false,
+            "company": {
+                "id": 1,
+                "fullName": "EURL Company",
+                "tradeName": null,
+                "raisonSociale": {
+                    "id": 5,
+                    "code": "M14",
+                    "label": "EURL"
+                },
+                "vatOption": false,
+                "intercommunityVat": null,
+                "vat": null,
+                "siren": "123123123",
+                "naf": null,
+                "address": {
+                    "address1": "Domaine De Roque Haute",
+                    "city": "Portiragnes",
+                    "country": "FRANCE",
+                    "zipcode": "34420",
+                    "lat": 43.30042,
+                    "lng": 3.3658699999999726
+                }
+            },
+            "buildingCompany": {
+                "part": 100,
+                "company": {
+                    "id": 1,
+                    "fullName": "EURL Company",
+                    "tradeName": null,
+                    "raisonSociale": {
+                        "id": 5,
+                        "code": "M14",
+                        "label": "EURL"
+                    },
+                    "vatOption": false,
+                    "intercommunityVat": null,
+                    "vat": null,
+                    "siren": "123123123",
+                    "naf": null,
+                    "address": {
+                        "address1": "Domaine De Roque Haute",
+                        "city": "Portiragnes",
+                        "country": "FRANCE",
+                        "zipcode": "34420",
+                        "lat": 43.30042,
+                        "lng": 3.3658699999999726
+                    }
+                }
+            },
+            "address": {
+                "address1": "455 South 4th Street",
+                "city": "Louisville",
+                "country": "UNITED STATES",
+                "zipcode": "40202",
+                "lat": 38.2513642,
+                "lng": -85.75692099999998
+            },
+            "tantieme": 1,
+            "occupation": 0,
+            "annualIncome": 0,
+            "sdp": 100,
+            "name": "Hertz Starks Building",
+            "code": "STONE",
+            "unit": "m²",
+            "currency": {
+                "id": 2,
+                "code": "$"
+            },
+            "monthDevelopment": 6,
+            "aful": true,
+            "asl": true,
+            "gie": true,
+            "typology": {
+                "id": 1,
+                "label": "Commerce",
+                "code": "1",
+                "has_loyer": true
+            },
+            "shon": 1,
+            "shonRT": 1,
+            "surfacePonderee": 1,
+            "valorisation": 1,
+            "dette": 0,
+            "capex": 1,
+            "charges": 0,
+            "erv": 1,
+            "numberLot": 10,
+            "constructionYear": "1/1/2015",
+            "restructurationYear": "1/1/2017",
+            "images": "stark.jpg|"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 24,
+                    "name": "Hertz Starks Building",
+                    "floor": 1,
+                    "parkingFloor": 0,
+                    "sdp": 100,
+                    "lots": [
+                        {
+                            "id": 371,
+                            "code": "SP101",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "High density area",
+                            "floor": 0,
+                            "sdp": 5,
+                            "stairs": null,
+                            "surfaceFiscale": 5,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        },
+                        {
+                            "id": 372,
+                            "code": "SP102",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "High density area",
+                            "floor": 0,
+                            "sdp": 5,
+                            "stairs": null,
+                            "surfaceFiscale": 5,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        },
+                        {
+                            "id": 381,
+                            "code": "COM01",
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "has_loyer": true
+                            },
+                            "outdoorParking": false,
+                            "comment": "Good view",
+                            "floor": 1,
+                            "sdp": 10,
+                            "stairs": "Wooden",
+                            "surfaceFiscale": 1,
+                            "selected": false,
+                            "bail": [],
+                            "batimentId": 24,
+                            "tantieme": null
+                        }
+                    ]
+                }
+            }
 
 ## Group CRM Prospect
 
 `token` is required.
-`permission:prospect.*` is required
+`permission:prospect.*` is required.
 
 ## Prospect Detail [/crm/prospect/{id}]
 ### Prospect Detail [POST]
