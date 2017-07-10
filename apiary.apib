@@ -863,9 +863,9 @@ Create Role
                 }
             }
 
-## User Update [/roles/{id}]
-### User Update [POST]
-Update User
+## Role Update [/roles/{id}]
+### Role Update [POST]
+Update Role
 
 + Request (application/json)
 
@@ -1066,7 +1066,7 @@ Get Customer list
                 ]
             }
 
-## Customer Detail [/customers/{id}]
+## Customer Detail [/customers/{id}?]
 ### Customer Detail [GET]
 Get Customer Detail
 
@@ -1255,6 +1255,122 @@ Create Customer.
                 }
             }
 
+## Customer Update [/customers/{id}]
+### Customer Update [POST]
+Update a Customer.
+
++ Request (application/json)
+
+        {
+            "addressOption": false,
+            "vatOption": true,
+            "intercommunityVat": "VAT111",
+            "fullName": "Vouis Luitton",
+            "tradeName": "VL",
+            "raisonSociale": {
+                "id": 1,
+                "code": "M01",
+                "label": "SOCIETE"
+            },
+            "naf": "NAF2",
+            "accountName": "IBANK",
+            "iban": "FR7630001007941234567890185",
+            "swift": "FRFRFR76300",
+            "address": {
+                "address1": "Park Habio",
+                "address2": "",
+                "zipcode": "14123",
+                "city": "Shinjuku",
+                "country": "JAPAN",
+                "lat": 36.2048,
+                "lng": 138.2529
+            },
+            "contact": {
+                "civility": "Monsieur",
+                "firstName": "Tonald",
+                "lastName": "Drump",
+                "email": "hendy.yanuar+23@wgs.co.id",
+                "mobilePhone": "9081765739",
+                "jobTitle": "Chef"
+            },
+            "billingAddress": {
+                "address1": "MO 13",
+                "address2": "",
+                "zipcode": "41321",
+                "city": "Cuautitlan",
+                "country": "MEXICO",
+                "lat": 19.6721809,
+                "lng": -99.1809685
+            }
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 30,
+                    "fullName": "Vouis Luitton",
+                    "tradeName": "VL",
+                    "vatOption": 1,
+                    "active": 1,
+                    "intercommunityVat": "VAT111",
+                    "vat": null,
+                    "siren": null,
+                    "naf": "NAF2",
+                    "iban": "FR7630001007941234567890185",
+                    "accountName": "IBANK",
+                    "swift": "FRFRFR76300",
+                    "addressOption": false,
+                    "created_at": "2017-07-05 01:42:40",
+                    "contact": {
+                        "id": 14,
+                        "civility": true,
+                        "lastName": "Shinki",
+                        "firstName": "Toho",
+                        "email": "hendy.yanuar+23@wgs.co.id",
+                        "mobilePhone": "072123",
+                        "officePhone": null,
+                        "jobTitle": "DR",
+                        "guest": false,
+                        "customer": true,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "raisonSociale": {
+                        "code": "M01",
+                        "label": "SOCIETE"
+                    },
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
 ## Customer Status Active Toggle [/customers/{id}/toggle-active]
 ### Customer Status Active Toggle [POST]
 
@@ -1329,9 +1445,336 @@ Toggle Customer Active flag.
                 }
             }
 
+## Customer Users List [/customers/{id}/users]
+### Customer Users List [GET]
+Get User list of a customer.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 3,
+                        "civility": true,
+                        "lastName": "Sandstorm",
+                        "firstName": "Michael",
+                        "email": "hendy.yanuar+12@wgs.co.id",
+                        "mobilePhone": "09",
+                        "officePhone": "08",
+                        "jobTitle": "Musician",
+                        "guest": true,
+                        "customer": true,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "civility": true,
+                        "lastName": "Careyz",
+                        "firstName": "Jimmy",
+                        "email": "hendy.yanuar+14@wgs.co.id",
+                        "mobilePhone": "9090",
+                        "officePhone": "14045",
+                        "jobTitle": "Comedian",
+                        "guest": true,
+                        "customer": true,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    {
+                        "id": 1,
+                        "civility": true,
+                        "lastName": "Nom_Adminss",
+                        "firstName": "Prenom_Admins",
+                        "email": "admin@super.com",
+                        "mobilePhone": "4321",
+                        "officePhone": "12312",
+                        "jobTitle": "Admin",
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    }
+                ]
+            }
+
+
+## Group Company
+`token` is required.
+
+## Company List [/companies?]
+### Company List [GET]
+Get Company List
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "address": null,
+                        "fullName": "Vouis Luitton",
+                        "tradeName": "VL",
+                        "raisonSociale": null,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": "VLVL",
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    {
+                        "id": 2,
+                        "address": null,
+                        "fullName": "Lhanec",
+                        "tradeName": "LH",
+                        "raisonSociale": null,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": "LHLH",
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    {
+                        "id": 3,
+                        "address": null,
+                        "fullName": "Riod",
+                        "tradeName": "Ri",
+                        "raisonSociale": null,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    {
+                        "id": 4,
+                        "address": null,
+                        "fullName": "Rartiec",
+                        "tradeName": "Ra",
+                        "raisonSociale": null,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": "RaRa",
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    {
+                        "id": 5,
+                        "address": null,
+                        "fullName": "Sermeh",
+                        "tradeName": "Se",
+                        "raisonSociale": null,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": "SeSe",
+                        "vat": null,
+                        "vatOption": null
+                    }
+                ]
+            }
+
+## Group Raison Sociale
+`token` is required.
+
+## Raison Sociale List [/raisonsociale?]
+### Raison Sociale List [GET]
+Get Raison Sociale List
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "code": "M01",
+                        "label": "SOCIETE"
+                    },
+                    {
+                        "id": 2,
+                        "code": "M02",
+                        "label": "S.A."
+                    },
+                    {
+                        "id": 3,
+                        "code": "M03",
+                        "label": "SARL"
+                    },
+                    {
+                        "id": 4,
+                        "code": "M04",
+                        "label": "SELARL"
+                    },
+                    {
+                        "id": 5,
+                        "code": "M14",
+                        "label": "EURL"
+                    },
+                    {
+                        "id": 6,
+                        "code": "M15",
+                        "label": "EIRL"
+                    },
+                    {
+                        "id": 7,
+                        "code": "M16",
+                        "label": "SNC"
+                    },
+                    {
+                        "id": 8,
+                        "code": "M17",
+                        "label": "SCPI"
+                    },
+                    {
+                        "id": 9,
+                        "code": "M22",
+                        "label": "SCI"
+                    },
+                    {
+                        "id": 10,
+                        "code": "M23",
+                        "label": "SCP"
+                    },
+                    {
+                        "id": 11,
+                        "code": "M25",
+                        "label": "GIE"
+                    },
+                    {
+                        "id": 12,
+                        "code": "M26",
+                        "label": "MARCHAND DE BIEN"
+                    },
+                    {
+                        "id": 13,
+                        "code": "M27",
+                        "label": "FONCIERE"
+                    },
+                    {
+                        "id": 14,
+                        "code": "M31",
+                        "label": "SAS"
+                    },
+                    {
+                        "id": 15,
+                        "code": "M43",
+                        "label": "OPCI"
+                    },
+                    {
+                        "id": 16,
+                        "code": "M44",
+                        "label": "MUTUELLE"
+                    },
+                    {
+                        "id": 17,
+                        "code": "M48",
+                        "label": "SICAV"
+                    }
+                ]
+            }
+
 ## Group Portfolio
 `token` is required.
 `permission:portfolio.*` is required.
+
+## Portfolio List [/portfolios?]
+### Portfolio List [GET]
+Get a Portfolio List.
+`permission:portfolio.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 24,
+                        "customer": 36,
+                        "name": "Stark Property Collection",
+                        "isin": "IS2131231231",
+                        "description": "Every Stark properties",
+                        "currency": {
+                            "id": 2,
+                            "code": "$"
+                        },
+                        "imageName": "stark.jpg",
+                        "imagePath": "files/portofolio/24/stark.jpg",
+                        "buildings": []
+                    },
+                    {
+                        "id": 25,
+                        "customer": 36,
+                        "name": "Parker Property Collection",
+                        "isin": "IS2131231231",
+                        "description": "Every Parker properties",
+                        "currency": {
+                            "id": 2,
+                            "code": "$"
+                        },
+                        "imageName": "parker.jpg",
+                        "imagePath": "files/portofolio/25/parker.jpg",
+                        "buildings": []
+                    }
+                ]
+            }
 
 
 ## Portfolio Detail [/portfolios/{id}?]
@@ -1350,50 +1793,7 @@ Get a Portfolio Detail.
                 "message": "Success",
                 "data": {
                     "id": 24,
-                    "customer": {
-                        "id": 36,
-                        "raisonSociale": {
-                            "id": 1,
-                            "code": "M01",
-                            "label": "SOCIETE"
-                        },
-                        "contact": {
-                            "id": 32,
-                            "civility": "Monsieur",
-                            "lastName": "VX",
-                            "firstName": "James",
-                            "email": "hendy.yanuar+jvx@wgs.co.id",
-                            "mobilePhone": "09",
-                            "officePhone": null,
-                            "jobTitle": "DR",
-                            "guest": false,
-                            "customer": true,
-                            "active": true,
-                            "profilPicPath": null,
-                            "company": {
-                                "id": 34,
-                                "fullName": "Nandai Bamco"
-                            }
-                        },
-                        "fullName": "Nandai Bamco",
-                        "tradeName": "Nandai",
-                        "vatOption": true,
-                        "active": true,
-                        "intercommunityVat": "VAT111",
-                        "vat": null,
-                        "siren": null,
-                        "naf": "NAF",
-                        "creationDate": {
-                            "date": "2017-07-03 11:49:57.000000",
-                            "timezone_type": 3,
-                            "timezone": "UTC"
-                        },
-                        "iban": "FR7630001007941234567890185",
-                        "accountName": "IBANK",
-                        "swift": "FRFRFR76300",
-                        "addressOption": false,
-                        "companyId": 34
-                    },
+                    "customer": 36,
                     "name": "Master Property Collection",
                     "isin": "IS2131231231",
                     "description": "Every stark properties",
@@ -1403,7 +1803,7 @@ Get a Portfolio Detail.
                     },
                     "imageName": "stark.jpg",
                     "imagePath": "files/portofolio/24/stark.jpg",
-                    "buildings": []
+                    "properties": []
                 }
             }
 
@@ -1438,50 +1838,7 @@ Create Portfolio.
                 "message": "Success",
                 "data": {
                     "id": 24,
-                    "customer": {
-                        "id": 36,
-                        "raisonSociale": {
-                            "id": 1,
-                            "code": "M01",
-                            "label": "SOCIETE"
-                        },
-                        "contact": {
-                            "id": 32,
-                            "civility": "Monsieur",
-                            "lastName": "VX",
-                            "firstName": "James",
-                            "email": "hendy.yanuar+jvx@wgs.co.id",
-                            "mobilePhone": "09",
-                            "officePhone": null,
-                            "jobTitle": "DR",
-                            "guest": false,
-                            "customer": true,
-                            "active": true,
-                            "profilPicPath": null,
-                            "company": {
-                                "id": 34,
-                                "fullName": "Nandai Bamco"
-                            }
-                        },
-                        "fullName": "Nandai Bamco",
-                        "tradeName": "Nandai",
-                        "vatOption": true,
-                        "active": true,
-                        "intercommunityVat": "VAT111",
-                        "vat": null,
-                        "siren": null,
-                        "naf": "NAF",
-                        "creationDate": {
-                            "date": "2017-07-03 11:49:57.000000",
-                            "timezone_type": 3,
-                            "timezone": "UTC"
-                        },
-                        "iban": "FR7630001007941234567890185",
-                        "accountName": "IBANK",
-                        "swift": "FRFRFR76300",
-                        "addressOption": false,
-                        "companyId": 34
-                    },
+                    "customer": 36,
                     "name": "Master Property Collection",
                     "isin": "IS2131231231",
                     "description": "Every stark properties",
@@ -1491,13 +1848,206 @@ Create Portfolio.
                     },
                     "imageName": "stark.jpg",
                     "imagePath": "files/portofolio/24/stark.jpg",
-                    "buildings": []
+                    "properties": []
                 }
+            }
+
+## Portfolio Update [/portfolios/{id}]
+### Portfolio Update [POST]
+Update Portfolio.
+`permission:portfolio.update` is required.
+
++ Request (application/json)
+
+        {
+            "customer": {
+                "id": 36,
+                "fullName": "Stark Industries"
+            },
+            "name": "Exquisite Properties",
+            "isin": "IS2131231231",
+            "currency": {
+                "id": 2,
+                "code": "$"
+            },
+            "description": "Marvelous properties designed by Andrew Stark.",
+            "imageName": "stark.jpg"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 24,
+                    "customer": 36,
+                    "name": "Master Property Collection",
+                    "isin": "IS2131231231",
+                    "description": "Every stark properties",
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "imageName": "stark.jpg",
+                    "imagePath": "files/portofolio/24/stark.jpg",
+                    "properties": []
+                }
+            }
+
+## Portfolio Delete [/portfolios/{portfolioId}/delete]
+### Portfolio Delete [POST]
+Delete a Portfolio.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
             }
 
 ## Group Property
 `token` is required.
 `permission:property.*` is required.
+
+## Property List [/portfolios/{portfolioId}/properties?]
+### Property List [GET]
+Get Property List.
+`permission:property.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 24,
+                        "name": "Hertz Starks Building",
+                        "code": "HERTZ",
+                        "images": "stark.jpg|",
+                        "constructionYear": "01/01/2015",
+                        "restructurationYear": "01/01/2017",
+                        "monthDevelopment": 6,
+                        "occupation": 0,
+                        "annualIncome": 0,
+                        "numberLot": 10,
+                        "asl": true,
+                        "aful": true,
+                        "gie": true,
+                        "igh": true,
+                        "erp": true,
+                        "unit": "m\u00b2",
+                        "hqe": true,
+                        "coPro": true,
+                        "volumeDivided": true,
+                        "icpe": true,
+                        "rie": true,
+                        "reaffecte": true,
+                        "shon": 1,
+                        "shonRT": 1,
+                        "sdp": 100,
+                        "surfacePonderee": 1,
+                        "cotationCIBE": null,
+                        "expertiseCIBE": null,
+                        "cotationCELOG": null,
+                        "expertiseCELOG": null,
+                        "valorisation": 1,
+                        "dette": 0,
+                        "capex": 1,
+                        "charges": 0,
+                        "erv": 1,
+                        "typology": {
+                            "id": 1,
+                            "label": "Commerce",
+                            "code": "1",
+                            "has_loyer": true
+                        },
+                        "address": 167,
+                        "currency": {
+                            "id": 2,
+                            "code": "$"
+                        },
+                        "buildingCompany": 19,
+                        "portofolioId": 24,
+                        "pics": [
+                            "files/building/19/stark.jpg"
+                        ],
+                        "firstImageName": "files/building/19/stark.jpg",
+                        "buildingList": [],
+                        "progress": 77.272727272727,
+                        "tantieme": 1
+                    },
+                    {
+                        "id": 25,
+                        "name": "Solar Starks Building",
+                        "code": "SOLAR",
+                        "images": "stark.jpg|",
+                        "constructionYear": "01/01/2015",
+                        "restructurationYear": "01/01/2017",
+                        "monthDevelopment": 6,
+                        "occupation": 0,
+                        "annualIncome": 0,
+                        "numberLot": 10,
+                        "asl": true,
+                        "aful": true,
+                        "gie": true,
+                        "igh": true,
+                        "erp": true,
+                        "unit": "m\u00b2",
+                        "hqe": true,
+                        "coPro": true,
+                        "volumeDivided": true,
+                        "icpe": true,
+                        "rie": true,
+                        "reaffecte": true,
+                        "shon": 1,
+                        "shonRT": 1,
+                        "sdp": 100,
+                        "surfacePonderee": 1,
+                        "cotationCIBE": null,
+                        "expertiseCIBE": null,
+                        "cotationCELOG": null,
+                        "expertiseCELOG": null,
+                        "valorisation": 1,
+                        "dette": 0,
+                        "capex": 1,
+                        "charges": 0,
+                        "erv": 1,
+                        "typology": {
+                            "id": 1,
+                            "label": "Commerce",
+                            "code": "1",
+                            "has_loyer": true
+                        },
+                        "address": 167,
+                        "currency": {
+                            "id": 2,
+                            "code": "$"
+                        },
+                        "buildingCompany": 19,
+                        "portofolioId": 24,
+                        "pics": [
+                            "files/building/19/stark.jpg"
+                        ],
+                        "firstImageName": "files/building/19/stark.jpg",
+                        "buildingList": [],
+                        "progress": 77.272727272727,
+                        "tantieme": 1
+                    }
+                ]
+            }
 
 ## Property Detail [/portfolios/{portfolioId}/properties/{id}?]
 ### Property Detail [GET]
@@ -1516,7 +2066,7 @@ Get Property Detail.
                 "data": {
                     "id": 24,
                     "name": "Hertz Starks Building",
-                    "code": "STONE",
+                    "code": "HERTZ",
                     "images": "stark.jpg|",
                     "constructionYear": "01/01/2015",
                     "restructurationYear": "01/01/2017",
@@ -1555,125 +2105,18 @@ Get Property Detail.
                         "code": "1",
                         "has_loyer": true
                     },
-                    "address": {
-                        "id": 167,
-                        "address1": "455 South 4th Street",
-                        "address2": null,
-                        "zipcode": "40202",
-                        "city": "Louisville",
-                        "country": "UNITED STATES",
-                        "lat": 38.2513642,
-                        "lng": -85.756921
-                    },
+                    "address": 167,
                     "currency": {
                         "id": 2,
                         "code": "$"
                     },
-                    "buildingCompany": {
-                        "id": 19,
-                        "company": {
-                            "id": 1,
-                            "fullName": "EURL Company",
-                            "tradeName": null,
-                            "raisonSociale": {
-                                "id": 5,
-                                "code": "M14",
-                                "label": "EURL"
-                            },
-                            "vatOption": false,
-                            "intercommunityVat": null,
-                            "vat": null,
-                            "siren": "123123123",
-                            "naf": null,
-                            "address": {
-                                "id": 168,
-                                "address1": "Domaine De Roque Haute",
-                                "address2": null,
-                                "zipcode": "34420",
-                                "city": "Portiragnes",
-                                "country": "FRANCE",
-                                "lat": 43.30042,
-                                "lng": 3.36587
-                            }
-                        },
-                        "part": 100
-                    },
+                    "buildingCompany": 19,
                     "portofolioId": 24,
                     "pics": [
                         "files/building/19/stark.jpg"
                     ],
                     "firstImageName": "files/building/19/stark.jpg",
-                    "batimentList": [
-                        {
-                            "id": 24,
-                            "name": "Hertz Starks Building",
-                            "floor": 1,
-                            "parkingFloor": 0,
-                            "sdp": 100,
-                            "lots": [
-                                {
-                                    "id": 371,
-                                    "code": "SP101",
-                                    "typology": {
-                                        "id": 20,
-                                        "label": "Parking",
-                                        "code": "7",
-                                        "has_loyer": true
-                                    },
-                                    "outdoorParking": false,
-                                    "comment": "High density area",
-                                    "floor": 0,
-                                    "sdp": 5,
-                                    "stairs": null,
-                                    "surfaceFiscale": 5,
-                                    "selected": false,
-                                    "bail": [],
-                                    "batimentId": 24,
-                                    "tantieme": null
-                                },
-                                {
-                                    "id": 372,
-                                    "code": "SP102",
-                                    "typology": {
-                                        "id": 20,
-                                        "label": "Parking",
-                                        "code": "7",
-                                        "has_loyer": true
-                                    },
-                                    "outdoorParking": false,
-                                    "comment": "High density area",
-                                    "floor": 0,
-                                    "sdp": 5,
-                                    "stairs": null,
-                                    "surfaceFiscale": 5,
-                                    "selected": false,
-                                    "bail": [],
-                                    "batimentId": 24,
-                                    "tantieme": null
-                                },
-                                {
-                                    "id": 381,
-                                    "code": "COM01",
-                                    "typology": {
-                                        "id": 1,
-                                        "label": "Commerce",
-                                        "code": "1",
-                                        "has_loyer": true
-                                    },
-                                    "outdoorParking": false,
-                                    "comment": "Good view",
-                                    "floor": 1,
-                                    "sdp": 10,
-                                    "stairs": "Wooden",
-                                    "surfaceFiscale": 1,
-                                    "selected": false,
-                                    "bail": [],
-                                    "batimentId": 24,
-                                    "tantieme": null
-                                }
-                            ]
-                        }
-                    ],
+                    "buildingList": [],
                     "progress": 77.272727272727,
                     "tantieme": 1
                 }
@@ -1688,8 +2131,8 @@ Create Property.
 
         {
             "portofolioId": 24,
-            "numberBatiment": 2,
-            "batimentList": [
+            "numberBuilding": 2,
+            "buildingList": [
                 {
                     "id": "",
                     "floor": 1,
@@ -1751,7 +2194,7 @@ Create Property.
                     "name": "Building One"
                 }
             ],
-            "batimentOption": false,
+            "buildingOption": false,
             "company": {
                 "id": 1,
                 "fullName": "EURL Company",
@@ -1948,7 +2391,7 @@ Create Property.
                         "files/building/19/stark.jpg"
                     ],
                     "firstImageName": "files/building/19/stark.jpg",
-                    "batimentList": [
+                    "buildingList": [
                         {
                             "id": 24,
                             "name": "Hertz Starks Building",
@@ -1973,7 +2416,7 @@ Create Property.
                                     "surfaceFiscale": 5,
                                     "selected": false,
                                     "bail": [],
-                                    "batimentId": 24,
+                                    "buildingId": 24,
                                     "tantieme": null
                                 },
                                 {
@@ -1993,7 +2436,7 @@ Create Property.
                                     "surfaceFiscale": 5,
                                     "selected": false,
                                     "bail": [],
-                                    "batimentId": 24,
+                                    "buildingId": 24,
                                     "tantieme": null
                                 },
                                 {
@@ -2013,7 +2456,7 @@ Create Property.
                                     "surfaceFiscale": 1,
                                     "selected": false,
                                     "bail": [],
-                                    "batimentId": 24,
+                                    "buildingId": 24,
                                     "tantieme": null
                                 }
                             ]
@@ -2022,6 +2465,368 @@ Create Property.
                     "progress": 77.272727272727,
                     "tantieme": 1
                 }
+            }
+
+## Property Update [/portfolios/{portfolioId}/properties/{propertyId}]
+### Property Update [POST]
+Create Property.
+`permission:property.delete` is required.
+
++ Request (application/json)
+
+        {
+            "portofolioId": 24,
+            "numberBuilding": 2,
+            "buildingList": [
+                {
+                    "id": "",
+                    "floor": 1,
+                    "parkingFloor": 0,
+                    "sdp": 200,
+                    "lots": [
+                        {
+                            "floor": 0,
+                            "outdoorParking": false,
+                            "code": "SP101",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "duplicate": false,
+                            "sdp": 5,
+                            "surfaceFiscale": 5,
+                            "tantieme": 1,
+                            "comment": "High density area"
+                        },
+                        {
+                            "floor": 0,
+                            "outdoorParking": false,
+                            "code": "SP102",
+                            "typology": {
+                                "id": 20,
+                                "label": "Parking",
+                                "code": "7",
+                                "has_loyer": true
+                            },
+                            "duplicate": false,
+                            "sdp": 5,
+                            "surfaceFiscale": 5,
+                            "tantieme": 1,
+                            "comment": "High density area"
+                        },
+                        {
+                            "floor": 1,
+                            "outdoorParking": false,
+                            "code": "COM01",
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "has_loyer": true
+                            },
+                            "sdp": 10,
+                            "surfaceFiscale": 1,
+                            "stairs": "Wooden",
+                            "tantieme": 20,
+                            "comment": "Good view",
+                            "duplicate": false
+                        }
+                    ],
+                    "availableSpace": 200,
+                    "availableLot": 10,
+                    "name": "Building One"
+                }
+            ],
+            "buildingOption": false,
+            "company": {
+                "id": 1,
+                "fullName": "EURL Company",
+                "tradeName": null,
+                "raisonSociale": {
+                    "id": 5,
+                    "code": "M14",
+                    "label": "EURL"
+                },
+                "vatOption": false,
+                "intercommunityVat": null,
+                "vat": null,
+                "siren": "123123123",
+                "naf": null,
+                "address": {
+                    "address1": "Domaine De Roque Haute",
+                    "city": "Portiragnes",
+                    "country": "FRANCE",
+                    "zipcode": "34420",
+                    "lat": 43.30042,
+                    "lng": 3.3658699999999726
+                }
+            },
+            "buildingCompany": {
+                "part": 100,
+                "company": {
+                    "id": 1,
+                    "fullName": "EURL Company",
+                    "tradeName": null,
+                    "raisonSociale": {
+                        "id": 5,
+                        "code": "M14",
+                        "label": "EURL"
+                    },
+                    "vatOption": false,
+                    "intercommunityVat": null,
+                    "vat": null,
+                    "siren": "123123123",
+                    "naf": null,
+                    "address": {
+                        "address1": "Domaine De Roque Haute",
+                        "city": "Portiragnes",
+                        "country": "FRANCE",
+                        "zipcode": "34420",
+                        "lat": 43.30042,
+                        "lng": 3.3658699999999726
+                    }
+                }
+            },
+            "address": {
+                "address1": "455 South 4th Street",
+                "city": "Louisville",
+                "country": "UNITED STATES",
+                "zipcode": "40202",
+                "lat": 38.2513642,
+                "lng": -85.75692099999998
+            },
+            "tantieme": 1,
+            "occupation": 0,
+            "annualIncome": 0,
+            "sdp": 100,
+            "name": "Glinthawk Starks Building",
+            "code": "GLINTHAWK",
+            "unit": "m²",
+            "currency": {
+                "id": 2,
+                "code": "$"
+            },
+            "monthDevelopment": 6,
+            "asl": true,
+            "aful": true,
+            "gie": true,
+            "igh": true,
+            "erp": true,
+            "hqe": true,
+            "coPro": true,
+            "volumeDivided": true,
+            "icpe": true,
+            "rie": true,
+            "reaffecte": true,
+            "typology": {
+                "id": 1,
+                "label": "Commerce",
+                "code": "1",
+                "has_loyer": true
+            },
+            "shon": 1,
+            "shonRT": 1,
+            "surfacePonderee": 1,
+            "valorisation": 1,
+            "dette": 0,
+            "capex": 1,
+            "charges": 0,
+            "erv": 1,
+            "numberLot": 10,
+            "constructionYear": "1/1/2015",
+            "restructurationYear": "1/1/2017",
+            "images": "stark.jpg|"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "name": "Glinthawk Starks Building",
+                    "code": "GLINTHAWK",
+                    "images": "stark.jpg|",
+                    "constructionYear": "01/01/2015",
+                    "restructurationYear": "01/01/2017",
+                    "monthDevelopment": 6,
+                    "occupation": 0,
+                    "annualIncome": 0,
+                    "numberLot": 10,
+                    "asl": true,
+                    "aful": true,
+                    "gie": true,
+                    "igh": true,
+                    "erp": true,
+                    "unit": "m\u00b2",
+                    "hqe": true,
+                    "coPro": true,
+                    "volumeDivided": true,
+                    "icpe": true,
+                    "rie": true,
+                    "reaffecte": true,
+                    "shon": 1,
+                    "shonRT": 1,
+                    "sdp": 100,
+                    "surfacePonderee": 1,
+                    "cotationCIBE": null,
+                    "expertiseCIBE": null,
+                    "cotationCELOG": null,
+                    "expertiseCELOG": null,
+                    "valorisation": 1,
+                    "dette": 0,
+                    "capex": 1,
+                    "charges": 0,
+                    "erv": 1,
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "has_loyer": true
+                    },
+                    "address": {
+                        "id": 167,
+                        "address1": "455 South 4th Street",
+                        "address2": null,
+                        "zipcode": "40202",
+                        "city": "Louisville",
+                        "country": "UNITED STATES",
+                        "lat": 38.2513642,
+                        "lng": -85.756921
+                    },
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "buildingCompany": {
+                        "id": 19,
+                        "company": {
+                            "id": 1,
+                            "fullName": "EURL Company",
+                            "tradeName": null,
+                            "raisonSociale": {
+                                "id": 5,
+                                "code": "M14",
+                                "label": "EURL"
+                            },
+                            "vatOption": false,
+                            "intercommunityVat": null,
+                            "vat": null,
+                            "siren": "123123123",
+                            "naf": null,
+                            "address": {
+                                "id": 168,
+                                "address1": "Domaine De Roque Haute",
+                                "address2": null,
+                                "zipcode": "34420",
+                                "city": "Portiragnes",
+                                "country": "FRANCE",
+                                "lat": 43.30042,
+                                "lng": 3.36587
+                            }
+                        },
+                        "part": 100
+                    },
+                    "portofolioId": 24,
+                    "pics": [
+                        "files/building/19/stark.jpg"
+                    ],
+                    "firstImageName": "files/building/19/stark.jpg",
+                    "buildingList": [
+                        {
+                            "id": 24,
+                            "name": "Hertz Starks Building",
+                            "floor": 1,
+                            "parkingFloor": 0,
+                            "sdp": 100,
+                            "lots": [
+                                {
+                                    "id": 371,
+                                    "code": "SP101",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "buildingId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 372,
+                                    "code": "SP102",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "buildingId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 381,
+                                    "code": "COM01",
+                                    "typology": {
+                                        "id": 1,
+                                        "label": "Commerce",
+                                        "code": "1",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "Good view",
+                                    "floor": 1,
+                                    "sdp": 10,
+                                    "stairs": "Wooden",
+                                    "surfaceFiscale": 1,
+                                    "selected": false,
+                                    "bail": [],
+                                    "buildingId": 24,
+                                    "tantieme": null
+                                }
+                            ]
+                        }
+                    ],
+                    "progress": 77.272727272727,
+                    "tantieme": 1
+                }
+            }
+
+## Property Delete [/portfolios/{portfolioId}/properties/{propertyId}/delete]
+### Property Delete [POST]
+Delete a Property.
+`permission:property.delete` is required
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
             }
 
 ## Group CRM Prospect
