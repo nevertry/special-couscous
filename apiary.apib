@@ -1,4 +1,4 @@
-FORMAT: 1A
+eFORMAT: 1A
 HOST: http://api.myre.domain/api/v1/
 
 # Myre - Web
@@ -1334,7 +1334,7 @@ Toggle Customer Active flag.
 `permission:portfolio.*` is required.
 
 
-## Portfolio Detail [/portfolio/{id}?]
+## Portfolio Detail [/portfolios/{id}?]
 ### Portfolio Detail [GET]
 Get a Portfolio Detail.
 `permission:portfolio.read` is required.
@@ -1407,7 +1407,7 @@ Get a Portfolio Detail.
                 }
             }
 
-## Portfolio Create [/portfolio]
+## Portfolio Create [/portfolios]
 ### Portfolio Create [POST]
 Create Portfolio.
 `permission:portfolio.create` is required.
@@ -1499,9 +1499,9 @@ Create Portfolio.
 `token` is required.
 `permission:property.*` is required.
 
-## Property Detail [/portfolio/{portfolioId}/property/{id}?]
-### Property Create [GET]
-Create Property.
+## Property Detail [/portfolios/{portfolioId}/properties/{id}?]
+### Property Detail [GET]
+Get Property Detail.
 `permission:property.read` is required.
 
 + Request (application/json)
@@ -1516,75 +1516,170 @@ Create Property.
                 "data": {
                     "id": 24,
                     "name": "Hertz Starks Building",
-                    "floor": 1,
-                    "parkingFloor": 0,
+                    "code": "STONE",
+                    "images": "stark.jpg|",
+                    "constructionYear": "01/01/2015",
+                    "restructurationYear": "01/01/2017",
+                    "monthDevelopment": 6,
+                    "occupation": 0,
+                    "annualIncome": 0,
+                    "numberLot": 10,
+                    "asl": true,
+                    "aful": true,
+                    "gie": true,
+                    "igh": true,
+                    "erp": true,
+                    "unit": "m\u00b2",
+                    "hqe": true,
+                    "coPro": true,
+                    "volumeDivided": true,
+                    "icpe": true,
+                    "rie": true,
+                    "reaffecte": true,
+                    "shon": 1,
+                    "shonRT": 1,
                     "sdp": 100,
-                    "lots": [
-                        {
-                            "id": 371,
-                            "code": "SP101",
-                            "typology": {
-                                "id": 20,
-                                "label": "Parking",
-                                "code": "7",
-                                "has_loyer": true
+                    "surfacePonderee": 1,
+                    "cotationCIBE": null,
+                    "expertiseCIBE": null,
+                    "cotationCELOG": null,
+                    "expertiseCELOG": null,
+                    "valorisation": 1,
+                    "dette": 0,
+                    "capex": 1,
+                    "charges": 0,
+                    "erv": 1,
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "has_loyer": true
+                    },
+                    "address": {
+                        "id": 167,
+                        "address1": "455 South 4th Street",
+                        "address2": null,
+                        "zipcode": "40202",
+                        "city": "Louisville",
+                        "country": "UNITED STATES",
+                        "lat": 38.2513642,
+                        "lng": -85.756921
+                    },
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "buildingCompany": {
+                        "id": 19,
+                        "company": {
+                            "id": 1,
+                            "fullName": "EURL Company",
+                            "tradeName": null,
+                            "raisonSociale": {
+                                "id": 5,
+                                "code": "M14",
+                                "label": "EURL"
                             },
-                            "outdoorParking": false,
-                            "comment": "High density area",
-                            "floor": 0,
-                            "sdp": 5,
-                            "stairs": null,
-                            "surfaceFiscale": 5,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
+                            "vatOption": false,
+                            "intercommunityVat": null,
+                            "vat": null,
+                            "siren": "123123123",
+                            "naf": null,
+                            "address": {
+                                "id": 168,
+                                "address1": "Domaine De Roque Haute",
+                                "address2": null,
+                                "zipcode": "34420",
+                                "city": "Portiragnes",
+                                "country": "FRANCE",
+                                "lat": 43.30042,
+                                "lng": 3.36587
+                            }
                         },
+                        "part": 100
+                    },
+                    "portofolioId": 24,
+                    "pics": [
+                        "files/building/19/stark.jpg"
+                    ],
+                    "firstImageName": "files/building/19/stark.jpg",
+                    "batimentList": [
                         {
-                            "id": 372,
-                            "code": "SP102",
-                            "typology": {
-                                "id": 20,
-                                "label": "Parking",
-                                "code": "7",
-                                "has_loyer": true
-                            },
-                            "outdoorParking": false,
-                            "comment": "High density area",
-                            "floor": 0,
-                            "sdp": 5,
-                            "stairs": null,
-                            "surfaceFiscale": 5,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
-                        },
-                        {
-                            "id": 381,
-                            "code": "COM01",
-                            "typology": {
-                                "id": 1,
-                                "label": "Commerce",
-                                "code": "1",
-                                "has_loyer": true
-                            },
-                            "outdoorParking": false,
-                            "comment": "Good view",
+                            "id": 24,
+                            "name": "Hertz Starks Building",
                             "floor": 1,
-                            "sdp": 10,
-                            "stairs": "Wooden",
-                            "surfaceFiscale": 1,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
+                            "parkingFloor": 0,
+                            "sdp": 100,
+                            "lots": [
+                                {
+                                    "id": 371,
+                                    "code": "SP101",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 372,
+                                    "code": "SP102",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 381,
+                                    "code": "COM01",
+                                    "typology": {
+                                        "id": 1,
+                                        "label": "Commerce",
+                                        "code": "1",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "Good view",
+                                    "floor": 1,
+                                    "sdp": 10,
+                                    "stairs": "Wooden",
+                                    "surfaceFiscale": 1,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                }
+                            ]
                         }
-                    ]
+                    ],
+                    "progress": 77.272727272727,
+                    "tantieme": 1
                 }
             }
 
-## Property Create [/portfolio/{portfolioId}/property]
+## Property Create [/portfolios/{portfolioId}/properties]
 ### Property Create [POST]
 Create Property.
 `permission:property.create` is required.
@@ -1726,9 +1821,17 @@ Create Property.
                 "code": "$"
             },
             "monthDevelopment": 6,
-            "aful": true,
             "asl": true,
+            "aful": true,
             "gie": true,
+            "igh": true,
+            "erp": true,
+            "hqe": true,
+            "coPro": true,
+            "volumeDivided": true,
+            "icpe": true,
+            "rie": true,
+            "reaffecte": true,
             "typology": {
                 "id": 1,
                 "label": "Commerce",
@@ -1757,73 +1860,167 @@ Create Property.
                 "code": 0,
                 "message": "Success",
                 "data": {
-                    "id": 24,
                     "name": "Hertz Starks Building",
-                    "floor": 1,
-                    "parkingFloor": 0,
+                    "code": "STONE",
+                    "images": "stark.jpg|",
+                    "constructionYear": "01/01/2015",
+                    "restructurationYear": "01/01/2017",
+                    "monthDevelopment": 6,
+                    "occupation": 0,
+                    "annualIncome": 0,
+                    "numberLot": 10,
+                    "asl": true,
+                    "aful": true,
+                    "gie": true,
+                    "igh": true,
+                    "erp": true,
+                    "unit": "m\u00b2",
+                    "hqe": true,
+                    "coPro": true,
+                    "volumeDivided": true,
+                    "icpe": true,
+                    "rie": true,
+                    "reaffecte": true,
+                    "shon": 1,
+                    "shonRT": 1,
                     "sdp": 100,
-                    "lots": [
-                        {
-                            "id": 371,
-                            "code": "SP101",
-                            "typology": {
-                                "id": 20,
-                                "label": "Parking",
-                                "code": "7",
-                                "has_loyer": true
+                    "surfacePonderee": 1,
+                    "cotationCIBE": null,
+                    "expertiseCIBE": null,
+                    "cotationCELOG": null,
+                    "expertiseCELOG": null,
+                    "valorisation": 1,
+                    "dette": 0,
+                    "capex": 1,
+                    "charges": 0,
+                    "erv": 1,
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "has_loyer": true
+                    },
+                    "address": {
+                        "id": 167,
+                        "address1": "455 South 4th Street",
+                        "address2": null,
+                        "zipcode": "40202",
+                        "city": "Louisville",
+                        "country": "UNITED STATES",
+                        "lat": 38.2513642,
+                        "lng": -85.756921
+                    },
+                    "currency": {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    "buildingCompany": {
+                        "id": 19,
+                        "company": {
+                            "id": 1,
+                            "fullName": "EURL Company",
+                            "tradeName": null,
+                            "raisonSociale": {
+                                "id": 5,
+                                "code": "M14",
+                                "label": "EURL"
                             },
-                            "outdoorParking": false,
-                            "comment": "High density area",
-                            "floor": 0,
-                            "sdp": 5,
-                            "stairs": null,
-                            "surfaceFiscale": 5,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
+                            "vatOption": false,
+                            "intercommunityVat": null,
+                            "vat": null,
+                            "siren": "123123123",
+                            "naf": null,
+                            "address": {
+                                "id": 168,
+                                "address1": "Domaine De Roque Haute",
+                                "address2": null,
+                                "zipcode": "34420",
+                                "city": "Portiragnes",
+                                "country": "FRANCE",
+                                "lat": 43.30042,
+                                "lng": 3.36587
+                            }
                         },
+                        "part": 100
+                    },
+                    "portofolioId": 24,
+                    "pics": [
+                        "files/building/19/stark.jpg"
+                    ],
+                    "firstImageName": "files/building/19/stark.jpg",
+                    "batimentList": [
                         {
-                            "id": 372,
-                            "code": "SP102",
-                            "typology": {
-                                "id": 20,
-                                "label": "Parking",
-                                "code": "7",
-                                "has_loyer": true
-                            },
-                            "outdoorParking": false,
-                            "comment": "High density area",
-                            "floor": 0,
-                            "sdp": 5,
-                            "stairs": null,
-                            "surfaceFiscale": 5,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
-                        },
-                        {
-                            "id": 381,
-                            "code": "COM01",
-                            "typology": {
-                                "id": 1,
-                                "label": "Commerce",
-                                "code": "1",
-                                "has_loyer": true
-                            },
-                            "outdoorParking": false,
-                            "comment": "Good view",
+                            "id": 24,
+                            "name": "Hertz Starks Building",
                             "floor": 1,
-                            "sdp": 10,
-                            "stairs": "Wooden",
-                            "surfaceFiscale": 1,
-                            "selected": false,
-                            "bail": [],
-                            "batimentId": 24,
-                            "tantieme": null
+                            "parkingFloor": 0,
+                            "sdp": 100,
+                            "lots": [
+                                {
+                                    "id": 371,
+                                    "code": "SP101",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 372,
+                                    "code": "SP102",
+                                    "typology": {
+                                        "id": 20,
+                                        "label": "Parking",
+                                        "code": "7",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "High density area",
+                                    "floor": 0,
+                                    "sdp": 5,
+                                    "stairs": null,
+                                    "surfaceFiscale": 5,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                },
+                                {
+                                    "id": 381,
+                                    "code": "COM01",
+                                    "typology": {
+                                        "id": 1,
+                                        "label": "Commerce",
+                                        "code": "1",
+                                        "has_loyer": true
+                                    },
+                                    "outdoorParking": false,
+                                    "comment": "Good view",
+                                    "floor": 1,
+                                    "sdp": 10,
+                                    "stairs": "Wooden",
+                                    "surfaceFiscale": 1,
+                                    "selected": false,
+                                    "bail": [],
+                                    "batimentId": 24,
+                                    "tantieme": null
+                                }
+                            ]
                         }
-                    ]
+                    ],
+                    "progress": 77.272727272727,
+                    "tantieme": 1
                 }
             }
 
@@ -1832,8 +2029,8 @@ Create Property.
 `token` is required.
 `permission:prospect.*` is required.
 
-## Prospect Detail [/crm/prospect/{id}]
-### Prospect Detail [POST]
+## Prospect Detail [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}]
+### Prospect Detail [GET]
 Get Prospect Detail
 `permission:prospect.read` is required
 
@@ -1849,31 +2046,19 @@ Get Prospect Detail
                 "message": "Success",
                 "data": {
                     "id": 10,
-                    "wanted_surface": 1,
-                    "current_surface": 1,
-                    "number_of_posts": 1,
+                    "leasingEndingDate": "2017-07-07",
+                    "wantedSurface": 5,
+                    "currentSurface": "Above sea level",
+                    "numberOfPosts": 2,
                     "reason": "Surface expansion",
-                    "specify": "Isolation",
-                    "visit_date": "2017-07-01",
-                    "visits": [
-                        {
-                            "id": 1,
-                            "property_id": 1
-                        }
-                    ],
-                    "step": "Prospect",
-                    "steps": [
-                        {
-                            "id": 1,
-                            "step_process": "Prospect",
-                            "date": "2017-07-01"
-                        }
-                    ],
+                    "specifity": "Isolation",
+                    "isOpportunity": false,
+                    "opportunityDate": null,
                     "broker": {
                         "id": 1,
                         "civility": false,
-                        "lastName": null,
-                        "firstName": null,
+                        "lastName": "Broker",
+                        "firstName": "Eddie",
                         "email": "hendy.yannuar+broker@wgs.co.id",
                         "mobilePhone": null,
                         "officePhone": null,
@@ -1895,26 +2080,331 @@ Get Prospect Detail
                             "vatOption": null
                         }
                     },
-                    "company": {
+                    "owner": {
                         "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
+                        "civility": false,
+                        "lastName": null,
+                        "firstName": null,
+                        "email": null,
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "company": {
+                        "id": 1,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
                     },
                     "contact": {
-                        "id": 14,
-                        "civility": true,
-                        "lastName": "Sukadi",
-                        "firstName": "Sudardi",
-                        "email": "hendy.yanuar+su@wgs.co.id",
-                        "mobilePhone": "072123",
-                        "jobTitle": "DR"
+                        "firstName": "Guestavo",
+                        "lastName": "Ramirez",
+                        "email": "hendy.yannuar+prospect1@wgs.co.id",
+                        "jobTitle": "CEO",
+                        "mobilePhone": "0088715346"
+                    },
+                    "address": {
+                        "id": 1,
+                        "address1": "Soekarno Hatta 104",
+                        "address2": "Sukawarna",
+                        "zipcode": "40404",
+                        "city": "BANDUNG",
+                        "country": "INDONESIA"
+                    },
+                    "propertyExisting": [
+                        {
+                            "id": 1,
+                            "name": "Business Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Inter 86",
+                                "address2": "Nazionale",
+                                "zipcode": "41114",
+                                "city": "MILAN",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "propertyVisited": [
+                        {
+                            "id": 1,
+                            "name": "Commercial Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Frotti 10",
+                                "address2": "",
+                                "zipcode": "41114",
+                                "city": "ROME",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "activity": [
+                        {
+                            "id": 1,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Introduction to the client.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:00:00",
+                            "createdAt": "2017-07-01 07:00:00"
+                        },
+                        {
+                            "id": 2,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Good. Make her an Opportunity.",
+                            "userId": 2,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:30:00",
+                            "createdAt": "2017-07-01 07:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "interaction",
+                            "title": "Call",
+                            "description": "Calling on mobile phone.",
+                            "userId": 1,
+                            "interaction": {
+                                "id": 1,
+                                "code": "call",
+                                "interactionDate": "2017-07-05 00:00:00",
+                                "createdAt": "2017-07-05 17:30:00"
+                            },
+                            "phase": null,
+                            "activityDate": "2017-07-05 17:30:00",
+                            "createdAt": "2017-07-05 17:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "phase",
+                            "title": "1st Step",
+                            "description": "She say yes. Interested.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": {
+                                "id": 1,
+                                "code": "1st Step",
+                                "phaseDate": "2017-07-10 00:00:00",
+                                "createdAt": "2017-07-10 07:30:00"
+                            },
+                            "activityDate": "2017-07-10 00:00:00",
+                            "createdAt": "2017-07-10 07:30:00"
+                        }
+                    ]
+                }
+            }
+
+## Prospect Create [/portfolios/{portfolioId}/properties/{propertyId}/prospects]
+### Prospect Create [POST]
+Create a Prospect
+`permission:prospect.create` is required
+
++ Request (application/json)
+
+        {
+            "leasingEndingDate": "2017-07-07",
+            "wantedSurface": 5,
+            "currentSurface": "Above sea level",
+            "numberOfPosts": 2,
+            "reason": "Surface expansion",
+            "specifity": "Isolation",
+            "isOpportunity": false,
+            "opportunityDate": null,
+            "company": {
+                "name": "The Great Remnant",
+                "siren": "1411286"
+            },
+            "contact": {
+                "firstName": "Guestavo",
+                "lastName": "Ramirez",
+                "email": "hendy.yannuar+prospect1@wgs.co.id",
+                "jobTitle": "CEO",
+                "mobilePhone": "0088715346"
+            },
+            "address": {
+                "address1": "Soekarno Hatta 104",
+                "address2": "Sukawarna",
+                "zipcode": "40404",
+                "city": "BANDUNG",
+                "country": "INDONESIA"
+            },
+            "propertyExisting": [
+                {
+                    "id": 1,
+                    "name": "Business Tower",
+                    "address": {
+                        "id": 1,
+                        "address1": "Inter 86",
+                        "address2": "Nazionale",
+                        "zipcode": "41114",
+                        "city": "MILAN",
+                        "country": "ITALY"
                     }
+                },
+                {
+                    "devNote": "!!!DEVNOTE!!! newly added property doesn't have ID",
+                    "name": "Just In Tower",
+                    "address": {
+                        "devNote": "!!!DEVNOTE!!! newly added address doesn't have ID",
+                        "address1": "Juventud 14",
+                        "address2": "",
+                        "zipcode": "41114",
+                        "city": "TURIN",
+                        "country": "ITALY"
+                    }
+                }
+            ],
+            "propertyVisited": [
+                {
+                    "id": 1,
+                    "name": "Commercial Tower",
+                    "address": {
+                        "id": 1,
+                        "address1": "Frotti 10",
+                        "address2": "",
+                        "zipcode": "41114",
+                        "city": "ROME",
+                        "country": "ITALY"
+                    }
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 10,
+                    "leasingEndingDate": "2017-07-07",
+                    "wantedSurface": 5,
+                    "currentSurface": "Above sea level",
+                    "numberOfPosts": 2,
+                    "reason": "Surface expansion",
+                    "specifity": "Isolation",
+                    "isOpportunity": false,
+                    "opportunityDate": null,
+                    "broker": {
+                        "id": 1,
+                        "civility": false,
+                        "lastName": "Broker",
+                        "firstName": "Eddie",
+                        "email": "hendy.yannuar+broker@wgs.co.id",
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "owner": {
+                        "id": 0,
+                        "civility": false,
+                        "lastName": null,
+                        "firstName": null,
+                        "email": null,
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "company": {
+                        "id": 1,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    },
+                    "contact": {
+                        "firstName": "Guestavo",
+                        "lastName": "Ramirez",
+                        "email": "hendy.yannuar+prospect1@wgs.co.id",
+                        "jobTitle": "CEO",
+                        "mobilePhone": "0088715346"
+                    },
+                    "address": {
+                        "id": 1,
+                        "address1": "Soekarno Hatta 104",
+                        "address2": "Sukawarna",
+                        "zipcode": "40404",
+                        "city": "BANDUNG",
+                        "country": "INDONESIA"
+                    },
+                    "propertyExisting": [
+                        {
+                            "id": 1,
+                            "name": "Business Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Inter 86",
+                                "address2": "Nazionale",
+                                "zipcode": "41114",
+                                "city": "MILAN",
+                                "country": "ITALY"
+                        }
+                    ],
+                    "propertyVisited": [
+                        {
+                            "id": 10,
+                            "name": "Just In Tower",
+                            "address": {
+                                "id": 10,
+                                "address1": "Juventud 14",
+                                "address2": "",
+                                "zipcode": "41114",
+                                "city": "TURIN",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "activity": []
                 }
             }
