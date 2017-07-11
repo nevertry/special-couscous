@@ -2834,7 +2834,150 @@ Delete a Property.
 `token` is required.
 `permission:prospect.*` is required.
 
-## Prospect Detail [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}]
+## Prospect List [/portfolios/{portfolioId}/properties/{propertyId}/prospects?]
+### Prospect List [GET]
+Get Prospect List
+`permission:prospect.read` is required
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 10,
+                        "leasingEndingDate": "2017-07-07",
+                        "wantedSurface": 5,
+                        "currentSurface": "Above sea level",
+                        "numberOfPosts": 2,
+                        "reason": "Surface expansion",
+                        "specifity": "Isolation",
+                        "isOpportunity": false,
+                        "opportunityDate": null,
+                        "broker": {
+                            "id": 1,
+                            "civility": false,
+                            "lastName": "Broker",
+                            "firstName": "Eddie",
+                            "email": "hendy.yannuar+broker@wgs.co.id",
+                            "mobilePhone": null,
+                            "officePhone": null,
+                            "jobTitle": null,
+                            "guest": false,
+                            "customer": false,
+                            "active": true,
+                            "profilPicPath": null,
+                            "company": {
+                                "id": 0,
+                                "address": 0,
+                                "fullName": null,
+                                "tradeName": null,
+                                "raisonSociale": 0,
+                                "intercommunityVat": null,
+                                "naf": null,
+                                "siren": null,
+                                "vat": null,
+                                "vatOption": null
+                            }
+                        },
+                        "owner": null,
+                        "company": {
+                            "id": 1,
+                            "name": "The Great Remnant",
+                            "siren": "1411286"
+                        },
+                        "contact": {
+                            "firstName": "Guestavo",
+                            "lastName": "Ramirez",
+                            "email": "hendy.yannuar+prospect1@wgs.co.id",
+                            "jobTitle": "CEO",
+                            "mobilePhone": "0088715346"
+                        },
+                        "address": {
+                            "id": 1,
+                            "address1": "Soekarno Hatta 104",
+                            "address2": "Sukawarna",
+                            "zipcode": "40404",
+                            "city": "BANDUNG",
+                            "country": "INDONESIA"
+                        },
+                        "propertyExisting": [],
+                        "propertyVisited": [],
+                        "activity": []
+                    },
+                    {
+                        "id": 14,
+                        "leasingEndingDate": "2017-08-15",
+                        "wantedSurface": 5,
+                        "currentSurface": "200m deep",
+                        "numberOfPosts": 2,
+                        "reason": "Surface expansion",
+                        "specifity": "Isolation",
+                        "isOpportunity": false,
+                        "opportunityDate": null,
+                        "broker": {
+                            "id": 1,
+                            "civility": false,
+                            "lastName": "Broker",
+                            "firstName": "Eddie",
+                            "email": "hendy.yannuar+broker@wgs.co.id",
+                            "mobilePhone": null,
+                            "officePhone": null,
+                            "jobTitle": null,
+                            "guest": false,
+                            "customer": false,
+                            "active": true,
+                            "profilPicPath": null,
+                            "company": {
+                                "id": 0,
+                                "address": 0,
+                                "fullName": null,
+                                "tradeName": null,
+                                "raisonSociale": 0,
+                                "intercommunityVat": null,
+                                "naf": null,
+                                "siren": null,
+                                "vat": null,
+                                "vatOption": null
+                            }
+                        },
+                        "owner": null,
+                        "company": {
+                            "id": 2,
+                            "name": "IBM",
+                            "siren": "891231"
+                        },
+                        "contact": {
+                            "id": 2,
+                            "firstName": "Ginny",
+                            "lastName": "Rometti",
+                            "email": "hendy.yannuar+prospect2@wgs.co.id",
+                            "jobTitle": "CEO",
+                            "mobilePhone": "1928361874"
+                        },
+                        "address": {
+                            "id": 1,
+                            "address1": "IBM Lane",
+                            "address2": "",
+                            "zipcode": "560071",
+                            "city": "Bengaluru",
+                            "country": "INDIA"
+                        },
+                        "propertyExisting": [],
+                        "propertyVisited": [],
+                        "activity": []
+                    },
+                    
+                ]
+            }
+
+## Prospect Detail [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}?]
 ### Prospect Detail [GET]
 Get Prospect Detail
 `permission:prospect.read` is required
@@ -2969,7 +3112,7 @@ Get Prospect Detail
                             "interaction": null,
                             "phase": null,
                             "activityDate": "2017-07-01 07:00:00",
-                            "createdAt": "2017-07-01 07:00:00"
+                            "creationDate": "2017-07-01 07:00:00"
                         },
                         {
                             "id": 2,
@@ -2980,7 +3123,7 @@ Get Prospect Detail
                             "interaction": null,
                             "phase": null,
                             "activityDate": "2017-07-01 07:30:00",
-                            "createdAt": "2017-07-01 07:30:00"
+                            "creationDate": "2017-07-01 07:30:00"
                         },
                         {
                             "id": 3,
@@ -2992,11 +3135,11 @@ Get Prospect Detail
                                 "id": 1,
                                 "code": "call",
                                 "interactionDate": "2017-07-05 00:00:00",
-                                "createdAt": "2017-07-05 17:30:00"
+                                "creationDate": "2017-07-05 17:30:00"
                             },
                             "phase": null,
                             "activityDate": "2017-07-05 17:30:00",
-                            "createdAt": "2017-07-05 17:30:00"
+                            "creationDate": "2017-07-05 17:30:00"
                         },
                         {
                             "id": 3,
@@ -3009,10 +3152,10 @@ Get Prospect Detail
                                 "id": 1,
                                 "code": "1st Step",
                                 "phaseDate": "2017-07-10 00:00:00",
-                                "createdAt": "2017-07-10 07:30:00"
+                                "creationDate": "2017-07-10 07:30:00"
                             },
                             "activityDate": "2017-07-10 00:00:00",
-                            "createdAt": "2017-07-10 07:30:00"
+                            "creationDate": "2017-07-10 07:30:00"
                         }
                     ]
                 }
@@ -3211,5 +3354,269 @@ Create a Prospect
                         }
                     ],
                     "activity": []
+                }
+            }
+
+## Prospect Update [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}]
+### Prospect Update [POST]
+Update a Prospect
+`permission:prospect.update` is required
+
++ Request (application/json)
+
+        {
+            "leasingEndingDate": "2017-07-07",
+            "wantedSurface": 5,
+            "currentSurface": "Above sea level",
+            "numberOfPosts": 2,
+            "reason": "Surface expansion",
+            "specifity": "Isolation",
+            "isOpportunity": false,
+            "opportunityDate": null,
+            "company": {
+                "name": "The Great Remnant",
+                "siren": "1411286"
+            },
+            "contact": {
+                "firstName": "Guestavo",
+                "lastName": "Ramirez",
+                "email": "hendy.yannuar+prospect1@wgs.co.id",
+                "jobTitle": "CEO",
+                "mobilePhone": "0088715346"
+            },
+            "address": {
+                "address1": "Soekarno Hatta 104",
+                "address2": "Sukawarna",
+                "zipcode": "40404",
+                "city": "BANDUNG",
+                "country": "INDONESIA"
+            },
+            "propertyExisting": [
+                {
+                    "id": 1,
+                    "name": "Business Tower",
+                    "address": {
+                        "id": 1,
+                        "address1": "Inter 86",
+                        "address2": "Nazionale",
+                        "zipcode": "41114",
+                        "city": "MILAN",
+                        "country": "ITALY"
+                    }
+                },
+                {
+                    "devNote": "!!!DEVNOTE!!! newly added property doesn't have ID",
+                    "name": "Just In Tower",
+                    "address": {
+                        "devNote": "!!!DEVNOTE!!! newly added address doesn't have ID",
+                        "address1": "Juventud 14",
+                        "address2": "",
+                        "zipcode": "41114",
+                        "city": "TURIN",
+                        "country": "ITALY"
+                    }
+                }
+            ],
+            "propertyVisited": [
+                {
+                    "id": 1,
+                    "name": "Commercial Tower",
+                    "address": {
+                        "id": 1,
+                        "address1": "Frotti 10",
+                        "address2": "",
+                        "zipcode": "41114",
+                        "city": "ROME",
+                        "country": "ITALY"
+                    }
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 10,
+                    "leasingEndingDate": "2017-07-07",
+                    "wantedSurface": 5,
+                    "currentSurface": "Above sea level",
+                    "numberOfPosts": 2,
+                    "reason": "Surface expansion",
+                    "specifity": "Isolation",
+                    "isOpportunity": false,
+                    "opportunityDate": null,
+                    "broker": {
+                        "id": 1,
+                        "civility": false,
+                        "lastName": "Broker",
+                        "firstName": "Eddie",
+                        "email": "hendy.yannuar+broker@wgs.co.id",
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "owner": {
+                        "id": 0,
+                        "civility": false,
+                        "lastName": null,
+                        "firstName": null,
+                        "email": null,
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "company": {
+                        "id": 1,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    },
+                    "contact": {
+                        "firstName": "Guestavo",
+                        "lastName": "Ramirez",
+                        "email": "hendy.yannuar+prospect1@wgs.co.id",
+                        "jobTitle": "CEO",
+                        "mobilePhone": "0088715346"
+                    },
+                    "address": {
+                        "id": 1,
+                        "address1": "Soekarno Hatta 104",
+                        "address2": "Sukawarna",
+                        "zipcode": "40404",
+                        "city": "BANDUNG",
+                        "country": "INDONESIA"
+                    },
+                    "propertyExisting": [
+                        {
+                            "id": 1,
+                            "name": "Business Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Inter 86",
+                                "address2": "Nazionale",
+                                "zipcode": "41114",
+                                "city": "MILAN",
+                                "country": "ITALY"
+                        }
+                    ],
+                    "propertyVisited": [
+                        {
+                            "id": 10,
+                            "name": "Just In Tower",
+                            "address": {
+                                "id": 10,
+                                "address1": "Juventud 14",
+                                "address2": "",
+                                "zipcode": "41114",
+                                "city": "TURIN",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "activity": []
+                }
+            }
+
+## Prospect Delete [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}/delete]
+### Prospect Delete [POST]
+Delete a Prospect.
+`permission:prospect.delete` is required
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3,
+                "devNote": "data will contains id of deleted item"
+            }
+
+## Prospect Activity Create [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}/activities]
+### Prospect Activity Create [POST]
+Create an activity to a Prospect.
+`permission:prospect.update` is required
+
+`activityType` in body is required. `activityType` can be:
+* `comment` by default if not set.
+* `interaction`
+* `phase`
+
++ Parameters
+
+    + portfolioId (required, number, `1`) ... ID of the Portfolio in form of an integer
+    + propertyId (required, number, `1`) ... ID of the Property in form of an integer
+    + id (required, number, `1`) ... ID of the Prospect in form of an integer
+
++ Request (application/json)
+
+        {
+            "activityType": "interaction",
+            "activityDate": "2017-07-01",
+            "title": "Call",
+            "description": "Calling Prospect after lunch."
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 3,
+                    "type": "interaction",
+                    "title": "Call",
+                    "description": "Calling Prospect after lunch.",
+                    "userId": 1,
+                    "interaction": {
+                        "id": 1,`
+                        "code": "call",
+                        "interactionDate": "2017-07-01 00:00:00",
+                        "creationDate": "2017-07-05 17:30:00"
+                    },
+                    "phase": null,
+                    "activityDate": "2017-07-01 00:00:00",
+                    "creationDate": "2017-07-05 17:30:00"
                 }
             }
