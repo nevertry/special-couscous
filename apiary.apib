@@ -618,96 +618,127 @@ Get Role list
             {
                 "code": 0,
                 "message": "Success",
-                "data": [
-                    {
-                        "id": 1,
-                        "name": "Super Admin",
-                        "slug": "super-admin",
-                        "permissions": [
-                            {
-                                "user.create": true
-                            },
-                            {
-                                "user.read": true
-                            },
-                            {
-                                "user.delete": true
-                            },
-                            {
-                                "user.update": true
-                            },
-                            {
-                                "building.create": true
-                            },
-                            {
-                                "building.read": true
-                            },
-                            {
-                                "building.delete": true
-                            },
-                            {
-                                "building.update": true
-                            },
-                            {
-                                "role.create": true
-                            },
-                            {
-                                "role.read": true
-                            },
-                            {
-                                "role.delete": true
-                            },
-                            {
-                                "role.update": true
-                            },
-                            {
-                                "lot.create": true
-                            },
-                            {
-                                "lot.read": true
-                            },
-                            {
-                                "lot.delete": true
-                            },
-                            {
-                                "lot.update": true
-                            },
-                            {
-                                "bail.create": true
-                            },
-                            {
-                                "bail.read": true
-                            },
-                            {
-                                "bail.delete": true
-                            },
-                            {
-                                "bail.update": true
-                            },
-                            {
-                                "portofolio.create": true
-                            },
-                            {
-                                "portofolio.read": true
-                            },
-                            {
-                                "portofolio.delete": true
-                            },
-                            {
-                                "portofolio.update": true
-                            },
-                            {
-                                "admin.read": true
-                            },
-                            {
-                                "access.create": true
-                            },
-                            {
-                                "access.update": true
-                            }
-                        ]
-                    }
-                ]
+                "data": {
+                    "roles" : [
+                        {
+                            "id": 1,
+                            "name": "Super Admin",
+                            "slug": "super-admin",
+                            "permissions": [
+                                {
+                                    "user.create": true
+                                },
+                                {
+                                    "user.read": true
+                                },
+                                {
+                                    "user.delete": true
+                                },
+                                {
+                                    "user.update": true
+                                },
+                                {
+                                    "building.create": true
+                                },
+                                {
+                                    "building.read": true
+                                },
+                                {
+                                    "building.delete": true
+                                },
+                                {
+                                    "building.update": true
+                                },
+                                {
+                                    "role.create": true
+                                },
+                                {
+                                    "role.read": true
+                                },
+                                {
+                                    "role.delete": true
+                                },
+                                {
+                                    "role.update": true
+                                },
+                                {
+                                    "lot.create": true
+                                },
+                                {
+                                    "lot.read": true
+                                },
+                                {
+                                    "lot.delete": true
+                                },
+                                {
+                                    "lot.update": true
+                                },
+                                {
+                                    "bail.create": true
+                                },
+                                {
+                                    "bail.read": true
+                                },
+                                {
+                                    "bail.delete": true
+                                },
+                                {
+                                    "bail.update": true
+                                },
+                                {
+                                    "portofolio.create": true
+                                },
+                                {
+                                    "portofolio.read": true
+                                },
+                                {
+                                    "portofolio.delete": true
+                                },
+                                {
+                                    "portofolio.update": true
+                                },
+                                {
+                                    "admin.read": true
+                                },
+                                {
+                                    "access.create": true
+                                },
+                                {
+                                    "access.update": true
+                                }
+                            ]
+                        }
+                    ],
+                    "permissions": [
+                        "user.create", 
+                        "user.read", 
+                        "user.delete", 
+                        "user.update", 
+                        "building.create",
+                        "building.read",
+                        "building.delete",
+                        "building.update",
+                        "role.create",
+                        "role.read",
+                        "role.delete",
+                        "role.update",
+                        "lot.create",
+                        "lot.read",
+                        "lot.delete",
+                        "lot.update",
+                        "bail.create",
+                        "bail.read",
+                        "bail.delete",
+                        "bail.update",
+                        "portofolio.create",
+                        "portofolio.read",
+                        "portofolio.delete",
+                        "portofolio.update",
+                        "admin.read",
+                        "access.create",
+                        "access.update"
+                    ]
+                }
             }
 
 ## Role Detail [/roles/{id}?]
@@ -1880,7 +1911,7 @@ Get a Portfolio List.
                         },
                         "imageName": "stark.jpg",
                         "imagePath": "files/portofolio/24/stark.jpg",
-                        "buildings": []
+                        "properties": []
                     },
                     {
                         "id": 25,
@@ -1894,7 +1925,7 @@ Get a Portfolio List.
                         },
                         "imageName": "parker.jpg",
                         "imagePath": "files/portofolio/25/parker.jpg",
-                        "buildings": []
+                        "properties": []
                     }
                 ]
             }
@@ -2950,6 +2981,57 @@ Delete a Property.
                 "code": 0,
                 "message": "Success",
                 "data": 3
+            }
+
+## Group Currency / Devise
+`token` is required.
+
+## Currency List [/currencies?]
+### Currency List [GET]
+Get Currency List.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "code": "€"
+                    },
+                    {
+                        "id": 2,
+                        "code": "$"
+                    },
+                    {
+                        "id": 3,
+                        "code": "£"
+                    }
+                ]
+            }
+
+## Currency Detail [/currencies/{id}?]
+### Currency Detail [GET]
+Get Currency Detail.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "code": "$"
+                }
             }
 
 ## Group CRM Prospect
