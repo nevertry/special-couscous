@@ -29,7 +29,7 @@ Attempt to login and get user token.
                 "code": 0,
                 "message": "Login has been successfully.",
                 "data": {
-                    "userType": "customer",
+                    "userType": "admin",
                     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL21pZy5teXJlLmFwaVwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE0OTkxNDk4ODUsImV4cCI6MTUyODE4MDI4NSwibmJmIjoxNDk5MTQ5ODg1LCJqdGkiOiJmZ0xjTzUyRkJralU4VTk4In0.JCdkONitJsqWtJ1DNmU26evr3xXHBp3UsNDRq9xtpS0",
                     "user": {
                         "id": 1,
@@ -3269,6 +3269,70 @@ Delete a Property.
                 "message": "Success",
                 "data": 3
             }
+            
+## Group Typology
+`token` is required.
+
+## Typology list [/typologies?]
+### Typology list [GET]
+Get Typology List.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "code": "1",
+                        "hasLoyer": true,
+                        "label": "Commerce"
+                    },
+                    {
+                        "id": 2,
+                        "code": "2",
+                        "hasLoyer": true,
+                        "label": "Bureau"
+                    },
+                    {
+                        "id": 3,
+                        "code": "2A",
+                        "hasLoyer": false,
+                        "label": "Bureau classique"
+                    }
+                ]
+            }
+            
+## Group Upload
+`token` is required.
+
+## Customer Image [/upload?]
+### Customer Image [POST]
+Upload Customer Image.
+
++ Request (application/json)
+
+        {
+           "customerImg" : "temp://image.jpg"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "filePath": "uploads/dataroom/1499994988_96e7bfe7de8c686810ad42bd2ca5693b.txt"
+                }
+            }
+
 
 ## Group Currency / Devise
 `token` is required.
@@ -4320,7 +4384,16 @@ Get Competitor List
                     {
                         "id": 1,
                         "name": "Pantheon",
-                        "addressId": 1,
+                        "address": {
+                            "id": 25,
+                            "address1": "West Lane 12",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Vancouver",
+                            "country": "CANADA",
+                            "lat": "49.2827291",
+                            "lng": "-123.1207375"
+                        },
                         "expectedPrice": 1500000,
                         "lastFacialRent": 1000000,
                         "lastLeaseDate": "2017-07-08",
@@ -4333,7 +4406,16 @@ Get Competitor List
                     {
                         "id": 2,
                         "name": "The Shard",
-                        "addressId": 2,
+                        "address": {
+                            "id": 25,
+                            "address1": "West Lane 12",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Vancouver",
+                            "country": "CANADA",
+                            "lat": "49.2827291",
+                            "lng": "-123.1207375"
+                        },
                         "expectedPrice": 750000,
                         "lastFacialRent": 750000,
                         "lastLeaseDate": "2017-07-08",
@@ -4346,7 +4428,16 @@ Get Competitor List
                     {
                         "id": 3,
                         "name": "Space Needle",
-                        "addressId": 3,
+                        "address": {
+                            "id": 25,
+                            "address1": "West Lane 12",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Vancouver",
+                            "country": "CANADA",
+                            "lat": "49.2827291",
+                            "lng": "-123.1207375"
+                        },
                         "expectedPrice": 4500000,
                         "lastFacialRent": 3950000,
                         "lastLeaseDate": "2017-07-08",
@@ -4359,7 +4450,16 @@ Get Competitor List
                     {
                         "id": 4,
                         "name": "Alhambra",
-                        "addressId": 4,
+                        "address": {
+                            "id": 25,
+                            "address1": "West Lane 12",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Vancouver",
+                            "country": "CANADA",
+                            "lat": "49.2827291",
+                            "lng": "-123.1207375"
+                        },
                         "expectedPrice": 3135000,
                         "lastFacialRent": 3950000,
                         "lastLeaseDate": "2017-07-08",
@@ -4389,7 +4489,16 @@ Get Competitor Detail.
                 "data": {
                     "id": 5,
                     "name": "Gateway Arche",
-                    "addressId": 6,
+                    "address": {
+                        "id": 25,
+                        "address1": "West Lane 12",
+                        "address2": null,
+                        "zipcode": "14123",
+                        "city": "Vancouver",
+                        "country": "CANADA",
+                        "lat": "49.2827291",
+                        "lng": "-123.1207375"
+                    },
                     "expectedPrice": 1500000,
                     "lastFacialRent": 1000000,
                     "lastLeaseDate": "2017-07-08",
@@ -4424,7 +4533,25 @@ Create a Competitor
             "lastLeaseDate": "2017-07-08",
             "lastEconomicRent": 1000000,
             "brokerName": "Louise",
-            "emptySinceDate": "2017-01-01"
+            "emptySinceDate": "2017-01-01",
+            "prospects": [
+                {
+                    "wanted_surface": 100,
+                    "current_surface": 150,
+                    "company": {
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    }
+                },
+                {
+                    "wanted_surface": 150,
+                    "current_surface": 100,
+                    "company": {
+                        "name": "Nikki",
+                        "siren": "9129391"
+                    }
+                }
+            ]
         }
 
 + Response 200 (application/json)
@@ -4445,6 +4572,28 @@ Create a Competitor
                     "brokerName": "Louise",
                     "hidden": false,
                     "emptySinceDate": "2017-01-01",
+                    "prospects": [
+                        {
+                            "id": 1,
+                            "wanted_surface": 100,
+                            "current_surface": 150,
+                            "company": {
+                                "id": 1,
+                                "name": "The Great Remnant",
+                                "siren": "1411286"
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "wanted_surface": 150,
+                            "current_surface": 100,
+                            "company": {
+                                "id": 2,
+                                "name": "Nikki",
+                                "siren": "9129391"
+                            }
+                        }
+                    ],
                     "creationDate": "2017-07-05 18:47:12"
                 }
             }
@@ -4473,7 +4622,29 @@ Update an existing Competitor
             "lastEconomicRent": 1000000,
             "brokerName": "Louise|Clark",
             "hidden": false,
-            "emptySinceDate": "2017-01-01"
+            "emptySinceDate": "2017-01-01",
+            "prospects": [
+                {
+                    "id": 1,
+                    "wanted_surface": 100,
+                    "current_surface": 150,
+                    "company": {
+                        "id": 1,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    }
+                },
+                {
+                    "id": 2,
+                    "wanted_surface": 150,
+                    "current_surface": 100,
+                    "company": {
+                        "id": 2,
+                        "name": "Nikki",
+                        "siren": "9129391"
+                    }
+                }
+            ],
         }
 
 + Response 200 (application/json)
@@ -4494,6 +4665,28 @@ Update an existing Competitor
                     "brokerName": "Louise|Clark",
                     "hidden": false,
                     "emptySinceDate": "2017-01-01",
+                    "prospects": [
+                        {
+                            "id": 1,
+                            "wanted_surface": 100,
+                            "current_surface": 150,
+                            "company": {
+                                "id": 1,
+                                "name": "The Great Remnant",
+                                "siren": "1411286"
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "wanted_surface": 150,
+                            "current_surface": 100,
+                            "company": {
+                                "id": 2,
+                                "name": "Nikki",
+                                "siren": "9129391"
+                            }
+                        }
+                    ],
                     "creationDate": "2017-07-05 18:47:12"
                 }
             }
@@ -4540,6 +4733,28 @@ Toggle hide flag of an existing Competitor.
                     "brokerName": "Louise|Clark",
                     "hidden": true,
                     "emptySinceDate": "2017-01-01",
+                    "prospects": [
+                        {
+                            "id": 1,
+                            "wanted_surface": 100,
+                            "current_surface": 150,
+                            "company": {
+                                "id": 1,
+                                "name": "The Great Remnant",
+                                "siren": "1411286"
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "wanted_surface": 150,
+                            "current_surface": 100,
+                            "company": {
+                                "id": 2,
+                                "name": "Nikki",
+                                "siren": "9129391"
+                            }
+                        }
+                    ],
                     "creationDate": "2017-07-05 18:47:12"
                 }
             }
