@@ -242,17 +242,17 @@ Get User list
                 "message": "Success",
                 "data": [
                     {
-                        "id": 3,
+                        "id": 2,
                         "civility": true,
-                        "lastName": "Sandstorm",
-                        "firstName": "Michael",
-                        "email": "hendy.yanuar+12@wgs.co.id",
+                        "lastName": "Carey",
+                        "firstName": "Jim",
+                        "email": "hendy.yanuar+14@wgs.co.id",
                         "mobilePhone": "09",
                         "officePhone": "08",
-                        "jobTitle": "Musician",
-                        "guest": true,
-                        "customer": true,
-                        "active": true,
+                        "jobTitle": "CTO",
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
                         "profilPicPath": null,
                         "company": {
                             "id": 0,
@@ -265,7 +265,9 @@ Get User list
                             "siren": null,
                             "vat": null,
                             "vatOption": null
-                        }
+                        },
+                        "customers": [ 999 ],
+                        "roles": [ 1 ]
                     },
                     {
                         "id": 2,
@@ -275,10 +277,10 @@ Get User list
                         "email": "hendy.yanuar+14@wgs.co.id",
                         "mobilePhone": "9090",
                         "officePhone": "14045",
-                        "jobTitle": "Comedian",
-                        "guest": true,
-                        "customer": true,
-                        "active": true,
+                        "jobTitle": "CEO",
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
                         "profilPicPath": null,
                         "company": {
                             "id": 0,
@@ -291,7 +293,9 @@ Get User list
                             "siren": null,
                             "vat": null,
                             "vatOption": null
-                        }
+                        },
+                        "customers": [],
+                        "roles": [ 2 ]
                     },
                     {
                         "id": 1,
@@ -302,9 +306,9 @@ Get User list
                         "mobilePhone": "4321",
                         "officePhone": "12312",
                         "jobTitle": "Admin",
-                        "guest": false,
-                        "customer": false,
-                        "active": true,
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
                         "profilPicPath": null,
                         "company": {
                             "id": 0,
@@ -317,7 +321,9 @@ Get User list
                             "siren": null,
                             "vat": null,
                             "vatOption": null
-                        }
+                        },
+                        "customers": [],
+                        "roles": [ 1 ]
                     }
                 ]
             }
@@ -344,9 +350,9 @@ Get User Detail
                     "mobilePhone": "4321",
                     "officePhone": "12312",
                     "jobTitle": "Admin",
-                    "guest": false,
-                    "customer": false,
-                    "active": true,
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
                     "profilPicPath": null,
                     "company": {
                         "id": 0,
@@ -370,22 +376,22 @@ Create User
 + Request (application/json)
 
         {
-            "guest": true,
+            "is_guest": true,
             "is_customer": true,
-            "active": true,
+            "is_active": true,
             "civility": "mr",
             "firstName": "Jim",
             "lastName": "Carey",
             "email": "hendy.yanuar+14@wgs.co.id",
             "mobilePhone": "09",
             "officePhone": "08",
-            "company": "9",
-            "customer": [
-                "999"
+            "company": 9,
+            "customers": [
+                999
             ],
             "jobTitle": "Comedian",
-            "role": [
-                "1"
+            "roles": [
+                1
             ]
         }
 
@@ -405,9 +411,9 @@ Create User
                     "mobilePhone": "09",
                     "officePhone": "08",
                     "jobTitle": "Comedian",
-                    "guest": true,
-                    "customer": true,
-                    "active": true,
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
                     "profilPicPath": null,
                     "company": {
                         "id": 0,
@@ -420,7 +426,9 @@ Create User
                         "siren": null,
                         "vat": null,
                         "vatOption": null
-                    }
+                    },
+                    "customers": [ 999 ],
+                    "roles": [ 1 ]
                 }
             }
 
@@ -431,22 +439,23 @@ Update User
 + Request (application/json)
 
         {
-            "guest": true,
+            "id": 1,
+            "is_guest": true,
             "is_customer": true,
-            "active": true,
+            "is_active": true,
             "civility": "mr",
-            "firstName": "Jimmy",
-            "lastName": "Careyz",
+            "firstName": "Jim",
+            "lastName": "Careys",
             "email": "hendy.yanuar+14@wgs.co.id",
-            "mobilePhone": "9090",
-            "officePhone": "14045",
-            "company": "9",
-            "customer": [
-                "999"
+            "mobilePhone": "09",
+            "officePhone": "08",
+            "company": 9,
+            "customers": [
+                999
             ],
             "jobTitle": "Comedian",
-            "role": [
-                "1"
+            "roles": [
+                1
             ]
         }
 
@@ -460,15 +469,15 @@ Update User
                 "data": {
                     "id": 2,
                     "civility": true,
-                    "lastName": "Careyz",
-                    "firstName": "Jimmy",
+                    "lastName": "Careys",
+                    "firstName": "Jim",
                     "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "9090",
-                    "officePhone": "14045",
+                    "mobilePhone": "09",
+                    "officePhone": "08",
                     "jobTitle": "Comedian",
-                    "guest": true,
-                    "customer": true,
-                    "active": true,
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
                     "profilPicPath": null,
                     "company": {
                         "id": 0,
@@ -481,7 +490,9 @@ Update User
                         "siren": null,
                         "vat": null,
                         "vatOption": null
-                    }
+                    },
+                    "customers": [ 999 ],
+                    "roles": [ 1 ]
                 }
             }
 
@@ -619,11 +630,13 @@ Get Role list
                 "code": 0,
                 "message": "Success",
                 "data": {
-                    "roles" : [
+                    "roles": [
                         {
                             "id": 1,
                             "name": "Super Admin",
                             "slug": "super-admin",
+                            "description": null,
+                            "protected": false,
                             "permissions": [
                                 {
                                     "user.create": true
@@ -632,22 +645,10 @@ Get Role list
                                     "user.read": true
                                 },
                                 {
-                                    "user.delete": true
-                                },
-                                {
                                     "user.update": true
                                 },
                                 {
-                                    "building.create": true
-                                },
-                                {
-                                    "building.read": true
-                                },
-                                {
-                                    "building.delete": true
-                                },
-                                {
-                                    "building.update": true
+                                    "user.delete": true
                                 },
                                 {
                                     "role.create": true
@@ -656,10 +657,34 @@ Get Role list
                                     "role.read": true
                                 },
                                 {
+                                    "role.update": true
+                                },
+                                {
                                     "role.delete": true
                                 },
                                 {
-                                    "role.update": true
+                                    "portfolio.create": true
+                                },
+                                {
+                                    "portfolio.read": true
+                                },
+                                {
+                                    "portfolio.update": true
+                                },
+                                {
+                                    "portfolio.delete": true
+                                },
+                                {
+                                    "property.create": true
+                                },
+                                {
+                                    "property.read": true
+                                },
+                                {
+                                    "property.update": true
+                                },
+                                {
+                                    "property.delete": true
                                 },
                                 {
                                     "lot.create": true
@@ -668,10 +693,10 @@ Get Role list
                                     "lot.read": true
                                 },
                                 {
-                                    "lot.delete": true
+                                    "lot.update": true
                                 },
                                 {
-                                    "lot.update": true
+                                    "lot.delete": true
                                 },
                                 {
                                     "bail.create": true
@@ -680,22 +705,34 @@ Get Role list
                                     "bail.read": true
                                 },
                                 {
-                                    "bail.delete": true
-                                },
-                                {
                                     "bail.update": true
                                 },
                                 {
-                                    "portofolio.create": true
+                                    "bail.delete": true
                                 },
                                 {
-                                    "portofolio.read": true
+                                    "prospect.create": true
                                 },
                                 {
-                                    "portofolio.delete": true
+                                    "prospect.read": true
                                 },
                                 {
-                                    "portofolio.update": true
+                                    "prospect.update": true
+                                },
+                                {
+                                    "prospect.delete": true
+                                },
+                                {
+                                    "competitor.create": true
+                                },
+                                {
+                                    "competitor.read": true
+                                },
+                                {
+                                    "competitor.update": true
+                                },
+                                {
+                                    "competitor.delete": true
                                 },
                                 {
                                     "admin.read": true
@@ -706,38 +743,154 @@ Get Role list
                                 {
                                     "access.update": true
                                 }
-                            ]
+                            ],
+                            "customer": {
+                                "id": 0,
+                                "fullName": null,
+                                "tradeName": null,
+                                "vatOption": null,
+                                "active": null,
+                                "intercommunityVat": null,
+                                "vat": null,
+                                "siren": null,
+                                "naf": null,
+                                "iban": null,
+                                "accountName": null,
+                                "swift": null,
+                                "addressOption": null,
+                                "addresses": [],
+                                "customerImg": [
+                                    ""
+                                ],
+                                "created_at": ""
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "name": "Admin Client",
+                            "slug": "admin-client",
+                            "description": null,
+                            "protected": false,
+                            "permissions": [
+                                {
+                                    "user.create": true
+                                },
+                                {
+                                    "user.read": true
+                                },
+                                {
+                                    "user.update": true
+                                },
+                                {
+                                    "user.delete": true
+                                },
+                                {
+                                    "role.create": true
+                                },
+                                {
+                                    "role.read": true
+                                },
+                                {
+                                    "role.update": true
+                                },
+                                {
+                                    "role.delete": true
+                                },
+                                {
+                                    "portfolio.create": true
+                                },
+                                {
+                                    "portfolio.read": true
+                                },
+                                {
+                                    "portfolio.update": true
+                                },
+                                {
+                                    "portfolio.delete": true
+                                },
+                                {
+                                    "property.create": true
+                                },
+                                {
+                                    "property.read": true
+                                },
+                                {
+                                    "property.update": true
+                                },
+                                {
+                                    "property.delete": true
+                                },
+                                {
+                                    "lot.create": true
+                                },
+                                {
+                                    "lot.read": true
+                                },
+                                {
+                                    "lot.update": true
+                                },
+                                {
+                                    "lot.delete": true
+                                },
+                                {
+                                    "bail.create": true
+                                },
+                                {
+                                    "bail.read": true
+                                },
+                                {
+                                    "bail.update": true
+                                },
+                                {
+                                    "bail.delete": true
+                                },
+                                {
+                                    "prospect.create": true
+                                },
+                                {
+                                    "prospect.read": true
+                                },
+                                {
+                                    "prospect.update": true
+                                },
+                                {
+                                    "prospect.delete": true
+                                },
+                                {
+                                    "competitor.create": true
+                                },
+                                {
+                                    "competitor.read": true
+                                },
+                                {
+                                    "competitor.update": true
+                                },
+                                {
+                                    "competitor.delete": true
+                                }
+                            ],
+                            "customer": {
+                                "id": 0,
+                                "fullName": null,
+                                "tradeName": null,
+                                "vatOption": null,
+                                "active": null,
+                                "intercommunityVat": null,
+                                "vat": null,
+                                "siren": null,
+                                "naf": null,
+                                "iban": null,
+                                "accountName": null,
+                                "swift": null,
+                                "addressOption": null,
+                                "addresses": [],
+                                "customerImg": [
+                                    ""
+                                ],
+                                "created_at": ""
+                            }
                         }
-                    ],
-                    "permissions": [
-                        "user.create", 
-                        "user.read", 
-                        "user.delete", 
-                        "user.update", 
-                        "building.create",
-                        "building.read",
-                        "building.delete",
-                        "building.update",
-                        "role.create",
-                        "role.read",
-                        "role.delete",
-                        "role.update",
-                        "lot.create",
-                        "lot.read",
-                        "lot.delete",
-                        "lot.update",
-                        "bail.create",
-                        "bail.read",
-                        "bail.delete",
-                        "bail.update",
-                        "portofolio.create",
-                        "portofolio.read",
-                        "portofolio.delete",
-                        "portofolio.update",
-                        "admin.read",
-                        "access.create",
-                        "access.update"
-                    ]
+                    }
                 }
             }
 
@@ -851,22 +1004,24 @@ Create Role
 + Request (application/json)
 
         {
-            "label": "Admin Client",
-            "description": null,
-            "customer": "8",
+            "name": "Broker",
+            "description": "Broker",
+            "customer": {
+                "id": 16
+            },
             "permissions": {
-            "user": [
-                "create",
-                "delete",
-                "update",
-                "read"
-            ],
-            "building": [
-                "create",
-                "delete",
-                "update",
-                "read"
-            ]
+                "user": [
+                    "create",
+                    "delete",
+                    "update",
+                    "read"
+                ],
+                "building": [
+                    "create",
+                    "delete",
+                    "update",
+                    "read"
+                ]
             }
         }
 
@@ -878,9 +1033,11 @@ Create Role
                 "code": 0,
                 "message": "Success",
                 "data": {
-                    "id": 2,
-                    "name": "Admin Client",
-                    "slug": "admin-client",
+                    "id": 9,
+                    "name": "Broker",
+                    "slug": "broker",
+                    "description": "Broker",
+                    "protected": false,
                     "permissions": [
                         "user.create",
                         "user.delete",
@@ -890,7 +1047,56 @@ Create Role
                         "building.delete",
                         "building.update",
                         "building.read"
-                    ]
+                    ],
+                    "customer": {
+                        "id": 16,
+                        "fullName": "Nandai Bamco",
+                        "tradeName": "Nandai",
+                        "vatOption": 1,
+                        "active": 1,
+                        "intercommunityVat": "VAT111",
+                        "vat": null,
+                        "siren": null,
+                        "naf": "NAF",
+                        "iban": "FR7630001007941234567890185",
+                        "accountName": "IBANK",
+                        "swift": "FRFRFR76300",
+                        "addressOption": 0,
+                        "addresses": [
+                            {
+                                "id": 31,
+                                "addressType": "headquarter",
+                                "address": {
+                                    "id": 126,
+                                    "address1": "West Lane 12",
+                                    "address2": null,
+                                    "zipcode": "14123",
+                                    "city": "Vancouver",
+                                    "country": "CANADA",
+                                    "lat": 49.2827291,
+                                    "lng": -123.1207375
+                                }
+                            },
+                            {
+                                "id": 32,
+                                "addressType": "billing",
+                                "address": {
+                                    "id": 127,
+                                    "address1": "Dakota 13",
+                                    "address2": null,
+                                    "zipcode": "41321",
+                                    "city": "Cuautitlan",
+                                    "country": "MEXICO",
+                                    "lat": 19.6721809,
+                                    "lng": -99.1809685
+                                }
+                            }
+                        ],
+                        "customerImg": [
+                            ""
+                        ],
+                        "created_at": "2017-07-16 09:19:03"
+                    }
                 }
             }
 
