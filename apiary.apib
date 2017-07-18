@@ -225,6 +225,152 @@ Update Profile Detail
 
 User resource for super-admin
 `token` is required.
+`role:super-admin` is required.
+
+## User Create [/users]
+### User Create [POST]
+Create User
+
++ Request (application/json)
+
+        {
+            "is_guest": true,
+            "is_customer": true,
+            "is_active": true,
+            "civility": "mr",
+            "firstName": "Jim",
+            "lastName": "Carey",
+            "email": "hendy.yanuar+14@wgs.co.id",
+            "mobilePhone": "09",
+            "officePhone": "08",
+            "company": 9,
+            "customers": [
+                999
+            ],
+            "jobTitle": "Comedian",
+            "roles": [
+                {
+                    "id": 2,
+                    "name": "Asset manager",
+                    "description": "Asset Manager",
+                    "permissions": {
+                        "user": [
+                            "create",
+                            "delete",
+                            "update",
+                            "read"
+                        ],
+                        "building": [
+                            "create",
+                            "delete",
+                            "update",
+                            "read"
+                        ]
+                    }
+                },
+                {
+                    "DEVNOTE_id": "without id is considered as new Role",
+                    "name": "Broker",
+                    "description": "Broker",
+                    "permissions": {
+                        "user": [
+                            "create",
+                            "delete",
+                            "update",
+                            "read"
+                        ],
+                        "building": [
+                            "create",
+                            "delete",
+                            "update",
+                            "read"
+                        ]
+                    }
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Carey",
+                    "firstName": "Jim",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "09",
+                    "officePhone": "08",
+                    "jobTitle": "Comedian",
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    "customers": [ 999 ],
+                    "roles": [
+                        {
+                            "id": 2,
+                            "name": "Asset manager",
+                            "description": "Asset Manager",
+                            "permissions": {
+                                "user": [
+                                    "create",
+                                    "delete",
+                                    "update",
+                                    "read"
+                                ],
+                                "building": [
+                                    "create",
+                                    "delete",
+                                    "update",
+                                    "read"
+                                ]
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "name": "Broker",
+                            "description": "Broker",
+                            "permissions": {
+                                "user": [
+                                    "create",
+                                    "delete",
+                                    "update",
+                                    "read"
+                                ],
+                                "building": [
+                                    "create",
+                                    "delete",
+                                    "update",
+                                    "read"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+
+
+## Group OLD Users for Super Admin
+
+User resource for super-admin
+`token` is required.
 `role`:super-admin is required.
 
 ## User List [/users?]
@@ -369,8 +515,8 @@ Get User Detail
                 }
             }
 
-## User Create [/users]
-### User Create [POST]
+## OLD User Create [/old-users]
+### OLD User Create [POST]
 Create User
 
 + Request (application/json)
