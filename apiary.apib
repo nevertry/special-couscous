@@ -234,25 +234,169 @@ Create User
 + Request (application/json)
 
         {
-            "is_guest": true,
-            "is_customer": true,
-            "is_active": true,
-            "civility": "mr",
-            "firstName": "Jim",
-            "lastName": "Carey",
-            "email": "hendy.yanuar+14@wgs.co.id",
-            "mobilePhone": "09",
-            "officePhone": "08",
-            "company": 9,
+            "isGuest": false,
+            "isCustomer": false,
+            "isActive": true,
+            "civility": "mrs",
+            "firstName": "Syiwa",
+            "lastName": "Tes",
+            "email": "syiwa.ws@smooets.com",
+            "company": {
+                "id": 9,
+                "address": {
+                    "id": 34,
+                    "address1": "Paris",
+                    "address2": null,
+                    "zipcode": "83470",
+                    "city": "Var",
+                    "country": "Prancis",
+                    "lat": 43.4941437,
+                    "lng": 5.8932809
+                },
+                "fullName": "TEST 12",
+                "tradeName": "TEST14JULY",
+                "raisonSociale": {
+                    "id": 1,
+                    "code": "M01",
+                    "label": "SOCIETE"
+                },
+                "intercommunityVat": "TSET11001010",
+                "naf": "TEST10101010",
+                "siren": null,
+                "vat": null,
+                "vatOption": 1
+            },
             "customers": [
-                999
+                {
+                    "id": 14,
+                    "fullName": "Ellison Harmon LLC",
+                    "tradeName": "Freya Chang",
+                    "vatOption": 0,
+                    "active": 1,
+                    "intercommunityVat": "315",
+                    "vat": null,
+                    "siren": null,
+                    "naf": "1307007",
+                    "iban": "FR7630004003200001019471656",
+                    "accountName": "Bo Ewing",
+                    "swift": "FRFRFR76300",
+                    "addressOption": 1,
+                    "addresses": [
+                        {
+                            "id": 19,
+                            "addressType": "headquarter",
+                            "address": {
+                                "id": 52,
+                                "address1": "54 West Clarendon Parkway",
+                                "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                                "zipcode": "80534",
+                                "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                                "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                                "lat": 48.6670602,
+                                "lng": 1.8179955
+                            }
+                        },
+                        {
+                            "id": 20,
+                            "addressType": "billing",
+                            "address": {
+                                "id": 53,
+                                "address1": "40 Old Court",
+                                "address2": "Iusto et minus quaerat quia at sint aut eligendi minima mollitia minus in ut expedita aliquid mollitia",
+                                "zipcode": "55185",
+                                "city": "Nulla perferendis sint itaque voluptas doloribus nisi fuga Similique pariatur Expedita qui aliquam excepturi cupiditate deserunt voluptatem",
+                                "country": "Natus quas tempore excepteur expedita praesentium tempore ea",
+                                "lat": 48.6670602,
+                                "lng": 1.8179955
+                            }
+                        }
+                    ],
+                    "customerImg": [
+                        ""
+                    ],
+                    "created_at": "2017-07-15 12:32:57",
+                    "contact": {
+                        "id": 10,
+                        "civility": "mrs",
+                        "lastName": "Newton",
+                        "firstName": "Stuart",
+                        "email": "dozuda@yahoo.com",
+                        "mobilePhone": "472161442896",
+                        "officePhone": "663774958368",
+                        "jobTitle": "Magna exercitationem nesciunt blanditiis aut labore nulla",
+                        "is_guest": false,
+                        "is_customer": true,
+                        "is_active": true,
+                        "profilePicPath": null,
+                        "customers": [
+                            14
+                        ],
+                        "roles": [
+                            2
+                        ],
+                        "company": {
+                            "id": 12,
+                            "address": {
+                                "id": 52,
+                                "address1": "54 West Clarendon Parkway",
+                                "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                                "zipcode": "80534",
+                                "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                                "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                                "lat": 48.6670602,
+                                "lng": 1.8179955
+                            },
+                            "fullName": "Ellison Harmon LLC",
+                            "tradeName": "Freya Chang",
+                            "raisonSociale": {
+                                "id": 16,
+                                "code": "M44",
+                                "label": "MUTUELLE"
+                            },
+                            "intercommunityVat": "315",
+                            "naf": "1307007",
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": 0
+                        }
+                    },
+                    "raisonSociale": {
+                        "id": 16,
+                        "code": "M44",
+                        "label": "MUTUELLE"
+                    },
+                    "company": {
+                        "id": 12,
+                        "address": {
+                            "id": 52,
+                            "address1": "54 West Clarendon Parkway",
+                            "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                            "zipcode": "80534",
+                            "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                            "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                            "lat": 48.6670602,
+                            "lng": 1.8179955
+                        },
+                        "fullName": "Ellison Harmon LLC",
+                        "tradeName": "Freya Chang",
+                        "raisonSociale": {
+                            "id": 16,
+                            "code": "M44",
+                            "label": "MUTUELLE"
+                        },
+                        "intercommunityVat": "315",
+                        "naf": "1307007",
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": 0
+                    }
+                }
             ],
-            "jobTitle": "Comedian",
+            "jobTitle": "CEO",
             "roles": [
                 {
-                    "id": 2,
-                    "name": "Asset manager",
-                    "description": "Asset Manager",
+                    "name": "Broker",
+                    "description": "Broker",
                     "permissions": {
                         "user": [
                             "create",
@@ -269,9 +413,11 @@ Create User
                     }
                 },
                 {
-                    "DEVNOTE_id": "without id is considered as new Role",
-                    "name": "Broker",
-                    "description": "Broker",
+                    "id": 2,
+                    "name": "Admin Client",
+                    "slug": "admin-client",
+                    "description": null,
+                    "protected": true,
                     "permissions": {
                         "user": [
                             "create",
@@ -298,68 +444,299 @@ Create User
                 "code": 0,
                 "message": "Success",
                 "data": {
-                    "id": 2,
-                    "civility": true,
-                    "lastName": "Carey",
-                    "firstName": "Jim",
-                    "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "09",
-                    "officePhone": "08",
-                    "jobTitle": "Comedian",
-                    "is_guest": true,
-                    "is_customer": true,
-                    "is_active": true,
-                    "profilPicPath": null,
+                    "id": 5,
+                    "isGuest": false,
+                    "isCustomer": false,
+                    "isActive": true,
+                    "civility": "mrs",
+                    "firstName": "Syiwa",
+                    "lastName": "Tes",
+                    "email": "syiwa.ws@smooets.com",
                     "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
+                        "id": 9,
+                        "address": {
+                            "id": 34,
+                            "address1": "Paris",
+                            "address2": null,
+                            "zipcode": "83470",
+                            "city": "Var",
+                            "country": "Prancis",
+                            "lat": 43.4941437,
+                            "lng": 5.8932809
+                        },
+                        "fullName": "TEST 12",
+                        "tradeName": "TEST14JULY",
+                        "raisonSociale": {
+                            "id": 1,
+                            "code": "M01",
+                            "label": "SOCIETE"
+                        },
+                        "intercommunityVat": "TSET11001010",
+                        "naf": "TEST10101010",
                         "siren": null,
                         "vat": null,
-                        "vatOption": null
+                        "vatOption": 1
                     },
-                    "customers": [ 999 ],
+                    "customers": [
+                        {
+                            "id": 14,
+                            "fullName": "Ellison Harmon LLC",
+                            "tradeName": "Freya Chang",
+                            "vatOption": 0,
+                            "active": 1,
+                            "intercommunityVat": "315",
+                            "vat": null,
+                            "siren": null,
+                            "naf": "1307007",
+                            "iban": "FR7630004003200001019471656",
+                            "accountName": "Bo Ewing",
+                            "swift": "FRFRFR76300",
+                            "addressOption": 1,
+                            "addresses": [
+                                {
+                                    "id": 19,
+                                    "addressType": "headquarter",
+                                    "address": {
+                                        "id": 52,
+                                        "address1": "54 West Clarendon Parkway",
+                                        "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                                        "zipcode": "80534",
+                                        "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                                        "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                                        "lat": 48.6670602,
+                                        "lng": 1.8179955
+                                    }
+                                },
+                                {
+                                    "id": 20,
+                                    "addressType": "billing",
+                                    "address": {
+                                        "id": 53,
+                                        "address1": "40 Old Court",
+                                        "address2": "Iusto et minus quaerat quia at sint aut eligendi minima mollitia minus in ut expedita aliquid mollitia",
+                                        "zipcode": "55185",
+                                        "city": "Nulla perferendis sint itaque voluptas doloribus nisi fuga Similique pariatur Expedita qui aliquam excepturi cupiditate deserunt voluptatem",
+                                        "country": "Natus quas tempore excepteur expedita praesentium tempore ea",
+                                        "lat": 48.6670602,
+                                        "lng": 1.8179955
+                                    }
+                                }
+                            ],
+                            "customerImg": [
+                                ""
+                            ],
+                            "created_at": "2017-07-15 12:32:57",
+                            "contact": {
+                                "id": 10,
+                                "civility": "mrs",
+                                "lastName": "Newton",
+                                "firstName": "Stuart",
+                                "email": "dozuda@yahoo.com",
+                                "mobilePhone": "472161442896",
+                                "officePhone": "663774958368",
+                                "jobTitle": "Magna exercitationem nesciunt blanditiis aut labore nulla",
+                                "is_guest": false,
+                                "is_customer": true,
+                                "is_active": true,
+                                "profilePicPath": null,
+                                "customers": [
+                                    14
+                                ],
+                                "roles": [
+                                    2
+                                ],
+                                "company": {
+                                    "id": 12,
+                                    "address": {
+                                        "id": 52,
+                                        "address1": "54 West Clarendon Parkway",
+                                        "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                                        "zipcode": "80534",
+                                        "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                                        "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                                        "lat": 48.6670602,
+                                        "lng": 1.8179955
+                                    },
+                                    "fullName": "Ellison Harmon LLC",
+                                    "tradeName": "Freya Chang",
+                                    "raisonSociale": {
+                                        "id": 16,
+                                        "code": "M44",
+                                        "label": "MUTUELLE"
+                                    },
+                                    "intercommunityVat": "315",
+                                    "naf": "1307007",
+                                    "siren": null,
+                                    "vat": null,
+                                    "vatOption": 0
+                                }
+                            },
+                            "raisonSociale": {
+                                "id": 16,
+                                "code": "M44",
+                                "label": "MUTUELLE"
+                            },
+                            "company": {
+                                "id": 12,
+                                "address": {
+                                    "id": 52,
+                                    "address1": "54 West Clarendon Parkway",
+                                    "address2": "Nihil iste cupidatat aliquid commodo ut ex dolores ut deserunt expedita aut irure ex dolor veniam voluptas qui",
+                                    "zipcode": "80534",
+                                    "city": "Dolorem nemo porro consequatur Est molestiae ad ex nisi unde deserunt quasi",
+                                    "country": "Qui itaque est accusantium a esse rem omnis odio non nihil ratione exercitationem dolorem soluta cupiditate",
+                                    "lat": 48.6670602,
+                                    "lng": 1.8179955
+                                },
+                                "fullName": "Ellison Harmon LLC",
+                                "tradeName": "Freya Chang",
+                                "raisonSociale": {
+                                    "id": 16,
+                                    "code": "M44",
+                                    "label": "MUTUELLE"
+                                },
+                                "intercommunityVat": "315",
+                                "naf": "1307007",
+                                "siren": null,
+                                "vat": null,
+                                "vatOption": 0
+                            }
+                        }
+                    ],
+                    "jobTitle": "CEO",
                     "roles": [
                         {
-                            "id": 2,
-                            "name": "Asset manager",
-                            "description": "Asset Manager",
-                            "permissions": {
-                                "user": [
-                                    "create",
-                                    "delete",
-                                    "update",
-                                    "read"
+                            "id": 1,
+                            "name": "Super Admin",
+                            "slug": "super-admin",
+                            "description": null,
+                            "protected": true,
+                            "permissions": [
+                                {
+                                    "user.create": true
+                                },
+                                {
+                                    "user.read": true
+                                },
+                                {
+                                    "user.update": true
+                                },
+                                {
+                                    "user.delete": true
+                                },
+                                {
+                                    "role.create": true
+                                },
+                                {
+                                    "role.read": true
+                                },
+                                {
+                                    "role.update": true
+                                },
+                                {
+                                    "role.delete": true
+                                },
+                                {
+                                    "portfolio.create": true
+                                },
+                                {
+                                    "portfolio.read": true
+                                },
+                                {
+                                    "portfolio.update": true
+                                },
+                                {
+                                    "portfolio.delete": true
+                                },
+                                {
+                                    "property.create": true
+                                },
+                                {
+                                    "property.read": true
+                                },
+                                {
+                                    "property.update": true
+                                },
+                                {
+                                    "property.delete": true
+                                },
+                                {
+                                    "lot.create": true
+                                },
+                                {
+                                    "lot.read": true
+                                },
+                                {
+                                    "lot.update": true
+                                },
+                                {
+                                    "lot.delete": true
+                                },
+                                {
+                                    "bail.create": true
+                                },
+                                {
+                                    "bail.read": true
+                                },
+                                {
+                                    "bail.update": true
+                                },
+                                {
+                                    "bail.delete": true
+                                },
+                                {
+                                    "prospect.create": true
+                                },
+                                {
+                                    "prospect.read": true
+                                },
+                                {
+                                    "prospect.update": true
+                                },
+                                {
+                                    "prospect.delete": true
+                                },
+                                {
+                                    "competitor.create": true
+                                },
+                                {
+                                    "competitor.read": true
+                                },
+                                {
+                                    "competitor.update": true
+                                },
+                                {
+                                    "competitor.delete": true
+                                },
+                                {
+                                    "admin.read": true
+                                },
+                                {
+                                    "access.create": true
+                                },
+                                {
+                                    "access.update": true
+                                }
+                            ],
+                            "customer": {
+                                "id": 0,
+                                "fullName": null,
+                                "tradeName": null,
+                                "vatOption": null,
+                                "active": null,
+                                "intercommunityVat": null,
+                                "vat": null,
+                                "siren": null,
+                                "naf": null,
+                                "iban": null,
+                                "accountName": null,
+                                "swift": null,
+                                "addressOption": null,
+                                "addresses": [],
+                                "customerImg": [
+                                    ""
                                 ],
-                                "building": [
-                                    "create",
-                                    "delete",
-                                    "update",
-                                    "read"
-                                ]
-                            }
-                        },
-                        {
-                            "id": 3,
-                            "name": "Broker",
-                            "description": "Broker",
-                            "permissions": {
-                                "user": [
-                                    "create",
-                                    "delete",
-                                    "update",
-                                    "read"
-                                ],
-                                "building": [
-                                    "create",
-                                    "delete",
-                                    "update",
-                                    "read"
-                                ]
+                                "created_at": ""
                             }
                         }
                     ]
@@ -6172,7 +6549,108 @@ Get Prospect List grouped by Prospect Company.
                         }
                     ]
                 }
+            }
 
+## Prospect Property List Lookup [/portfolios/{portfolioId}/properties/{propertyId}/prospects/properties?name={name}]
+### Prospect Property List Lookup [GET]
+Get Prospect Property List by lookup
+`permission:prospect.read` is required
+
++ Request (application/json)
+        
+        {
+            "name": "gre"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "Great Tower",
+                        "address": {
+                            "id": 1,
+                            "address1": "Inter 86",
+                            "address2": "Nazionale",
+                            "zipcode": "41114",
+                            "city": "MILAN",
+                            "country": "ITALY",
+                            "lat": 43.4941437,
+                            "lng": 15.8932809
+                        }
+                    },
+                    {
+                        "id": 11,
+                        "name": "Bright Green Tower",
+                        "address": {
+                            "id": 2,
+                            "address1": "Snack",
+                            "address2": "taku",
+                            "zipcode": "1231",
+                            "city": "MILAN",
+                            "country": "ITALY",
+                            "lat": 17.4941437,
+                            "lng": 5.8932809
+                        }
+                    },
+                    {
+                        "id": 1131,
+                        "name": "Lotte Agre",
+                        "address": {
+                            "id": 5,
+                            "address1": "Desa Bojong",
+                            "address2": "12",
+                            "zipcode": "123",
+                            "city": "MILAN",
+                            "country": "ITALY",
+                            "lat": 42.4941437,
+                            "lng": 8.8932809
+                        }
+                    }
+                ]
+            }
+
+## Prospect Company List Lookup [/portfolios/{portfolioId}/properties/{propertyId}/prospects/companies?name={name}&siren={siren}]
+### Prospect Company List Lookup [GET]
+Get Prospect Company List by lookup
+`permission:prospect.read` is required
+
++ Request (application/json)
+        
+        {
+            "name": "gre",
+            "siren": "DR181227"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 11,
+                        "name": "The Great Remnant",
+                        "siren": "DR181227"
+                    },
+                    {
+                        "id": 12,
+                        "name": "Green Slime",
+                        "siren": "DR181227123"
+                    },
+                    {
+                        "id": 45,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    }
+                ]
             }
 
 ## Group CRM Competitor
@@ -6212,7 +6690,7 @@ Get Competitor List
                         "lastFacialRent": 1000000,
                         "lastLeaseDate": "2017-07-08",
                         "lastEconomicRent": 1000000,
-                        "brokerName": "Dominic",
+                        "brokers": ["Dominic"],
                         "hidden": false,
                         "emptySinceDate": "2017-01-01",
                         "creationDate": "2017-07-05 18:33:21"
@@ -6234,7 +6712,7 @@ Get Competitor List
                         "lastFacialRent": 750000,
                         "lastLeaseDate": "2017-07-08",
                         "lastEconomicRent": 750000,
-                        "brokerName": "Bennet Coll",
+                        "brokers": ["Bennet Coll"],
                         "hidden": false,
                         "emptySinceDate": "2017-01-01",
                         "creationDate": "2017-07-06 19:12:12"
@@ -6256,7 +6734,7 @@ Get Competitor List
                         "lastFacialRent": 3950000,
                         "lastLeaseDate": "2017-07-08",
                         "lastEconomicRent": 4500000,
-                        "brokerName": "Susan Parker|Stephany",
+                        "brokers": ["Susan Parker", "Stephany"],
                         "hidden": false,
                         "emptySinceDate": "2017-01-01",
                         "creationDate": "2017-07-07 20:19:12"
@@ -6278,7 +6756,7 @@ Get Competitor List
                         "lastFacialRent": 3950000,
                         "lastLeaseDate": "2017-07-08",
                         "lastEconomicRent": 3100000,
-                        "brokerName": "Susan Parker|Stephany",
+                        "brokers": ["Susan Parker", "Stephany"],
                         "hidden": true,
                         "emptySinceDate": "2017-01-01",
                         "creationDate": "2017-07-05 18:47:12"
@@ -6317,7 +6795,7 @@ Get Competitor Detail.
                     "lastFacialRent": 1000000,
                     "lastLeaseDate": "2017-07-08",
                     "lastEconomicRent": 1000000,
-                    "brokerName": "Louise|Clark",
+                    "brokers": ["Louise", "Clark"],
                     "hidden": false,
                     "emptySinceDate": "2017-01-01",
                     "creationDate": "2017-07-05 18:47:12"
@@ -6346,7 +6824,7 @@ Create a Competitor
             "lastFacialRent": 1000000,
             "lastLeaseDate": "2017-07-08",
             "lastEconomicRent": 1000000,
-            "brokerName": "Louise",
+            "brokers": ["Louise"],
             "emptySinceDate": "2017-01-01",
             "prospects": [
                 {
@@ -6383,7 +6861,7 @@ Create a Competitor
                     "lastFacialRent": 1000000,
                     "lastLeaseDate": "2017-07-08",
                     "lastEconomicRent": 1000000,
-                    "brokerName": "Louise",
+                    "brokers": ["Louise"],
                     "hidden": false,
                     "emptySinceDate": "2017-01-01",
                     "prospects": [
@@ -6434,7 +6912,7 @@ Update an existing Competitor
             "lastFacialRent": 1000000,
             "lastLeaseDate": "2017-07-08",
             "lastEconomicRent": 1000000,
-            "brokerName": "Louise|Clark",
+            "brokers": ["Louise", "Clark"],
             "hidden": false,
             "emptySinceDate": "2017-01-01",
             "prospects": [
@@ -6476,7 +6954,7 @@ Update an existing Competitor
                     "lastFacialRent": 1000000,
                     "lastLeaseDate": "2017-07-08",
                     "lastEconomicRent": 1000000,
-                    "brokerName": "Louise|Clark",
+                    "brokers": ["Louise", "Clark"],
                     "hidden": false,
                     "emptySinceDate": "2017-01-01",
                     "prospects": [
@@ -6544,7 +7022,7 @@ Toggle hide flag of an existing Competitor.
                     "lastFacialRent": 1000000,
                     "lastLeaseDate": "2017-07-08",
                     "lastEconomicRent": 1000000,
-                    "brokerName": "Louise|Clark",
+                    "brokers": ["Louise", "Clark"],
                     "hidden": true,
                     "emptySinceDate": "2017-01-01",
                     "prospects": [
