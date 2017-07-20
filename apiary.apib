@@ -324,9 +324,9 @@ Create User
                         "mobilePhone": "472161442896",
                         "officePhone": "663774958368",
                         "jobTitle": "Magna exercitationem nesciunt blanditiis aut labore nulla",
-                        "is_guest": false,
-                        "is_customer": true,
-                        "is_active": true,
+                        "isGuest": false,
+                        "isCustomer": true,
+                        "isActive": true,
                         "profilePicPath": null,
                         "customers": [
                             14
@@ -535,9 +535,9 @@ Create User
                                 "mobilePhone": "472161442896",
                                 "officePhone": "663774958368",
                                 "jobTitle": "Magna exercitationem nesciunt blanditiis aut labore nulla",
-                                "is_guest": false,
-                                "is_customer": true,
-                                "is_active": true,
+                                "isGuest": false,
+                                "isCustomer": true,
+                                "isActive": true,
                                 "profilePicPath": null,
                                 "customers": [
                                     14
@@ -743,395 +743,6 @@ Create User
                 }
             }
 
-
-## Group OLD Users for Super Admin
-
-User resource for super-admin
-`token` is required.
-`role`:super-admin is required.
-
-## User List [/users?]
-### User List [GET]
-Get User list
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-            
-            {
-                "code": 0,
-                "message": "Success",
-                "data": [
-                    {
-                        "id": 2,
-                        "civility": true,
-                        "lastName": "Carey",
-                        "firstName": "Jim",
-                        "email": "hendy.yanuar+14@wgs.co.id",
-                        "mobilePhone": "09",
-                        "officePhone": "08",
-                        "jobTitle": "CTO",
-                        "is_guest": true,
-                        "is_customer": true,
-                        "is_active": true,
-                        "profilPicPath": null,
-                        "company": {
-                            "id": 0,
-                            "address": 0,
-                            "fullName": null,
-                            "tradeName": null,
-                            "raisonSociale": 0,
-                            "intercommunityVat": null,
-                            "naf": null,
-                            "siren": null,
-                            "vat": null,
-                            "vatOption": null
-                        },
-                        "customers": [ 999 ],
-                        "roles": [ 1 ]
-                    },
-                    {
-                        "id": 2,
-                        "civility": true,
-                        "lastName": "Careyz",
-                        "firstName": "Jimmy",
-                        "email": "hendy.yanuar+14@wgs.co.id",
-                        "mobilePhone": "9090",
-                        "officePhone": "14045",
-                        "jobTitle": "CEO",
-                        "is_guest": true,
-                        "is_customer": true,
-                        "is_active": true,
-                        "profilPicPath": null,
-                        "company": {
-                            "id": 0,
-                            "address": 0,
-                            "fullName": null,
-                            "tradeName": null,
-                            "raisonSociale": 0,
-                            "intercommunityVat": null,
-                            "naf": null,
-                            "siren": null,
-                            "vat": null,
-                            "vatOption": null
-                        },
-                        "customers": [],
-                        "roles": [ 2 ]
-                    },
-                    {
-                        "id": 1,
-                        "civility": true,
-                        "lastName": "Nom_Adminss",
-                        "firstName": "Prenom_Admins",
-                        "email": "admin@super.com",
-                        "mobilePhone": "4321",
-                        "officePhone": "12312",
-                        "jobTitle": "Admin",
-                        "is_guest": true,
-                        "is_customer": true,
-                        "is_active": true,
-                        "profilPicPath": null,
-                        "company": {
-                            "id": 0,
-                            "address": 0,
-                            "fullName": null,
-                            "tradeName": null,
-                            "raisonSociale": 0,
-                            "intercommunityVat": null,
-                            "naf": null,
-                            "siren": null,
-                            "vat": null,
-                            "vatOption": null
-                        },
-                        "customers": [],
-                        "roles": [ 1 ]
-                    }
-                ]
-            }
-
-## User Detail [/users/{id}?]
-### User Detail [GET]
-Get User Detail
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 1,
-                    "civility": true,
-                    "lastName": "Nom_Adminss",
-                    "firstName": "Prenom_Admins",
-                    "email": "admin@super.com",
-                    "mobilePhone": "4321",
-                    "officePhone": "12312",
-                    "jobTitle": "Admin",
-                    "is_guest": true,
-                    "is_customer": true,
-                    "is_active": true,
-                    "profilPicPath": null,
-                    "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
-                    }
-                }
-            }
-
-## OLD User Create [/old-users]
-### OLD User Create [POST]
-Create User
-
-+ Request (application/json)
-
-        {
-            "is_guest": true,
-            "is_customer": true,
-            "is_active": true,
-            "civility": "mr",
-            "firstName": "Jim",
-            "lastName": "Carey",
-            "email": "hendy.yanuar+14@wgs.co.id",
-            "mobilePhone": "09",
-            "officePhone": "08",
-            "company": 9,
-            "customers": [
-                999
-            ],
-            "jobTitle": "Comedian",
-            "roles": [
-                1
-            ]
-        }
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 2,
-                    "civility": true,
-                    "lastName": "Carey",
-                    "firstName": "Jim",
-                    "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "09",
-                    "officePhone": "08",
-                    "jobTitle": "Comedian",
-                    "is_guest": true,
-                    "is_customer": true,
-                    "is_active": true,
-                    "profilPicPath": null,
-                    "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
-                    },
-                    "customers": [ 999 ],
-                    "roles": [ 1 ]
-                }
-            }
-
-## User Update [/users/{id}]
-### User Update [POST]
-Update User
-
-+ Request (application/json)
-
-        {
-            "id": 1,
-            "is_guest": true,
-            "is_customer": true,
-            "is_active": true,
-            "civility": "mr",
-            "firstName": "Jim",
-            "lastName": "Careys",
-            "email": "hendy.yanuar+14@wgs.co.id",
-            "mobilePhone": "09",
-            "officePhone": "08",
-            "company": 9,
-            "customers": [
-                999
-            ],
-            "jobTitle": "Comedian",
-            "roles": [
-                1
-            ]
-        }
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 2,
-                    "civility": true,
-                    "lastName": "Careys",
-                    "firstName": "Jim",
-                    "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "09",
-                    "officePhone": "08",
-                    "jobTitle": "Comedian",
-                    "is_guest": true,
-                    "is_customer": true,
-                    "is_active": true,
-                    "profilPicPath": null,
-                    "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
-                    },
-                    "customers": [ 999 ],
-                    "roles": [ 1 ]
-                }
-            }
-
-## User Delete [/users/{id}/delete]
-### User Delete [POST]
-Delete User
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": 3
-            }
-
-## User Status Active Toggle [/users/{id}/toggle-active]
-### User Status Active Toggle [POST]
-Toggle User Active flag. Inverses current `active` attribute of user.
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 2,
-                    "civility": true,
-                    "lastName": "Careyz",
-                    "firstName": "Jimmy",
-                    "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "9090",
-                    "officePhone": "14045",
-                    "jobTitle": "Comedian",
-                    "guest": true,
-                    "customer": true,
-                    "active": false,
-                    "profilPicPath": null,
-                    "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
-                    }
-                }
-            }
-
-## User Status Customer Toggle [/users/{id}/toggle-customer]
-### User Status Customer Toggle [POST]
-Toggle User Customer flag. Inverses current `customer` attribute of user.
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 2,
-                    "civility": true,
-                    "lastName": "Careyz",
-                    "firstName": "Jimmy",
-                    "email": "hendy.yanuar+14@wgs.co.id",
-                    "mobilePhone": "9090",
-                    "officePhone": "14045",
-                    "jobTitle": "Comedian",
-                    "guest": true,
-                    "customer": false,
-                    "active": false,
-                    "profilPicPath": null,
-                    "company": {
-                        "id": 0,
-                        "address": 0,
-                        "fullName": null,
-                        "tradeName": null,
-                        "raisonSociale": 0,
-                        "intercommunityVat": null,
-                        "naf": null,
-                        "siren": null,
-                        "vat": null,
-                        "vatOption": null
-                    }
-                }
-            }
-
-## User Check Registered Email [/users/check-registered-email/{email}]
-### User Check Registered Email [POST]
-Toggle User Customer flag. Inverses current `customer` attribute of user.
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": false
-            }
 
 ## Group Role
 
@@ -2728,7 +2339,7 @@ Get a Portfolio Detail.
                                 "id": 1,
                                 "label": "Commerce",
                                 "code": "1",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "address": 167,
                             "currency": {
@@ -2785,7 +2396,7 @@ Get a Portfolio Detail.
                                 "id": 1,
                                 "label": "Commerce",
                                 "code": "1",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "address": 167,
                             "currency": {
@@ -3156,7 +2767,7 @@ Create Property.
                             "id": 1,
                             "label": "Commerce",
                             "code": "1",
-                            "has_loyer": true
+                            "hasLoyer": true
                         },
                         "sdp": 100,
                         "numberOfParking": 50
@@ -3237,7 +2848,7 @@ Create Property.
                                             "id": 1,
                                             "label": "Commerce",
                                             "code": "1",
-                                            "has_loyer": true
+                                            "hasLoyer": true
                                         },
                                         "floor": 1,
                                         "etage": 10,
@@ -3537,7 +3148,7 @@ Property Detail.
                             "id": 1,
                             "label": "Commerce",
                             "code": "1",
-                            "has_loyer": true
+                            "hasLoyer": true
                         },
                         "sdp": 100,
                         "numberOfParking": 50
@@ -3618,7 +3229,7 @@ Property Detail.
                                             "id": 1,
                                             "label": "Commerce",
                                             "code": "1",
-                                            "has_loyer": true
+                                            "hasLoyer": true
                                         },
                                         "floor": 1,
                                         "etage": 10,
@@ -3918,7 +3529,7 @@ Update Property.
                             "id": 1,
                             "label": "Commerce",
                             "code": "1",
-                            "has_loyer": true
+                            "hasLoyer": true
                         },
                         "sdp": 100,
                         "numberOfParking": 50
@@ -3999,7 +3610,7 @@ Update Property.
                                             "id": 1,
                                             "label": "Commerce",
                                             "code": "1",
-                                            "has_loyer": true
+                                            "hasLoyer": true
                                         },
                                         "floor": 1,
                                         "etage": 10,
@@ -4150,7 +3761,7 @@ Get Property List.
                             "id": 1,
                             "label": "Commerce",
                             "code": "1",
-                            "has_loyer": true
+                            "hasLoyer": true
                         },
                         "address": 167,
                         "currency": {
@@ -4235,7 +3846,7 @@ Get Property List.
                             "id": 1,
                             "label": "Commerce",
                             "code": "1",
-                            "has_loyer": true
+                            "hasLoyer": true
                         },
                         "address": 167,
                         "currency": {
@@ -4337,7 +3948,7 @@ Get Property Detail.
                         "id": 1,
                         "label": "Commerce",
                         "code": "1",
-                        "has_loyer": true
+                        "hasLoyer": true
                     },
                     "address": { 
                         "address1": "Domaine De Roque Haute", 
@@ -4410,7 +4021,7 @@ Get Property Detail.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -4430,7 +4041,7 @@ Get Property Detail.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -4450,7 +4061,7 @@ Get Property Detail.
                                         "id": 1,
                                         "label": "Commerce",
                                         "code": "1",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "Good view",
@@ -4496,7 +4107,7 @@ Create Property.
                                 "id": 20,
                                 "label": "Parking",
                                 "code": "7",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "duplicate": false,
                             "sdp": 5,
@@ -4512,7 +4123,7 @@ Create Property.
                                 "id": 20,
                                 "label": "Parking",
                                 "code": "7",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "duplicate": false,
                             "sdp": 5,
@@ -4528,7 +4139,7 @@ Create Property.
                                 "id": 1,
                                 "label": "Commerce",
                                 "code": "1",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "sdp": 10,
                             "surfaceFiscale": 1,
@@ -4628,7 +4239,7 @@ Create Property.
                 "id": 1,
                 "label": "Commerce",
                 "code": "1",
-                "has_loyer": true
+                "hasLoyer": true
             },
             "shon": 1,
             "shonRT": 1,
@@ -4690,7 +4301,7 @@ Create Property.
                         "id": 1,
                         "label": "Commerce",
                         "code": "1",
-                        "has_loyer": true
+                        "hasLoyer": true
                     },
                     "address": {
                         "id": 167,
@@ -4755,7 +4366,7 @@ Create Property.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -4775,7 +4386,7 @@ Create Property.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -4795,7 +4406,7 @@ Create Property.
                                         "id": 1,
                                         "label": "Commerce",
                                         "code": "1",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "Good view",
@@ -4841,7 +4452,7 @@ Create Property.
                                 "id": 20,
                                 "label": "Parking",
                                 "code": "7",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "duplicate": false,
                             "sdp": 5,
@@ -4857,7 +4468,7 @@ Create Property.
                                 "id": 20,
                                 "label": "Parking",
                                 "code": "7",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "duplicate": false,
                             "sdp": 5,
@@ -4873,7 +4484,7 @@ Create Property.
                                 "id": 1,
                                 "label": "Commerce",
                                 "code": "1",
-                                "has_loyer": true
+                                "hasLoyer": true
                             },
                             "sdp": 10,
                             "surfaceFiscale": 1,
@@ -4973,7 +4584,7 @@ Create Property.
                 "id": 1,
                 "label": "Commerce",
                 "code": "1",
-                "has_loyer": true
+                "hasLoyer": true
             },
             "shon": 1,
             "shonRT": 1,
@@ -5035,7 +4646,7 @@ Create Property.
                         "id": 1,
                         "label": "Commerce",
                         "code": "1",
-                        "has_loyer": true
+                        "hasLoyer": true
                     },
                     "address": {
                         "id": 167,
@@ -5100,7 +4711,7 @@ Create Property.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -5120,7 +4731,7 @@ Create Property.
                                         "id": 20,
                                         "label": "Parking",
                                         "code": "7",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "High density area",
@@ -5140,7 +4751,7 @@ Create Property.
                                         "id": 1,
                                         "label": "Commerce",
                                         "code": "1",
-                                        "has_loyer": true
+                                        "hasLoyer": true
                                     },
                                     "outdoorParking": false,
                                     "comment": "Good view",
@@ -6834,16 +6445,16 @@ Create a Competitor
             "emptySinceDate": "2017-01-01",
             "prospects": [
                 {
-                    "wanted_surface": 100,
-                    "current_surface": 150,
+                    "wantedSurface": 100,
+                    "currentSurface": 150,
                     "company": {
                         "name": "The Great Remnant",
                         "siren": "1411286"
                     }
                 },
                 {
-                    "wanted_surface": 150,
-                    "current_surface": 100,
+                    "wantedSurface": 150,
+                    "currentSurface": 100,
                     "company": {
                         "name": "Nikki",
                         "siren": "9129391"
@@ -6874,8 +6485,8 @@ Create a Competitor
                     "prospects": [
                         {
                             "id": 1,
-                            "wanted_surface": 100,
-                            "current_surface": 150,
+                            "wantedSurface": 100,
+                            "currentSurface": 150,
                             "company": {
                                 "id": 1,
                                 "name": "The Great Remnant",
@@ -6884,8 +6495,8 @@ Create a Competitor
                         },
                         {
                             "id": 2,
-                            "wanted_surface": 150,
-                            "current_surface": 100,
+                            "wantedSurface": 150,
+                            "currentSurface": 100,
                             "company": {
                                 "id": 2,
                                 "name": "Nikki",
@@ -6926,8 +6537,8 @@ Update an existing Competitor
             "prospects": [
                 {
                     "id": 1,
-                    "wanted_surface": 100,
-                    "current_surface": 150,
+                    "wantedSurface": 100,
+                    "currentSurface": 150,
                     "company": {
                         "id": 1,
                         "name": "The Great Remnant",
@@ -6936,8 +6547,8 @@ Update an existing Competitor
                 },
                 {
                     "id": 2,
-                    "wanted_surface": 150,
-                    "current_surface": 100,
+                    "wantedSurface": 150,
+                    "currentSurface": 100,
                     "company": {
                         "id": 2,
                         "name": "Nikki",
@@ -6969,8 +6580,8 @@ Update an existing Competitor
                     "prospects": [
                         {
                             "id": 1,
-                            "wanted_surface": 100,
-                            "current_surface": 150,
+                            "wantedSurface": 100,
+                            "currentSurface": 150,
                             "company": {
                                 "id": 1,
                                 "name": "The Great Remnant",
@@ -6979,8 +6590,8 @@ Update an existing Competitor
                         },
                         {
                             "id": 2,
-                            "wanted_surface": 150,
-                            "current_surface": 100,
+                            "wantedSurface": 150,
+                            "currentSurface": 100,
                             "company": {
                                 "id": 2,
                                 "name": "Nikki",
@@ -7038,8 +6649,8 @@ Toggle hide flag of an existing Competitor.
                     "prospects": [
                         {
                             "id": 1,
-                            "wanted_surface": 100,
-                            "current_surface": 150,
+                            "wantedSurface": 100,
+                            "currentSurface": 150,
                             "company": {
                                 "id": 1,
                                 "name": "The Great Remnant",
@@ -7048,8 +6659,8 @@ Toggle hide flag of an existing Competitor.
                         },
                         {
                             "id": 2,
-                            "wanted_surface": 150,
-                            "current_surface": 100,
+                            "wantedSurface": 150,
+                            "currentSurface": 100,
                             "company": {
                                 "id": 2,
                                 "name": "Nikki",
@@ -7059,4 +6670,393 @@ Toggle hide flag of an existing Competitor.
                     ],
                     "creationDate": "2017-07-05 18:47:12"
                 }
+            }
+
+## Group OLD Users for Super Admin
+
+User resource for super-admin
+`token` is required.
+`role`:super-admin is required.
+
+## User List [/users?]
+### User List [GET]
+Get User list
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 2,
+                        "civility": true,
+                        "lastName": "Carey",
+                        "firstName": "Jim",
+                        "email": "hendy.yanuar+14@wgs.co.id",
+                        "mobilePhone": "09",
+                        "officePhone": "08",
+                        "jobTitle": "CTO",
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        },
+                        "customers": [ 999 ],
+                        "roles": [ 1 ]
+                    },
+                    {
+                        "id": 2,
+                        "civility": true,
+                        "lastName": "Careyz",
+                        "firstName": "Jimmy",
+                        "email": "hendy.yanuar+14@wgs.co.id",
+                        "mobilePhone": "9090",
+                        "officePhone": "14045",
+                        "jobTitle": "CEO",
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        },
+                        "customers": [],
+                        "roles": [ 2 ]
+                    },
+                    {
+                        "id": 1,
+                        "civility": true,
+                        "lastName": "Nom_Adminss",
+                        "firstName": "Prenom_Admins",
+                        "email": "admin@super.com",
+                        "mobilePhone": "4321",
+                        "officePhone": "12312",
+                        "jobTitle": "Admin",
+                        "is_guest": true,
+                        "is_customer": true,
+                        "is_active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        },
+                        "customers": [],
+                        "roles": [ 1 ]
+                    }
+                ]
+            }
+
+## User Detail [/users/{id}?]
+### User Detail [GET]
+Get User Detail
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "civility": true,
+                    "lastName": "Nom_Adminss",
+                    "firstName": "Prenom_Admins",
+                    "email": "admin@super.com",
+                    "mobilePhone": "4321",
+                    "officePhone": "12312",
+                    "jobTitle": "Admin",
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## OLD User Create [/old-users]
+### OLD User Create [POST]
+Create User
+
++ Request (application/json)
+
+        {
+            "is_guest": true,
+            "is_customer": true,
+            "is_active": true,
+            "civility": "mr",
+            "firstName": "Jim",
+            "lastName": "Carey",
+            "email": "hendy.yanuar+14@wgs.co.id",
+            "mobilePhone": "09",
+            "officePhone": "08",
+            "company": 9,
+            "customers": [
+                999
+            ],
+            "jobTitle": "Comedian",
+            "roles": [
+                1
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Carey",
+                    "firstName": "Jim",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "09",
+                    "officePhone": "08",
+                    "jobTitle": "Comedian",
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    "customers": [ 999 ],
+                    "roles": [ 1 ]
+                }
+            }
+
+## User Update [/users/{id}]
+### User Update [POST]
+Update User
+
++ Request (application/json)
+
+        {
+            "id": 1,
+            "is_guest": true,
+            "is_customer": true,
+            "is_active": true,
+            "civility": "mr",
+            "firstName": "Jim",
+            "lastName": "Careys",
+            "email": "hendy.yanuar+14@wgs.co.id",
+            "mobilePhone": "09",
+            "officePhone": "08",
+            "company": 9,
+            "customers": [
+                999
+            ],
+            "jobTitle": "Comedian",
+            "roles": [
+                1
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careys",
+                    "firstName": "Jim",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "09",
+                    "officePhone": "08",
+                    "jobTitle": "Comedian",
+                    "is_guest": true,
+                    "is_customer": true,
+                    "is_active": true,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    },
+                    "customers": [ 999 ],
+                    "roles": [ 1 ]
+                }
+            }
+
+## User Delete [/users/{id}/delete]
+### User Delete [POST]
+Delete User
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
+            }
+
+## User Status Active Toggle [/users/{id}/toggle-active]
+### User Status Active Toggle [POST]
+Toggle User Active flag. Inverses current `active` attribute of user.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careyz",
+                    "firstName": "Jimmy",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "9090",
+                    "officePhone": "14045",
+                    "jobTitle": "Comedian",
+                    "guest": true,
+                    "customer": true,
+                    "active": false,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## User Status Customer Toggle [/users/{id}/toggle-customer]
+### User Status Customer Toggle [POST]
+Toggle User Customer flag. Inverses current `customer` attribute of user.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 2,
+                    "civility": true,
+                    "lastName": "Careyz",
+                    "firstName": "Jimmy",
+                    "email": "hendy.yanuar+14@wgs.co.id",
+                    "mobilePhone": "9090",
+                    "officePhone": "14045",
+                    "jobTitle": "Comedian",
+                    "guest": true,
+                    "customer": false,
+                    "active": false,
+                    "profilPicPath": null,
+                    "company": {
+                        "id": 0,
+                        "address": 0,
+                        "fullName": null,
+                        "tradeName": null,
+                        "raisonSociale": 0,
+                        "intercommunityVat": null,
+                        "naf": null,
+                        "siren": null,
+                        "vat": null,
+                        "vatOption": null
+                    }
+                }
+            }
+
+## User Check Registered Email [/users/check-registered-email/{email}]
+### User Check Registered Email [POST]
+Toggle User Customer flag. Inverses current `customer` attribute of user.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": false
             }
