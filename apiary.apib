@@ -6798,16 +6798,19 @@ Get Competitor List
                 "data": [
                     {
                         "id": 1,
-                        "name": "Pantheon",
-                        "address": {
-                            "id": 25,
-                            "address1": "West Lane 12",
-                            "address2": null,
-                            "zipcode": "14123",
-                            "city": "Vancouver",
-                            "country": "CANADA",
-                            "lat": 49.2827291,
-                            "lng": -123.1207375
+                        "prospectProperty": {
+                            "id": 1,
+                            "name": "Gateway Arch",
+                            "address": {
+                                "id": 1,
+                                "address1": "742 Hillview Drive",
+                                "address2": null,
+                                "zipcode": "14123",
+                                "city": "Gainesville",
+                                "country": "Georgia",
+                                "lat": 43.4941437,
+                                "lng": 5.8932809
+                            }
                         },
                         "commercializedSurface": 100,
                         "expectedPrice": 1500000,
@@ -6821,16 +6824,19 @@ Get Competitor List
                     },
                     {
                         "id": 2,
-                        "name": "The Shard",
-                        "address": {
-                            "id": 25,
-                            "address1": "West Lane 12",
-                            "address2": null,
-                            "zipcode": "14123",
-                            "city": "Vancouver",
-                            "country": "CANADA",
-                            "lat": 49.2827291,
-                            "lng": -123.1207375
+                        "prospectProperty": {
+                            "id": 1,
+                            "name": "The Shard",
+                            "address": {
+                                "id": 1,
+                                "address1": "742 Hillview Drive",
+                                "address2": null,
+                                "zipcode": "14123",
+                                "city": "Gainesville",
+                                "country": "Georgia",
+                                "lat": 43.4941437,
+                                "lng": 5.8932809
+                            }
                         },
                         "commercializedSurface": 100,
                         "expectedPrice": 750000,
@@ -6844,16 +6850,19 @@ Get Competitor List
                     },
                     {
                         "id": 3,
-                        "name": "Space Needle",
-                        "address": {
-                            "id": 25,
-                            "address1": "West Lane 12",
-                            "address2": null,
-                            "zipcode": "14123",
-                            "city": "Vancouver",
-                            "country": "CANADA",
-                            "lat": "49.2827291",
-                            "lng": "-123.1207375"
+                        "prospectProperty": {
+                            "id": 1,
+                            "name": "Space Needle",
+                            "address": {
+                                "id": 1,
+                                "address1": "742 Hillview Drive",
+                                "address2": null,
+                                "zipcode": "14123",
+                                "city": "Gainesville",
+                                "country": "Georgia",
+                                "lat": 43.4941437,
+                                "lng": 5.8932809
+                            }
                         },
                         "commercializedSurface": 100,
                         "expectedPrice": 4500000,
@@ -6867,16 +6876,19 @@ Get Competitor List
                     },
                     {
                         "id": 4,
-                        "name": "Alhambra",
-                        "address": {
-                            "id": 25,
-                            "address1": "West Lane 12",
-                            "address2": null,
-                            "zipcode": "14123",
-                            "city": "Vancouver",
-                            "country": "CANADA",
-                            "lat": "49.2827291",
-                            "lng": "-123.1207375"
+                        "prospectProperty": {
+                            "id": 2,
+                            "name": "Tally Building",
+                            "address": {
+                                "id": 1,
+                                "address1": "742 Hillview Drive",
+                                "address2": null,
+                                "zipcode": "14123",
+                                "city": "Gainesville",
+                                "country": "Georgia",
+                                "lat": 43.4941437,
+                                "lng": 5.8932809
+                            }
                         },
                         "commercializedSurface": 100,
                         "expectedPrice": 3135000,
@@ -6938,15 +6950,17 @@ Create a Competitor
 + Request (application/json)
 
         {
-            "name": "Gateway Arch",
-            "address": {
-                "address1": "742 Hillview Drive",
-                "address2": null,
-                "zipcode": "14123",
-                "city": "Gainesville",
-                "country": "Georgia",
-                "lat": "49.2827291",
-                "lng": "-123.1207375"
+            "prospectProperty": {
+                "name": "Gateway Arch",
+                "address": {
+                    "address1": "742 Hillview Drive",
+                    "address2": null,
+                    "zipcode": "14123",
+                    "city": "Gainesville",
+                    "country": "Georgia",
+                    "lat": 43.4941437,
+                    "lng": 5.8932809
+                }
             },
             "commercializedSurface": 100,
             "expectedPrice": 1500000,
@@ -6984,8 +6998,20 @@ Create a Competitor
                 "message": "Success",
                 "data": {
                     "id": 5,
-                    "name": "Gateway Arch",
-                    "addressId": 6,
+                    "prospectProperty": {
+                        "id": 1,
+                        "name": "Gateway Arch",
+                        "address": {
+                            "id": 1,
+                            "address1": "742 Hillview Drive",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Gainesville",
+                            "country": "Georgia",
+                            "lat": 43.4941437,
+                            "lng": 5.8932809
+                        }
+                    },
                     "commercializedSurface": 100,
                     "expectedPrice": 1500000,
                     "lastFacialRent": 1000000,
@@ -7028,15 +7054,20 @@ Update an existing Competitor
 + Request (application/json)
 
         {
-            "name": "Gateway Arche",
-            "address": {
-                "address1": "742 Hillview Drive",
-                "address2": null,
-                "zipcode": "14123",
-                "city": "Gainesville",
-                "country": "Georgia",
-                "lat": "49.2827291",
-                "lng": "-123.1207375"
+            "id": 1,
+            "prospectProperty": {
+                "id": 1,
+                "name": "Gateway Arch",
+                "address": {
+                    "id": 1,
+                    "address1": "742 Hillview Drive",
+                    "address2": null,
+                    "zipcode": "14123",
+                    "city": "Gainesville",
+                    "country": "Georgia",
+                    "lat": 43.4941437,
+                    "lng": 5.8932809
+                }
             },
             "commercializedSurface": 200,
             "expectedPrice": 1500000,
@@ -7079,8 +7110,20 @@ Update an existing Competitor
                 "message": "Success",
                 "data": {
                     "id": 5,
-                    "name": "Gateway Arche",
-                    "addressId": 6,
+                    "prospectProperty": {
+                        "id": 1,
+                        "name": "Gateway Arch",
+                        "address": {
+                            "id": 1,
+                            "address1": "742 Hillview Drive",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Gainesville",
+                            "country": "Georgia",
+                            "lat": 43.4941437,
+                            "lng": 5.8932809
+                        }
+                    },
                     "commercializedSurface": 200,
                     "expectedPrice": 1500000,
                     "lastFacialRent": 1000000,
@@ -7148,8 +7191,20 @@ Toggle hide flag of an existing Competitor.
                 "message": "Success",
                 "data": {
                     "id": 5,
-                    "name": "Gateway Arche",
-                    "addressId": 6,
+                    "prospectProperty": {
+                        "id": 1,
+                        "name": "Gateway Arch",
+                        "address": {
+                            "id": 1,
+                            "address1": "742 Hillview Drive",
+                            "address2": null,
+                            "zipcode": "14123",
+                            "city": "Gainesville",
+                            "country": "Georgia",
+                            "lat": 43.4941437,
+                            "lng": 5.8932809
+                        }
+                    },
                     "commercializedSurface": 100,
                     "expectedPrice": 1500000,
                     "lastFacialRent": 1000000,
