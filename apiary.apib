@@ -6341,6 +6341,190 @@ Make a Prospect to be an Opportunity.
                 }
             }
 
+## Prospect Claim Ownership [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}/claim-ownership]
+### Prospect Claim Ownership [POST]
+Claim ownership of a Prospect.
+`permission:prospect.update` is required
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 10,
+                    "leasingEndingDate": "2017-07-07",
+                    "wantedSurface": 5,
+                    "currentSurface": "Above sea level",
+                    "numberOfPosts": 2,
+                    "reason": "Surface expansion",
+                    "specifity": "Isolation",
+                    "isOpportunity": true,
+                    "opportunityDate": "2017-07-11 11:20:12",
+                    "broker": {
+                        "id": 1,
+                        "civility": false,
+                        "lastName": "Broker",
+                        "firstName": "Eddie",
+                        "email": "hendy.yannuar+broker@wgs.co.id",
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "ownerId": 2,
+                    "owner": {
+                        "id": 0,
+                        "civility": false,
+                        "lastName": null,
+                        "firstName": null,
+                        "email": null,
+                        "mobilePhone": null,
+                        "officePhone": null,
+                        "jobTitle": null,
+                        "guest": false,
+                        "customer": false,
+                        "active": true,
+                        "profilPicPath": null,
+                        "company": {
+                            "id": 0,
+                            "address": 0,
+                            "fullName": null,
+                            "tradeName": null,
+                            "raisonSociale": 0,
+                            "intercommunityVat": null,
+                            "naf": null,
+                            "siren": null,
+                            "vat": null,
+                            "vatOption": null
+                        }
+                    },
+                    "company": {
+                        "id": 1,
+                        "name": "The Great Remnant",
+                        "siren": "1411286"
+                    },
+                    "contact": {
+                        "firstName": "Guestavo",
+                        "lastName": "Ramirez",
+                        "email": "hendy.yannuar+prospect1@wgs.co.id",
+                        "jobTitle": "CEO",
+                        "mobilePhone": "0088715346"
+                    },
+                    "address": {
+                        "id": 1,
+                        "address1": "Soekarno Hatta 104",
+                        "address2": "Sukawarna",
+                        "zipcode": "40404",
+                        "city": "BANDUNG",
+                        "country": "INDONESIA"
+                    },
+                    "propertyExisting": [
+                        {
+                            "id": 1,
+                            "name": "Business Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Inter 86",
+                                "address2": "Nazionale",
+                                "zipcode": "41114",
+                                "city": "MILAN",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "propertyVisited": [
+                        {
+                            "id": 1,
+                            "name": "Commercial Tower",
+                            "address": {
+                                "id": 1,
+                                "address1": "Frotti 10",
+                                "address2": "",
+                                "zipcode": "41114",
+                                "city": "ROME",
+                                "country": "ITALY"
+                            }
+                        }
+                    ],
+                    "activity": [
+                        {
+                            "id": 1,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Introduction to the client.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:00:00",
+                            "creationDate": "2017-07-01 07:00:00"
+                        },
+                        {
+                            "id": 2,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Good. Make her an Opportunity.",
+                            "userId": 2,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:30:00",
+                            "creationDate": "2017-07-01 07:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "interaction",
+                            "title": "Call",
+                            "description": "Calling on mobile phone.",
+                            "userId": 1,
+                            "interaction": {
+                                "id": 1,
+                                "code": "call",
+                                "interactionDate": "2017-07-05 00:00:00",
+                                "creationDate": "2017-07-05 17:30:00"
+                            },
+                            "phase": null,
+                            "activityDate": "2017-07-05 17:30:00",
+                            "creationDate": "2017-07-05 17:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "phase",
+                            "title": "1st Step",
+                            "description": "She say yes. Interested.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": {
+                                "id": 1,
+                                "code": "1st Step",
+                                "phaseDate": "2017-07-10 00:00:00",
+                                "creationDate": "2017-07-10 07:30:00"
+                            },
+                            "activityDate": "2017-07-10 00:00:00",
+                            "creationDate": "2017-07-10 07:30:00"
+                        }
+                    ]
+                }
+            }
+
 ## Prospect Activity Create [/portfolios/{portfolioId}/properties/{propertyId}/prospects/{id}/activities]
 ### Prospect Activity Create [POST]
 Create an activity to a Prospect.
