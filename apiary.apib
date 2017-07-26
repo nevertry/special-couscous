@@ -7422,3 +7422,71 @@ Toggle hide flag of an existing Competitor.
                     "creationDate": "2017-07-05 18:47:12"
                 }
             }
+
+## Group CRM Transaction
+
+`token` is required.
+`permission:transaction.*` is required.
+
+## Transaction List [/portfolios/{portfolioId}/properties/{propertyId}/transactions?]
+### Transaction List [GET]
+Get Transaction List
+`permission:transaction.read` is required
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                    }
+                ]
+            }
+
+## Transaction Create [/portfolios/{portfolioId}/properties/{propertyId}/transactions]
+### Transaction List [POST]
+Create a Transaction.
+`permission:transaction.create` is required
+
++ Request (application/json)
+
+        {
+            "prospectProperty": {
+                "name": "Sublime Corp.",
+                "siren": "000000000",
+                "address": {
+                    "address1": "742 Hillview Drive",
+                    "address2": null,
+                    "zipcode": "14123",
+                    "city": "Gainesville",
+                    "country": "Georgia",
+                    "lat": 43.4941437,
+                    "lng": 5.8932809
+                }
+            },
+            "tenantList": [
+                {
+                    "name": "Young Man"
+                }
+            ]
+        }
+            
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                    }
+                ]
+            }
