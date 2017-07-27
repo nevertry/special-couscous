@@ -6318,7 +6318,7 @@ Make a Prospect to be an Opportunity.
                     "reason": "Surface expansion",
                     "specifity": "Isolation",
                     "isOpportunity": true,
-                    "opportunityDate": "2017-07-11 11:20:12",
+                    "opportunityDate": null,
                     "broker": {
                         "id": 1,
                         "civility": false,
@@ -6474,6 +6474,62 @@ Make a Prospect to be an Opportunity.
                             "activityDate": "2017-07-10 00:00:00",
                             "creationDate": "2017-07-10 07:30:00"
                         }
+                    ],
+                    "activity": [
+                        {
+                            "id": 1,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Introduction to the client.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:00:00",
+                            "creationDate": "2017-07-01 07:00:00"
+                        },
+                        {
+                            "id": 2,
+                            "type": "comment",
+                            "title": "",
+                            "description": "Good. Make her an Opportunity.",
+                            "userId": 2,
+                            "interaction": null,
+                            "phase": null,
+                            "activityDate": "2017-07-01 07:30:00",
+                            "creationDate": "2017-07-01 07:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "interaction",
+                            "title": "Call",
+                            "description": "Calling on mobile phone.",
+                            "userId": 1,
+                            "interaction": {
+                                "id": 1,
+                                "code": "call",
+                                "interactionDate": "2017-07-05 00:00:00",
+                                "creationDate": "2017-07-05 17:30:00"
+                            },
+                            "phase": null,
+                            "activityDate": "2017-07-05 17:30:00",
+                            "creationDate": "2017-07-05 17:30:00"
+                        },
+                        {
+                            "id": 3,
+                            "type": "phase",
+                            "title": "1st Step",
+                            "description": "She say yes. Interested.",
+                            "userId": 1,
+                            "interaction": null,
+                            "phase": {
+                                "id": 1,
+                                "code": "1st Step",
+                                "phaseDate": "2017-07-10 00:00:00",
+                                "creationDate": "2017-07-10 07:30:00"
+                            },
+                            "activityDate": "2017-07-10 00:00:00",
+                            "creationDate": "2017-07-10 07:30:00"
+                        }
                     ]
                 }
             }
@@ -6501,7 +6557,7 @@ Claim ownership of a Prospect.
                     "reason": "Surface expansion",
                     "specifity": "Isolation",
                     "isOpportunity": true,
-                    "opportunityDate": "2017-07-11 11:20:12",
+                    "opportunityDate": null,
                     "broker": {
                         "id": 1,
                         "civility": false,
@@ -6528,13 +6584,12 @@ Claim ownership of a Prospect.
                             "vatOption": null
                         }
                     },
-                    "ownerId": 2,
                     "owner": {
-                        "id": 0,
+                        "id": 1,
                         "civility": false,
-                        "lastName": null,
-                        "firstName": null,
-                        "email": null,
+                        "lastName": "Broker",
+                        "firstName": "Eddie",
+                        "email": "hendy.yannuar+broker@wgs.co.id",
                         "mobilePhone": null,
                         "officePhone": null,
                         "jobTitle": null,
@@ -6744,7 +6799,7 @@ Get Prospect List grouped by Prospect Company.
                                     "numberOfPosts": 2,
                                     "reason": "Surface expansion",
                                     "specifity": "Isolation",
-                                    "isOpportunity": false,
+                                    "isOpportunity": true,
                                     "opportunityDate": null,
                                     "broker": {
                                         "id": 1,
@@ -6903,7 +6958,6 @@ Get Prospect List grouped by Prospect Company.
                                         }
                                     ]
                                 },
-                                {
                                     "id": 11,
                                     "leasingEndingDate": "2017-07-07",
                                     "wantedSurface": 5,
@@ -6911,14 +6965,14 @@ Get Prospect List grouped by Prospect Company.
                                     "numberOfPosts": 2,
                                     "reason": "Surface expansion",
                                     "specifity": "Isolation",
-                                    "isOpportunity": false,
+                                    "isOpportunity": true,
                                     "opportunityDate": null,
                                     "broker": {
                                         "id": 1,
                                         "civility": false,
-                                        "lastName": "Jimmy",
-                                        "firstName": "Mandril",
-                                        "email": "jimmy.mandril@wgs.co.id",
+                                        "lastName": "Broker",
+                                        "firstName": "Eddie",
+                                        "email": "hendy.yannuar+broker@wgs.co.id",
                                         "mobilePhone": null,
                                         "officePhone": null,
                                         "jobTitle": null,
@@ -6940,11 +6994,11 @@ Get Prospect List grouped by Prospect Company.
                                         }
                                     },
                                     "owner": {
-                                        "id": 0,
+                                        "id": 1,
                                         "civility": false,
-                                        "lastName": null,
-                                        "firstName": null,
-                                        "email": null,
+                                        "lastName": "Broker",
+                                        "firstName": "Eddie",
+                                        "email": "hendy.yannuar+broker@wgs.co.id",
                                         "mobilePhone": null,
                                         "officePhone": null,
                                         "jobTitle": null,
@@ -6985,9 +7039,90 @@ Get Prospect List grouped by Prospect Company.
                                         "city": "BANDUNG",
                                         "country": "INDONESIA"
                                     },
-                                    "propertyExisting": [],
-                                    "propertyVisited": [],
-                                    "activity": []
+                                    "propertyExisting": [
+                                        {
+                                            "id": 1,
+                                            "name": "Business Tower",
+                                            "address": {
+                                                "id": 1,
+                                                "address1": "Inter 86",
+                                                "address2": "Nazionale",
+                                                "zipcode": "41114",
+                                                "city": "MILAN",
+                                                "country": "ITALY"
+                                            }
+                                        }
+                                    ],
+                                    "propertyVisited": [
+                                        {
+                                            "id": 1,
+                                            "name": "Commercial Tower",
+                                            "address": {
+                                                "id": 1,
+                                                "address1": "Frotti 10",
+                                                "address2": "",
+                                                "zipcode": "41114",
+                                                "city": "ROME",
+                                                "country": "ITALY"
+                                            }
+                                        }
+                                    ],
+                                    "activity": [
+                                        {
+                                            "id": 1,
+                                            "type": "comment",
+                                            "title": "",
+                                            "description": "Introduction to the client.",
+                                            "userId": 1,
+                                            "interaction": null,
+                                            "phase": null,
+                                            "activityDate": "2017-07-01 07:00:00",
+                                            "creationDate": "2017-07-01 07:00:00"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "type": "comment",
+                                            "title": "",
+                                            "description": "Good. Make her an Opportunity.",
+                                            "userId": 2,
+                                            "interaction": null,
+                                            "phase": null,
+                                            "activityDate": "2017-07-01 07:30:00",
+                                            "creationDate": "2017-07-01 07:30:00"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "type": "interaction",
+                                            "title": "Call",
+                                            "description": "Calling on mobile phone.",
+                                            "userId": 1,
+                                            "interaction": {
+                                                "id": 1,
+                                                "code": "call",
+                                                "interactionDate": "2017-07-05 00:00:00",
+                                                "creationDate": "2017-07-05 17:30:00"
+                                            },
+                                            "phase": null,
+                                            "activityDate": "2017-07-05 17:30:00",
+                                            "creationDate": "2017-07-05 17:30:00"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "type": "phase",
+                                            "title": "1st Step",
+                                            "description": "She say yes. Interested.",
+                                            "userId": 1,
+                                            "interaction": null,
+                                            "phase": {
+                                                "id": 1,
+                                                "code": "1st Step",
+                                                "phaseDate": "2017-07-10 00:00:00",
+                                                "creationDate": "2017-07-10 07:30:00"
+                                            },
+                                            "activityDate": "2017-07-10 00:00:00",
+                                            "creationDate": "2017-07-10 07:30:00"
+                                        }
+                                    ]
                                 }
                             ]
                         }
