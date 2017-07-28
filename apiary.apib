@@ -5416,6 +5416,65 @@ Get Currency Detail.
                 }
             }
 
+## Group CRM KPI
+`token` is required.
+
+## CRM KPI [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/crm/kpi?]
+### CRM KPI [GET]
+Get CRM KPI of Property.
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "mandate": {
+                        "id": 1,
+                        "startDate": "2017-01-02 00:00:00",
+                        "endDate": "2017-07-30 00:00:00",
+                        "documentName": "Mandate_File_Finish.docx",
+                        "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
+                    },
+                    "startDate": "2017-01-02 00:00:00",
+                    "numberOfProspect": 34,
+                    "numberOfVisit": 12
+                }
+            }
+
+## CRM KPI Mandate Create [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/crm/mandates]
+### CRM KPI Mandate Create [POST]
+Create new Mandate. `documentPath` is generated using upload API.
+
++ Request (application/json)
+
+        {
+            "startDate": "2017-01-02 00:00:00",
+            "endDate": "2017-07-30 00:00:00",
+            "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "startDate": "2017-01-02 00:00:00",
+                    "endDate": "2017-07-30 00:00:00",
+                    "documentName": "Mandate_File_Finish.docx",
+                    "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
+                }
+            }
+
 ## Group CRM Prospect
 
 `token` is required.
@@ -5477,7 +5536,15 @@ Get Prospect List
                         "company": {
                             "id": 1,
                             "name": "The Great Remnant",
-                            "siren": "1411286"
+                            "siren": "1411286",
+                            "address": {
+                                "id": 1,
+                                "address1": "Soekarno Hatta 104",
+                                "address2": "Sukawarna",
+                                "zipcode": "40404",
+                                "city": "BANDUNG",
+                                "country": "INDONESIA"
+                            },
                         },
                         "contact": {
                             "firstName": "Guestavo",
@@ -5485,14 +5552,6 @@ Get Prospect List
                             "email": "hendy.yannuar+prospect1@wgs.co.id",
                             "jobTitle": "CEO",
                             "mobilePhone": "0088715346"
-                        },
-                        "address": {
-                            "id": 1,
-                            "address1": "Soekarno Hatta 104",
-                            "address2": "Sukawarna",
-                            "zipcode": "40404",
-                            "city": "BANDUNG",
-                            "country": "INDONESIA"
                         },
                         "propertyExisting": [],
                         "propertyVisited": [],
@@ -5538,7 +5597,15 @@ Get Prospect List
                         "company": {
                             "id": 2,
                             "name": "IBM",
-                            "siren": "891231"
+                            "siren": "891231",
+                            "address": {
+                                "id": 1,
+                                "address1": "IBM Lane",
+                                "address2": "",
+                                "zipcode": "560071",
+                                "city": "Bengaluru",
+                                "country": "INDIA"
+                            },
                         },
                         "contact": {
                             "id": 2,
@@ -5547,14 +5614,6 @@ Get Prospect List
                             "email": "hendy.yannuar+prospect2@wgs.co.id",
                             "jobTitle": "CEO",
                             "mobilePhone": "1928361874"
-                        },
-                        "address": {
-                            "id": 1,
-                            "address1": "IBM Lane",
-                            "address2": "",
-                            "zipcode": "560071",
-                            "city": "Bengaluru",
-                            "country": "INDIA"
                         },
                         "propertyExisting": [],
                         "propertyVisited": [],
@@ -5643,7 +5702,17 @@ Get Prospect Detail
                     "company": {
                         "id": 1,
                         "name": "The Great Remnant",
-                        "siren": "1411286"
+                        "siren": "1411286",
+                        "address": {
+                            "id": 1,
+                            "address1": "Soekarno Hatta 104",
+                            "address2": "Sukawarna",
+                            "zipcode": "40404",
+                            "city": "BANDUNG",
+                            "country": "INDONESIA",
+                            "lat": 44.6670602,
+                            "lng": 2.8179955
+                        }
                     },
                     "contact": {
                         "firstName": "Guestavo",
@@ -5652,39 +5721,79 @@ Get Prospect Detail
                         "jobTitle": "CEO",
                         "mobilePhone": "0088715346"
                     },
-                    "address": {
-                        "id": 1,
-                        "address1": "Soekarno Hatta 104",
-                        "address2": "Sukawarna",
-                        "zipcode": "40404",
-                        "city": "BANDUNG",
-                        "country": "INDONESIA"
-                    },
                     "propertyExisting": [
                         {
                             "id": 1,
-                            "name": "Business Tower",
-                            "address": {
+                            "prospectProperty": {
                                 "id": 1,
-                                "address1": "Inter 86",
-                                "address2": "Nazionale",
-                                "zipcode": "41114",
-                                "city": "MILAN",
-                                "country": "ITALY"
+                                "name": "Hyrule",
+                                "siren": "HR12971735",
+                                "address": {
+                                    "id": 1,
+                                    "address1": "Inter 86",
+                                    "address2": "Nazionale",
+                                    "zipcode": "41114",
+                                    "city": "MILAN",
+                                    "country": "ITALY",
+                                    "lat": 48.6670602,
+                                    "lng": 1.8179955
+                                }
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "prospectProperty": {
+                                "id": 2,
+                                "name": "Prime X",
+                                "siren": "PR67723134",
+                                "address": {
+                                    "id": 2,
+                                    "address1": "Magus 77",
+                                    "address2": "",
+                                    "zipcode": "41114",
+                                    "city": "MILAN",
+                                    "country": "ITALY",
+                                    "lat": 44.6670602,
+                                    "lng": 2.8179955
+                                }
                             }
                         }
                     ],
                     "propertyVisited": [
                         {
                             "id": 1,
-                            "name": "Commercial Tower",
-                            "address": {
-                                "id": 1,
-                                "address1": "Frotti 10",
-                                "address2": "",
-                                "zipcode": "41114",
-                                "city": "ROME",
-                                "country": "ITALY"
+                            "prospectProperty": {
+                                "id": 1
+                                "name": "Hyrule",
+                                "siren": "HR12971735",
+                                "address": {
+                                    "id": 3,
+                                    "address1": "Inter 86",
+                                    "address2": "Nazionale",
+                                    "zipcode": "41114",
+                                    "city": "MILAN",
+                                    "country": "ITALY",
+                                    "lat": 48.6670602,
+                                    "lng": 1.8179955
+                                }
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "prospectProperty": {
+                                "id": 2,
+                                "name": "Prime X",
+                                "siren": "PR67723134",
+                                "address": {
+                                    "id": 4,
+                                    "address1": "Magus 77",
+                                    "address2": "",
+                                    "zipcode": "41114",
+                                    "city": "MILAN",
+                                    "country": "ITALY",
+                                    "lat": 44.6670602,
+                                    "lng": 2.8179955
+                                }
                             }
                         }
                     ],
