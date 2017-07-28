@@ -8223,6 +8223,27 @@ Update a Transaction.
                 }
             }
 
+## Transaction Delete [/portfolios/{portfolioId}/properties/{propertyId}/transactions/{transactionId}/delete]
+### Transaction Delete [POST]
+Delete a Transaction.
+`permission:transaction.delete` is required.
+
++ Request (application/json)
+
+        {
+            "id": 1,
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 3
+            }
+
 ## Group CRM KPI
 `token` is required.
 
