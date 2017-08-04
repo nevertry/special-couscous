@@ -8260,13 +8260,14 @@ Get CRM KPI of Property.
 
 ## CRM KPI Mandate Create [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/crm/mandates]
 ### CRM KPI Mandate Create [POST]
-Create new Mandate. `documentPath` is generated using upload API.
+Create new Mandate. `documentPath` is generated using upload API. `propertyId` will be user to determine Property Owner of mandate.
 
 + Request (application/json)
 
         {
             "startDate": "2017-01-02 00:00:00",
             "endDate": "2017-07-30 00:00:00",
+            "documentName": "Mandate_File_Finish.docx",
             "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
         }
 
@@ -8279,37 +8280,9 @@ Create new Mandate. `documentPath` is generated using upload API.
                 "message": "Success",
                 "data": {
                     "id": 1,
+                    "propertyId": 1,
                     "startDate": "2017-01-02 00:00:00",
                     "endDate": "2017-07-30 00:00:00",
-                    "documentName": "Mandate_File_Finish.docx",
-                    "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
-                }
-            }
-
-## CRM KPI Mandate Update [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/crm/mandates/{id}]
-### CRM KPI Mandate Update [POST]
-Update existing Mandate. `documentPath` is generated using upload API.
-
-+ Request (application/json)
-
-        {
-            "id": 1,
-            "startDate": "2017-01-02 00:00:00",
-            "endDate": "2020-07-30 00:00:00",
-            "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
-        }
-
-+ Response 200 (application/json)
-
-    + Body
-    
-            {
-                "code": 0,
-                "message": "Success",
-                "data": {
-                    "id": 1,
-                    "startDate": "2017-01-02 00:00:00",
-                    "endDate": "2020-07-30 00:00:00",
                     "documentName": "Mandate_File_Finish.docx",
                     "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
                 }
