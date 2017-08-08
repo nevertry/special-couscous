@@ -221,6 +221,92 @@ Update Profile Detail
                 }
             }
 
+## Notification List [/my/notifications?id={notificationId}&date={date}&limit={limit}&type[]={type}]
+### Notification List [GET]
+Get Notification List
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 11,
+                        "title": "Leasing Create",
+                        "message": "Leasing Create",
+                        "type": "prospect",
+                        "typeId": 0,
+                        "read": true,
+                        "creationDate": {
+                            "date": "2017-07-14 17:00:12.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        }
+                    },
+                    {
+                        "id": 10,
+                        "title": "Leasing Create",
+                        "message": "Leasing Create",
+                        "type": "competitor",
+                        "typeId": 0,
+                        "read": true,
+                        "creationDate": {
+                            "date": "2017-07-30 17:00:12.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        }
+                    },
+                    {
+                        "id": 9,
+                        "title": "Leasing Create",
+                        "message": "Leasing Create",
+                        "type": "prospect",
+                        "typeId": 0,
+                        "read": true,
+                        "creationDate": {
+                            "date": "2017-06-14 17:00:12.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        }
+                    },
+                    {
+                        "id": 8,
+                        "title": "Leasing Create",
+                        "message": "Leasing Create",
+                        "type": "competitor",
+                        "typeId": 0,
+                        "read": true,
+                        "creationDate": {
+                            "date": "2017-07-17 17:00:12.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        }
+                    },
+                    {
+                        "id": 7,
+                        "title": "Leasing Create",
+                        "message": "Leasing Create",
+                        "type": "transaction",
+                        "typeId": 0,
+                        "read": true,
+                        "creationDate": {
+                            "date": "2017-06-30 17:00:12.000000",
+                            "timezone_type": 3,
+                            "timezone": "UTC"
+                        }
+                    }
+                ],
+                "version": {
+                    "api": "2017-08-07 10:52:31 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
 ## Group Users for Super Admin
 
 User resource for super-admin
@@ -5364,6 +5450,31 @@ Upload Customer Image.
                 }
             }
 
+## Dataroom Document [/upload?]
+### Dataroom Document [POST]
+Upload Dataroom Document.
+
++ Request (application/json)
+
+        {
+           "documentPath" : "temp://document.pdf"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "filePath": "uploads/mandates/1502079590_77e098f26f4db8731185a1db84b00cef.json"
+                },
+                "version": {
+                    "api": "2017-08-04 17:40:33 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
 
 ## Group Currency / Devise
 `token` is required.
@@ -7265,6 +7376,73 @@ Get Prospect Company List by lookup
                 ]
             }
 
+## CRM Prospect Analysis [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/prospects/analysis]
+### CRM Prospect Analysis [POST]
+Get CRM Prospect Analysis
+
++ Request (application/json)
+
+        {
+            "filterBy" : "4-sliding-month"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data":  [
+                    {
+                        "label": "Broker XX",
+                        "dataPoint": [
+                            {
+                                "x": "May",
+                                "y": 0
+                            },
+                            {
+                                "x": "Jun",
+                                "y": 0
+                            },
+                            {
+                                "x": "Jul",
+                                "y": 2
+                            },
+                            {
+                                "x": "Aug",
+                                "y": 0
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Broker YY",
+                        "dataPoint": [
+                            {
+                                "x": "May",
+                                "y": 2
+                            },
+                            {
+                                "x": "Jun",
+                                "y": 1
+                            },
+                            {
+                                "x": "Jul",
+                                "y": 1
+                            },
+                            {
+                                "x": "Aug",
+                                "y": 0
+                            }
+                        ]
+                    }
+                ],
+                "version": {
+                    "api": "2017-08-03 18:10:18 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
 ## Group CRM Competitor
 `token` is required.
 `permission:competitor.*` is required.
@@ -8287,3 +8465,1153 @@ Create new Mandate. `documentPath` is generated using upload API. `propertyId` w
                     "documentPath": "/customers/1/mandates/Mandate_File_Finish.docx"
                 }
             }
+
+## Group Dataroom
+`token` is required.
+
+## Dataroom List [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms]
+### Dataroom List [GET]
+Get Dataroom list
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "I": {
+                        "id": 713,
+                        "label": "SITUATION LOCATIVE",
+                        "level": "I",
+                        "index": "I",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "I"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 714,
+                                "label": "Etat locatif",
+                                "level": "I.A.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 713,
+                                    "level": "I.A."
+                                },
+                                "propertyId": 7
+                            },
+                            "B": {
+                                "id": 715,
+                                "label": "Baux & avenants",
+                                "level": "I.B.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 713,
+                                    "level": "I.B."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "II": {
+                        "id": 770,
+                        "label": "GESTION LOCATIVE",
+                        "level": "II",
+                        "index": "II",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "II"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 771,
+                                "label": "Charges Immeuble",
+                                "level": "II.A.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 770,
+                                    "level": "II.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "III": {
+                        "id": 816,
+                        "label": "SITUATION JURIDIQUE IMMEUBLE",
+                        "level": "III",
+                        "index": "III",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "III"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 817,
+                                "label": "Droit de propriété - Actes spécifiques constitutifs de servitude de droit privé - situation hypothécaire-",
+                                "level": "III.A.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 816,
+                                    "level": "III.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "V": {
+                        "id": 1086,
+                        "label": "FISCALITE DE L'IMMEUBLE & ASSURANCES",
+                        "level": "V",
+                        "index": "V",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "V"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1087,
+                                "label": "Fiscalité",
+                                "level": "V.A.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 1086,
+                                    "level": "V.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "IV": {
+                        "id": 1143,
+                        "label": "CORPORATE",
+                        "level": "IV",
+                        "index": "IV",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IV"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1144,
+                                "label": "Organigramme de détention",
+                                "level": "IV.A.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 1143,
+                                    "level": "IV.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "VI": {
+                        "id": 1292,
+                        "label": "EXPLOITATION DE L'IMMEUBLE",
+                        "level": "VI",
+                        "index": "VI",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VI"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1293,
+                                "label": "Asset Management",
+                                "level": "VI.A.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 1292,
+                                    "level": "VI.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "VII": {
+                        "id": 1355,
+                        "label": "TRAVAUX ET/OU RESTRUCTURATION",
+                        "level": "VII",
+                        "index": "VII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VII"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1356,
+                                "label": "Construction",
+                                "level": "VII.A.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 1355,
+                                    "level": "VII.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "VIII": {
+                        "id": 1406,
+                        "label": "PROCEDURES EN COURS",
+                        "level": "VIII",
+                        "index": "VIII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VIII"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1407,
+                                "label": "Procédure 1 xxxxx",
+                                "level": "VIII.A.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 1406,
+                                    "level": "VIII.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "IX": {
+                        "id": 1409,
+                        "label": "VENTE PROJETEE",
+                        "level": "IX",
+                        "index": "IX",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IX"
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "A": {
+                                "id": 1410,
+                                "label": "Simulation de plus-value",
+                                "level": "IX.A.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 1409,
+                                    "level": "IX.A."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    }
+                },
+                "version": {
+                    "api": "2017-08-03 18:10:18 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
+## Dataroom Detail [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{dataroomId}]
+### Dataroom Detail [GET]
+Get Dataroom detail
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "A": {
+                        "id": 771,
+                        "label": "Charges Immeuble",
+                        "level": "II.A.",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": 770,
+                            "level": "II.A."
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "1": {
+                                "id": 772,
+                                "label": "Tableau de synthèse",
+                                "level": "II.A.1.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 771,
+                                    "level": "II.A.1."
+                                },
+                                "propertyId": 7
+                            },
+                            "2": {
+                                "id": 773,
+                                "label": "Budget",
+                                "level": "II.A.2.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 771,
+                                    "level": "II.A.2."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 774,
+                                        "label": "Année 1",
+                                        "level": "II.A.2.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 773,
+                                            "level": "II.A.2.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 775,
+                                        "label": "Année 2",
+                                        "level": "II.A.2.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 773,
+                                            "level": "II.A.2.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            },
+                            "3": {
+                                "id": 776,
+                                "label": "Atterrissage",
+                                "level": "II.A.3.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 773,
+                                    "level": "II.A.3."
+                                },
+                                "propertyId": 7
+                            },
+                            "4": {
+                                "id": 777,
+                                "label": "Réalisé",
+                                "level": "II.A.4.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 773,
+                                    "level": "II.A.4."
+                                },
+                                "propertyId": 7
+                            },
+                            "5": {
+                                "id": 778,
+                                "label": "Reddition Propriétaire",
+                                "level": "II.A.5.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 773,
+                                    "level": "II.A.5."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 779,
+                                        "label": "Année 1",
+                                        "level": "II.A.5.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 778,
+                                            "level": "II.A.5.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 780,
+                                        "label": "Année 2",
+                                        "level": "II.A.5.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 778,
+                                            "level": "II.A.5.2."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "3": {
+                                        "id": 781,
+                                        "label": "Année 3",
+                                        "level": "II.A.5.3.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 778,
+                                            "level": "II.A.5.3."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "B": {
+                        "id": 782,
+                        "label": "Quittancements",
+                        "level": "II.B.",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": 778,
+                            "level": "II.B."
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "1": {
+                                "id": 783,
+                                "label": "Trimestres Loyers et charges",
+                                "level": "II.B.1.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 782,
+                                    "level": "II.B.1."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 784,
+                                        "label": "Q1 2016",
+                                        "level": "II.B.1.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 783,
+                                            "level": "II.B.1.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 785,
+                                        "label": "Q2 2016",
+                                        "level": "II.B.1.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 783,
+                                            "level": "II.B.1.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            },
+                            "2": {
+                                "id": 786,
+                                "label": "Refacturation Taxes",
+                                "level": "II.B.2.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 783,
+                                    "level": "II.B.2."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 787,
+                                        "label": "Taxe foncière",
+                                        "level": "II.B.2.1.",
+                                        "filePath": null,
+                                        "isFolder": 1,
+                                        "parentFolder": {
+                                            "id": 786,
+                                            "level": "II.B.2.1."
+                                        },
+                                        "propertyId": 7,
+                                        "subLevel": {
+                                            "1": {
+                                                "id": 788,
+                                                "label": "Année 1",
+                                                "level": "II.B.2.1.1.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 787,
+                                                    "level": "II.B.2.1.1."
+                                                },
+                                                "propertyId": 7
+                                            },
+                                            "2": {
+                                                "id": 789,
+                                                "label": "Année 2",
+                                                "level": "II.B.2.1.2.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 787,
+                                                    "level": "II.B.2.1.2."
+                                                },
+                                                "propertyId": 7
+                                            }
+                                        }
+                                    },
+                                    "2": {
+                                        "id": 790,
+                                        "label": "Taxe bureaux",
+                                        "level": "II.B.2.2.",
+                                        "filePath": null,
+                                        "isFolder": 1,
+                                        "parentFolder": {
+                                            "id": 787,
+                                            "level": "II.B.2.2."
+                                        },
+                                        "propertyId": 7,
+                                        "subLevel": {
+                                            "1": {
+                                                "id": 791,
+                                                "label": "Année 1",
+                                                "level": "II.B.2.2.1.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 790,
+                                                    "level": "II.B.2.2.1."
+                                                },
+                                                "propertyId": 7
+                                            },
+                                            "2": {
+                                                "id": 792,
+                                                "label": "Année 2",
+                                                "level": "II.B.2.2.2.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 790,
+                                                    "level": "II.B.2.2.2."
+                                                },
+                                                "propertyId": 7
+                                            }
+                                        }
+                                    },
+                                    "3": {
+                                        "id": 793,
+                                        "label": "TASS (Taxe annuelle sur les surfaces de stationnement)",
+                                        "level": "II.B.2.3.",
+                                        "filePath": null,
+                                        "isFolder": 1,
+                                        "parentFolder": {
+                                            "id": 790,
+                                            "level": "II.B.2.3."
+                                        },
+                                        "propertyId": 7,
+                                        "subLevel": {
+                                            "1": {
+                                                "id": 794,
+                                                "label": "Année 1",
+                                                "level": "II.B.2.3.1.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 793,
+                                                    "level": "II.B.2.3.1."
+                                                },
+                                                "propertyId": 7
+                                            },
+                                            "2": {
+                                                "id": 795,
+                                                "label": "Année 2",
+                                                "level": "II.B.2.3.2.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 793,
+                                                    "level": "II.B.2.3.2."
+                                                },
+                                                "propertyId": 7
+                                            }
+                                        }
+                                    },
+                                    "4": {
+                                        "id": 796,
+                                        "label": "Taxe d'enlèvement des ordures ménagères",
+                                        "level": "II.B.2.4.",
+                                        "filePath": null,
+                                        "isFolder": 1,
+                                        "parentFolder": {
+                                            "id": 793,
+                                            "level": "II.B.2.4."
+                                        },
+                                        "propertyId": 7,
+                                        "subLevel": {
+                                            "1": {
+                                                "id": 797,
+                                                "label": "Année 1",
+                                                "level": "II.B.2.4.1.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 796,
+                                                    "level": "II.B.2.4.1."
+                                                },
+                                                "propertyId": 7
+                                            },
+                                            "2": {
+                                                "id": 798,
+                                                "label": "Année 2",
+                                                "level": "II.B.2.4.2.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 796,
+                                                    "level": "II.B.2.4.2."
+                                                },
+                                                "propertyId": 7
+                                            }
+                                        }
+                                    },
+                                    "5": {
+                                        "id": 799,
+                                        "label": "TLPE (Taxe locale sur la publicité extérieure)",
+                                        "level": "II.B.2.5.",
+                                        "filePath": null,
+                                        "isFolder": 1,
+                                        "parentFolder": {
+                                            "id": 796,
+                                            "level": "II.B.2.5."
+                                        },
+                                        "propertyId": 7,
+                                        "subLevel": {
+                                            "1": {
+                                                "id": 800,
+                                                "label": "Année 1",
+                                                "level": "II.B.2.5.1.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 799,
+                                                    "level": "II.B.2.5.1."
+                                                },
+                                                "propertyId": 7
+                                            },
+                                            "2": {
+                                                "id": 801,
+                                                "label": "Année 2",
+                                                "level": "II.B.2.5.2.",
+                                                "filePath": null,
+                                                "isFolder": 0,
+                                                "parentFolder": {
+                                                    "id": 799,
+                                                    "level": "II.B.2.5.2."
+                                                },
+                                                "propertyId": 7
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "3": {
+                                "id": 802,
+                                "label": "Refacturation Assurance",
+                                "level": "II.B.3.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 799,
+                                    "level": "II.B.3."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 803,
+                                        "label": "Année 1",
+                                        "level": "II.B.3.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 802,
+                                            "level": "II.B.3.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 804,
+                                        "label": "Année 2",
+                                        "level": "II.B.3.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 802,
+                                            "level": "II.B.3.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            },
+                            "4": {
+                                "id": 805,
+                                "label": "Reddition",
+                                "level": "II.B.4.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 802,
+                                    "level": "II.B.4."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 806,
+                                        "label": "Année 1",
+                                        "level": "II.B.4.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 805,
+                                            "level": "II.B.4.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 807,
+                                        "label": "Année 2",
+                                        "level": "II.B.4.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 805,
+                                            "level": "II.B.4.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            },
+                            "5": {
+                                "id": 808,
+                                "label": "Refacturations exceptionnelles",
+                                "level": "II.B.5.",
+                                "filePath": null,
+                                "isFolder": 0,
+                                "parentFolder": {
+                                    "id": 805,
+                                    "level": "II.B.5."
+                                },
+                                "propertyId": 7
+                            }
+                        }
+                    },
+                    "C": {
+                        "id": 809,
+                        "label": "Clés de répartition",
+                        "level": "II.C.",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": 805,
+                            "level": "II.C."
+                        },
+                        "propertyId": 7,
+                        "subLevel": {
+                            "1": {
+                                "id": 810,
+                                "label": "Année 1",
+                                "level": "II.C.1.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 809,
+                                    "level": "II.C.1."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 811,
+                                        "label": "Clé 1",
+                                        "level": "II.C.1.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 810,
+                                            "level": "II.C.1.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 812,
+                                        "label": "Clé 2",
+                                        "level": "II.C.1.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 810,
+                                            "level": "II.C.1.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            },
+                            "2": {
+                                "id": 813,
+                                "label": "Année 2",
+                                "level": "II.C.2.",
+                                "filePath": null,
+                                "isFolder": 1,
+                                "parentFolder": {
+                                    "id": 810,
+                                    "level": "II.C.2."
+                                },
+                                "propertyId": 7,
+                                "subLevel": {
+                                    "1": {
+                                        "id": 814,
+                                        "label": "Clé 1",
+                                        "level": "II.C.2.1.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 813,
+                                            "level": "II.C.2.1."
+                                        },
+                                        "propertyId": 7
+                                    },
+                                    "2": {
+                                        "id": 815,
+                                        "label": "Clé 2",
+                                        "level": "II.C.2.2.",
+                                        "filePath": null,
+                                        "isFolder": 0,
+                                        "parentFolder": {
+                                            "id": 813,
+                                            "level": "II.C.2.2."
+                                        },
+                                        "propertyId": 7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "version": {
+                    "api": "2017-08-03 18:10:18 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
+## Dataroom Parent List [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/list-parents]
+### Dataroom Parent List [GET]
+Get Dataroom parent list
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "I": {
+                        "id": 713,
+                        "label": "SITUATION LOCATIVE",
+                        "level": "I",
+                        "index": "I",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "I"
+                        },
+                        "propertyId": 7
+                    },
+                    "II": {
+                        "id": 770,
+                        "label": "GESTION LOCATIVE",
+                        "level": "II",
+                        "index": "II",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "II"
+                        },
+                        "propertyId": 7
+                    },
+                    "III": {
+                        "id": 816,
+                        "label": "SITUATION JURIDIQUE IMMEUBLE",
+                        "level": "III",
+                        "index": "III",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "III"
+                        },
+                        "propertyId": 7
+                    },
+                    "V": {
+                        "id": 1086,
+                        "label": "FISCALITE DE L'IMMEUBLE & ASSURANCES",
+                        "level": "V",
+                        "index": "V",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "V"
+                        },
+                        "propertyId": 7
+                    },
+                    "IV": {
+                        "id": 1143,
+                        "label": "CORPORATE",
+                        "level": "IV",
+                        "index": "IV",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IV"
+                        },
+                        "propertyId": 7
+                    },
+                    "VI": {
+                        "id": 1292,
+                        "label": "EXPLOITATION DE L'IMMEUBLE",
+                        "level": "VI",
+                        "index": "VI",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VI"
+                        },
+                        "propertyId": 7
+                    },
+                    "VII": {
+                        "id": 1355,
+                        "label": "TRAVAUX ET/OU RESTRUCTURATION",
+                        "level": "VII",
+                        "index": "VII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VII"
+                        },
+                        "propertyId": 7
+                    },
+                    "VIII": {
+                        "id": 1406,
+                        "label": "PROCEDURES EN COURS",
+                        "level": "VIII",
+                        "index": "VIII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VIII"
+                        },
+                        "propertyId": 7
+                    },
+                    "IX": {
+                        "id": 1409,
+                        "label": "VENTE PROJETEE",
+                        "level": "IX",
+                        "index": "IX",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IX"
+                        },
+                        "propertyId": 7
+                    }
+                },
+                "version": {
+                    "api": "2017-08-03 18:10:18 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
+## Dataroom Generate [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/datarooms/generate]
+### Dataroom Generate [POST]
+Generate dataroom
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "I": {
+                        "id": 713,
+                        "label": "SITUATION LOCATIVE",
+                        "level": "I",
+                        "index": "I",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "I"
+                        },
+                        "propertyId": 7
+                    },
+                    "II": {
+                        "id": 770,
+                        "label": "GESTION LOCATIVE",
+                        "level": "II",
+                        "index": "II",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "II"
+                        },
+                        "propertyId": 7
+                    },
+                    "III": {
+                        "id": 816,
+                        "label": "SITUATION JURIDIQUE IMMEUBLE",
+                        "level": "III",
+                        "index": "III",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "III"
+                        },
+                        "propertyId": 7
+                    },
+                    "V": {
+                        "id": 1086,
+                        "label": "FISCALITE DE L'IMMEUBLE & ASSURANCES",
+                        "level": "V",
+                        "index": "V",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "V"
+                        },
+                        "propertyId": 7
+                    },
+                    "IV": {
+                        "id": 1143,
+                        "label": "CORPORATE",
+                        "level": "IV",
+                        "index": "IV",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IV"
+                        },
+                        "propertyId": 7
+                    },
+                    "VI": {
+                        "id": 1292,
+                        "label": "EXPLOITATION DE L'IMMEUBLE",
+                        "level": "VI",
+                        "index": "VI",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VI"
+                        },
+                        "propertyId": 7
+                    },
+                    "VII": {
+                        "id": 1355,
+                        "label": "TRAVAUX ET/OU RESTRUCTURATION",
+                        "level": "VII",
+                        "index": "VII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VII"
+                        },
+                        "propertyId": 7
+                    },
+                    "VIII": {
+                        "id": 1406,
+                        "label": "PROCEDURES EN COURS",
+                        "level": "VIII",
+                        "index": "VIII",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "VIII"
+                        },
+                        "propertyId": 7
+                    },
+                    "IX": {
+                        "id": 1409,
+                        "label": "VENTE PROJETEE",
+                        "level": "IX",
+                        "index": "IX",
+                        "filePath": null,
+                        "isFolder": 1,
+                        "parentFolder": {
+                            "id": null,
+                            "level": "IX"
+                        },
+                        "propertyId": 7
+                    }
+                },
+                "version": {
+                    "api": "2017-08-03 18:10:18 +0700",
+                    "web": "2017-07-16 10:44:21"
+                }
+            }
+
+
