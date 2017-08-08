@@ -5951,7 +5951,19 @@ Get Contract detail.
                             "bailTenantIncentiveOption": true,
                             "bailTenantIncentiveNumber": 1,
                             "bailTenantIncentiveNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
-                
+                            "bailTenantIncentive": [
+                                {
+                                    "id": 1,
+                                    "type": "lorem",
+                                    "amount": 100.00
+                                },
+                                {
+                                    "id": 2,
+                                    "type": "ipsum",
+                                    "amount": 200.00
+                                }
+                            ],
+                            
                             "bailDepositOption": true,
                             "bailDepositOption_DEVNOTE": "IS SELECT BETWEEN bailDeposit (TRUE) / bailCaution (FALSE)",
                             "bailDeposit": {
@@ -6194,7 +6206,17 @@ Create a Contract.
                     "bailTenantIncentiveOption": true,
                     "bailTenantIncentiveNumber": 1,
                     "bailTenantIncentiveNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
-        
+                    "bailTenantIncentive": [
+                        {
+                            "type": "lorem",
+                            "amount": 100.00
+                        },
+                        {
+                            "type": "ipsum",
+                            "amount": 200.00
+                        }
+                    ],
+
                     "bailDepositOption": true,
                     "bailDepositOption_DEVNOTE": "IS SELECT BETWEEN bailDeposit (TRUE) / bailCaution (FALSE)",
                     "bailDeposit": {
@@ -8357,7 +8379,9 @@ Get Prospect Company List by lookup
 
 ## CRM Prospect Analysis [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/prospects/analysis]
 ### CRM Prospect Analysis [POST]
-Get CRM Prospect Analysis
+Get CRM Prospect Analysis.
+`filterBy` available options:
+- `4-sliding-month`
 
 + Request (application/json)
 
@@ -8372,45 +8396,45 @@ Get CRM Prospect Analysis
             {
                 "code": 0,
                 "message": "Success",
-                "data":  [
+                "data": [
                     {
                         "label": "Broker XX",
-                        "dataPoint": [
+                        "dataPoints": [
                             {
-                                "x": "May",
+                                "label": "May",
                                 "y": 0
                             },
                             {
-                                "x": "Jun",
+                                "label": "Jun",
                                 "y": 0
                             },
                             {
-                                "x": "Jul",
+                                "label": "Jul",
                                 "y": 2
                             },
                             {
-                                "x": "Aug",
+                                "label": "Aug",
                                 "y": 0
                             }
                         ]
                     },
                     {
-                        "label": "Broker YY",
-                        "dataPoint": [
+                        "label": "Broker XX",
+                        "dataPoints": [
                             {
-                                "x": "May",
+                                "label": "May",
+                                "y": 0
+                            },
+                            {
+                                "label": "Jun",
+                                "y": 0
+                            },
+                            {
+                                "label": "Jul",
                                 "y": 2
                             },
                             {
-                                "x": "Jun",
-                                "y": 1
-                            },
-                            {
-                                "x": "Jul",
-                                "y": 1
-                            },
-                            {
-                                "x": "Aug",
+                                "label": "Aug",
                                 "y": 0
                             }
                         ]
