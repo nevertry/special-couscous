@@ -5527,6 +5527,985 @@ Get Currency Detail.
                 }
             }
 
+## Group Contract / Lease / Bail
+
+`token` is required.
+`permission:lease.*` is required.
+
+## Contract List [/portfolios/{portfolioId}/properties/{propertyId}/contracts?]
+### Contract List [GET]
+Get Contract list.
+`permission:lease.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "step1": {
+                            "id": 1,
+                            "code": "AZERTY",
+                            "contractType" : {
+                                "id": 1,
+                                "_DEVNOTE": "Object of BailType"
+                            },
+                            "usagePrincipal" : {
+                                "id": 1,
+                                "_DEVNOTE": "Object of Typology"
+                            },
+                            "leaseExecutionDate" : "2017-01-02",
+                            "leaseStartDate" : "2017-01-02",
+                            "leaseAvailabilityOption" : true,
+                            "leaseAvailabilityDate" : "2017-01-02",
+                            "chargeRecoverableOption" : true,
+                            "inventoryFixtureOption" : true,
+                            "leaseEndDate" : "2017-01-02",
+                            "leaseDuration" : 12,
+                            "bailFixedTerms": [
+                                {
+                                    "duration": 3,
+                                    "endDate": "2017-04-02"
+                                },
+                                {
+                                    "duration": 2,
+                                    "endDate": "2017-06-02"
+                                }
+                            ],
+                            "subleaseOption" : true,
+                            "sublease" : "Sublease comment",
+                            "leaseTransferOption" : true,
+                            "leaseTransfer" : "Lease transfer comment",
+                            "tenantFirstRefusalRightOption" : true,
+                            "tenantFirstRefusalRight" : "tenant_first_refusal_right comment",
+                            "tenantFirstRefusalPreemptiveRightOption" : true,
+                            "environmentalAppendixOption" : true,
+                            "greenLeaseOption" : true,
+                            "icpeOption" : true
+                        },
+                        "step2": {
+                            "tenant": {
+                                "fullName": "Jemi Hendrix",
+                                "raisonSociale": {
+                                    "id": 1,
+                                    "_DEVNOTE": "Object of Typology"
+                                },
+                                "vatOption": true,
+                                "vat": "CA90210",
+                                "addressOption": true,
+                                "addresses": [
+                                    {
+                                        "addressType": "headquarter",
+                                        "address": {
+                                            "address1": "West Lane 12",
+                                            "address2": null,
+                                            "zipcode": "14123",
+                                            "city": "Vancouver",
+                                            "country": "CANADA",
+                                            "lat": 49.2827291,
+                                            "lng": -123.1207375
+                                        }
+                                    },
+                                    {
+                                        "addressType": "billing",
+                                        "address": {
+                                            "address1": "West Lane 12",
+                                            "address2": null,
+                                            "zipcode": "14123",
+                                            "city": "Vancouver",
+                                            "country": "CANADA",
+                                            "lat": 49.2827291,
+                                            "lng": -123.1207375
+                                        }
+                                    }
+                                ],
+                                "siren": "111111111",
+                                "bankDetails": "ZERO",
+                                "bankAccountName": "Mat Dower",
+                                "iban": "IBAN111111111",
+                                "swift": "SWIFT",
+                                "contactJobTitle": "Job Title",
+                                "contactCivility": "mr.",
+                                "contactLastName": "McKendrik",
+                                "contactFirstName": "Alessia",
+                                "contactEmail": "hendy.yanuar+alessia@wgs.co.id",
+                                "contactOfficePhone": "+19283718246"
+                            }
+                        },
+                        "step3": {
+                        },
+                        "step4": {
+                        },
+                        "step5": {
+                        },
+                        "step6": {
+                        },
+                        "step7": {
+                        }
+                    },
+                    {
+                        "step1": {
+                            "id": 2,
+                            "code": "QUERTY",
+                            "contractType" : {
+                                "id": 1,
+                                "_DEVNOTE": "Object of BailType"
+                            },
+                            "usagePrincipal" : {
+                                "id": 1,
+                                "_DEVNOTE": "Object of Typology"
+                            },
+                            "leaseExecutionDate" : "2017-01-02",
+                            "leaseStartDate" : "2017-01-02",
+                            "leaseAvailabilityOption" : true,
+                            "leaseAvailabilityDate" : "2017-01-02",
+                            "chargeRecoverableOption" : true,
+                            "inventoryFixtureOption" : true,
+                            "leaseEndDate" : "2017-01-02",
+                            "leaseDuration" : 12,
+                            "bailFixedTerms": [
+                                {
+                                    "duration": 3,
+                                    "endDate": "2017-04-02"
+                                },
+                                {
+                                    "duration": 2,
+                                    "endDate": "2017-06-02"
+                                }
+                            ],
+                            "subleaseOption" : true,
+                            "sublease" : "Sublease comment",
+                            "leaseTransferOption" : true,
+                            "leaseTransfer" : "Lease transfer comment",
+                            "tenantFirstRefusalRightOption" : true,
+                            "tenantFirstRefusalRight" : "tenant_first_refusal_right comment",
+                            "tenantFirstRefusalPreemptiveRightOption" : true,
+                            "environmentalAppendixOption" : true,
+                            "greenLeaseOption" : true,
+                            "icpeOption" : true
+                        },
+                        "step2": {
+                            "tenant": {
+                                "fullName": "Jemi Hendrix",
+                                "raisonSociale": {
+                                    "id": 1,
+                                    "_DEVNOTE": "Object of Typology"
+                                },
+                                "vatOption": true,
+                                "vat": "CA90210",
+                                "addressOption": true,
+                                "addresses": [
+                                    {
+                                        "addressType": "headquarter",
+                                        "address": {
+                                            "address1": "West Lane 12",
+                                            "address2": null,
+                                            "zipcode": "14123",
+                                            "city": "Vancouver",
+                                            "country": "CANADA",
+                                            "lat": 49.2827291,
+                                            "lng": -123.1207375
+                                        }
+                                    },
+                                    {
+                                        "addressType": "billing",
+                                        "address": {
+                                            "address1": "West Lane 12",
+                                            "address2": null,
+                                            "zipcode": "14123",
+                                            "city": "Vancouver",
+                                            "country": "CANADA",
+                                            "lat": 49.2827291,
+                                            "lng": -123.1207375
+                                        }
+                                    }
+                                ],
+                                "siren": "111111111",
+                                "bankDetails": "ZERO",
+                                "bankAccountName": "Mat Dower",
+                                "iban": "IBAN111111111",
+                                "swift": "SWIFT",
+                                "contactJobTitle": "Job Title",
+                                "contactCivility": "mr.",
+                                "contactLastName": "McKendrik",
+                                "contactFirstName": "Alessia",
+                                "contactEmail": "hendy.yanuar+alessia@wgs.co.id",
+                                "contactOfficePhone": "+19283718246"
+                            }
+                        },
+                        "step3": {
+                        },
+                        "step4": {
+                        },
+                        "step5": {
+                        },
+                        "step6": {
+                        },
+                        "step7": {
+                        }
+                    }
+                ]
+            }
+
+## Contract Detail [/portfolios/{portfolioId}/properties/{propertyId}/contracts/{id}?]
+### Contract Detail [GET]
+Get Contract detail.
+`permission:lease.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "step1": {
+                        "id": 1,
+                        "code": "AZERTY",
+                        "contractType" : {
+                            "id": 1,
+                            "_DEVNOTE": "Object of BailType"
+                        },
+                        "usagePrincipal" : {
+                            "id": 1,
+                            "_DEVNOTE": "Object of Typology"
+                        },
+                        "leaseExecutionDate" : "2017-01-02",
+                        "leaseStartDate" : "2017-01-02",
+                        "leaseAvailabilityOption" : true,
+                        "leaseAvailabilityDate" : "2017-01-02",
+                        "chargeRecoverableOption" : true,
+                        "inventoryFixtureOption" : true,
+                        "leaseEndDate" : "2017-01-02",
+                        "leaseDuration" : 12,
+                        "bailFixedTerms": [
+                            {
+                                "id": 1,
+                                "duration": 3,
+                                "endDate": "2017-04-02"
+                            },
+                            {
+                                "id": 2,
+                                "duration": 2,
+                                "endDate": "2017-06-02"
+                            }
+                        ],
+                        "subleaseOption" : true,
+                        "sublease" : "Sublease comment",
+                        "leaseTransferOption" : true,
+                        "leaseTransfer" : "Lease transfer comment",
+                        "tenantFirstRefusalRightOption" : true,
+                        "tenantFirstRefusalRight" : "tenant_first_refusal_right comment",
+                        "tenantFirstRefusalPreemptiveRightOption" : true,
+                        "environmentalAppendixOption" : true,
+                        "greenLeaseOption" : true,
+                        "icpeOption" : true
+                    },
+                    "step2": {
+                        "tenant": {
+                            "id": 1,
+                            "fullName": "Jemi Hendrix",
+                            "raisonSociale": {
+                                "id": 1,
+                                "_DEVNOTE": "Object of Typology"
+                            },
+                            "vatOption": true,
+                            "vat": "CA90210",
+                            "addressOption": true,
+                            "addresses": [
+                                {
+                                    "id": 1,
+                                    "addressType": "headquarter",
+                                    "address": {
+                                        "id": 1,
+                                        "address1": "West Lane 12",
+                                        "address2": null,
+                                        "zipcode": "14123",
+                                        "city": "Vancouver",
+                                        "country": "CANADA",
+                                        "lat": 49.2827291,
+                                        "lng": -123.1207375
+                                    }
+                                },
+                                {
+                                    "id": 2,
+                                    "addressType": "billing",
+                                    "address": {
+                                        "id": 2,
+                                        "address1": "West Lane 12",
+                                        "address2": null,
+                                        "zipcode": "14123",
+                                        "city": "Vancouver",
+                                        "country": "CANADA",
+                                        "lat": 49.2827291,
+                                        "lng": -123.1207375
+                                    }
+                                }
+                            ],
+                            "siren": "111111111",
+                            "bankDetails": "ZERO",
+                            "bankAccountName": "Mat Dower",
+                            "iban": "IBAN111111111",
+                            "swift": "SWIFT",
+                            "contactJobTitle": "Job Title",
+                            "contactCivility": "mr.",
+                            "contactLastName": "McKendrik",
+                            "contactFirstName": "Alessia",
+                            "contactEmail": "hendy.yanuar+alessia@wgs.co.id",
+                            "contactOfficePhone": "+19283718246"
+                        }
+                    },
+                    "step3": {
+                        "buildingList": [
+                            {
+                                "id": 1,
+                                "lot": [
+                                    {
+                                        "id": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "step4": {
+                        "loyer": {
+                            "id": 1,
+                            "loyerFacialAnnuel": 100.00,
+                            "loyerFacialAnnuelM2": 100.00,
+                            "loyerFacialParking": 100.00,
+                            "loyerFacialParkingPerUnit": 100.00,
+                            "loyerFacialRIE": 100.00,
+                            "loyerFacialRIEPerUnit": 100.00,
+                
+                            "bailPlafonOption": true,
+                            "bailPlafon": [
+                                {
+                                    "id": 1,
+                                    "typology": {
+                                        "id": 1,
+                                        "_DEVNOTE": "Object of Typology"
+                                    },
+                                    "area": 123,
+                                    "area_DEVNOTE": "IS READONLY, CALCULATED FROM SELECTED LOT OF THE SAME TYPOLOGY, NOT SAVED TO DB",
+                                    "cap": 100.00
+                                }
+                            ],
+                
+                            "bailLevelOption": true,
+                            "bailLevelIndexReferenceOption": true,
+                            "bailLevelNumber": 1,
+                            "bailLevelNumber_DEVNOTE": "IS READONLY, NOT SAVED TO DB",
+                            "bailLevel": [
+                                {
+                                    "id": 1,
+                                    "startDate": "2017-01-01",
+                                    "endDate": "2017-01-01",
+                                    "amount": 100.00,
+                                    "amountM2": 100.00
+                                }
+                            ],
+                
+                            "invoicingPeriod": 6,
+                            "invoicingInterval": "month",
+                            "paidInAdvance": true,
+                
+                            "indexReference": {
+                                "id": 1,
+                                "value": 108.94,
+                                "type": "ILAT",
+                                "periode": "2016-10-01",
+                                "_DEVNOTE": "OBJECT OF indexReference / indice_reference, SELECTABLE FROM API"
+                            },
+                            "indexReferenceMixed": "MIXED INDEX REFERENCE",
+                            "indexReferenceFirstDate": "2017-07-01",
+                
+                            "bailFreeRentOption": true,
+                            "bailFreeRentDuration": 12,
+                            "freeRentPeriodSpreadOption": true,
+                            "freeRentPeriodSpreadOption_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                            "freeRentPeriodNumber": true,
+                            "freeRentPeriodNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                            "bailFreeRent": [
+                                {
+                                    "id": 1,
+                                    "monthDuration": 6,
+                                    "startDate": "2017-01-01",
+                                    "endDate": "2017-06-30"
+                                },
+                                {
+                                    "id": 1,
+                                    "monthDuration": 6,
+                                    "startDate": "2017-07-01",
+                                    "endDate": "2017-12-31"
+                                }
+                            ],
+                
+                            "bailTenantIncentiveOption": true,
+                            "bailTenantIncentiveNumber": 1,
+                            "bailTenantIncentiveNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                
+                            "bailDepositOption": true,
+                            "bailDepositOption_DEVNOTE": "IS SELECT BETWEEN bailDeposit (TRUE) / bailCaution (FALSE)",
+                            "bailDeposit": {
+                                "id": 1,
+                                "month": 12,
+                                "ttc": true,
+                                "ttc_DEVNOTE": "FALSE MEANS HT",
+                                "amount": 10000,
+                                "amount_DEVNOTE": "SAVED AND CALCULATED to DB; See Rules"
+                            },
+                            "bailCaution": {
+                                "id": 1,
+                                "startDate": "2017-01-01",
+                                "month": 12,
+                                "endDate": "2017-12-31",
+                                "endDate_DEVNOTE": "PROCESSED ON BACKEND, THUS IGNOREING endDate. See Rules.",
+                                "amount": 100000
+                            }
+                        }
+                    },
+                    "step5": {
+                        "bailCharge": {
+                            "id": 1,
+                            "landTaxOption": true,
+                            "garbageTaxOption": true,
+                            "officeTaxOption": true,
+                            "additionalTaxOption": true,
+                            "cvaeOption": true,
+                            "civilCode605Option": true,
+                            "civilCode606Option": false,
+                            "buildingInsuranceOption": true,
+                            "administrativeFeeOption": true,
+                            "technicalFeeOption": true,
+                            "defaultInterestOption": true,
+                            "defaultInterestComment": "default interest comment here",
+                            "myreOption": true
+                        }
+                    },
+                    "step6": {
+                        "noticePeriodDuration": 3,
+                        "terminationNoticeDate": "2017-07-29 00:00:00",
+                        "terminationReason": "termination reason here",
+                        "terminationPenaltyFeeOption": true,
+                        "terminationPenaltyFeeAmount": 3,
+                        "terminationPenaltyFeeComment": "termination penalty fee comment here",
+                        "tenantMoveOutDate": "2017-07-29 00:00:00",
+                        "departureInventoryOption": true,
+                        "refurbishmentOption": true,
+                        "refurbishmentAmount": 3,
+                        "rentalDeductionOption": true,
+                        "rentalDeductionAmount": 3,
+                        "disputeOption": true,
+                        "disputeComment": "dispute comment here",
+                        "cancelationClauseOption": true
+                    },
+                    "step7": {
+                        "additionalComment": "Additional Comment Text"
+                    }
+                }
+            }
+
+## Contract Create [/portfolios/{portfolioId}/properties/{propertyId}/contracts/]
+### Contract Create [POST]
+Create a Contract.
+`permission:lease.create` is required.
+
++ Request (application/json)
+
+        {
+            "step1": {
+                "code": "AZERTY",
+                "contractType" : {
+                    "id": 1,
+                    "_DEVNOTE": "Object of BailType"
+                },
+                "usagePrincipal" : {
+                    "id": 1,
+                    "_DEVNOTE": "Object of Typology"
+                },
+                "leaseExecutionDate" : "2017-01-02",
+                "leaseStartDate" : "2017-01-02",
+                "leaseAvailabilityOption" : true,
+                "leaseAvailabilityDate" : "2017-01-02",
+                "chargeRecoverableOption" : true,
+                "inventoryFixtureOption" : true,
+                "leaseEndDate" : "2017-01-02",
+                "leaseDuration" : 12,
+                "bailFixedTerms": [
+                    {
+                        "duration": 3,
+                        "endDate": "2017-04-02"
+                    },
+                    {
+                        "duration": 2,
+                        "endDate": "2017-06-02"
+                    }
+                ],
+                "subleaseOption" : true,
+                "sublease" : "Sublease comment",
+                "leaseTransferOption" : true,
+                "leaseTransfer" : "Lease transfer comment",
+                "tenantFirstRefusalRightOption" : true,
+                "tenantFirstRefusalRight" : "tenant_first_refusal_right comment",
+                "tenantFirstRefusalPreemptiveRightOption" : true,
+                "environmentalAppendixOption" : true,
+                "greenLeaseOption" : true,
+                "icpeOption" : true
+            },
+            "step2": {
+                "tenant": {
+                    "fullName": "Jemi Hendrix",
+                    "raisonSociale": {
+                        "id": 1,
+                        "_DEVNOTE": "Object of Typology"
+                    },
+                    "vatOption": true,
+                    "vat": "CA90210",
+                    "addressOption": true,
+                    "addresses": [
+                        {
+                            "addressType": "headquarter",
+                            "address": {
+                              "address1": "West Lane 12",
+                              "address2": null,
+                              "zipcode": "14123",
+                              "city": "Vancouver",
+                              "country": "CANADA",
+                              "lat": 49.2827291,
+                              "lng": -123.1207375
+                            }
+                        },
+                        {
+                            "addressType": "billing",
+                            "address": {
+                              "address1": "West Lane 12",
+                              "address2": null,
+                              "zipcode": "14123",
+                              "city": "Vancouver",
+                              "country": "CANADA",
+                              "lat": 49.2827291,
+                              "lng": -123.1207375
+                            }
+                        }
+                    ],
+                    "siren": "111111111",
+                    "bankDetails": "ZERO",
+                    "bankAccountName": "Mat Dower",
+                    "iban": "IBAN111111111",
+                    "swift": "SWIFT",
+                    "contactJobTitle": "Job Title",
+                    "contactCivility": "mr.",
+                    "contactLastName": "McKendrik",
+                    "contactFirstName": "Alessia",
+                    "contactEmail": "hendy.yanuar+alessia@wgs.co.id",
+                    "contactOfficePhone": "+19283718246"
+                }
+            },
+            "step3": {
+                "buildingList": [
+                    {
+                        "id": 1,
+                        "lot": [
+                            {
+                                "id": 1,
+                                "selected": false,
+                                "_DEVNOTE": "remove only used on update"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "step4": {
+                "loyer": {
+                    "loyerFacialAnnuel": 100.00,
+                    "loyerFacialAnnuelM2": 100.00,
+                    "loyerFacialParking": 100.00,
+                    "loyerFacialParkingPerUnit": 100.00,
+                    "loyerFacialRIE": 100.00,
+                    "loyerFacialRIEPerUnit": 100.00,
+        
+                    "bailPlafonOption": true,
+                    "bailPlafon": [
+                        {
+                            "typology": {
+                                "id": 1,
+                                "_DEVNOTE": "Object of Typology"
+                            },
+                            "area": 123,
+                            "area_DEVNOTE": "IS READONLY, CALCULATED FROM SELECTED LOT OF THE SAME TYPOLOGY, NOT SAVED TO DB",
+                            "cap": 100.00
+                        }
+                    ],
+        
+                    "bailLevelOption": true,
+                    "bailLevelIndexReferenceOption": true,
+                    "bailLevelNumber": 1,
+                    "bailLevelNumber_DEVNOTE": "IS READONLY, NOT SAVED TO DB",
+                    "bailLevel": [
+                        {
+                            "startDate": "2017-01-01",
+                            "endDate": "2017-01-01",
+                            "amount": 100.00,
+                            "amountM2": 100.00
+                        }
+                    ],
+        
+                    "invoicingPeriod": 6,
+                    "invoicingInterval": "month",
+                    "paidInAdvance": true,
+        
+                    "indexReference": {
+                        "id": 1,
+                        "value": 108.94,
+                        "type": "ILAT",
+                        "periode": "2016-10-01",
+                        "_DEVNOTE": "OBJECT OF indexReference / indice_reference, SELECTABLE FROM API"
+                    },
+                    "indexReferenceMixed": "MIXED INDEX REFERENCE",
+                    "indexReferenceFirstDate": "2017-07-01",
+        
+                    "bailFreeRentOption": true,
+                    "bailFreeRentDuration": 12,
+                    "freeRentPeriodSpreadOption": true,
+                    "freeRentPeriodSpreadOption_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                    "freeRentPeriodNumber": true,
+                    "freeRentPeriodNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                    "bailFreeRent": [
+                        {
+                            "monthDuration": 6,
+                            "startDate": "2017-01-01",
+                            "endDate": "2017-06-30"
+                        },
+                        {
+                            "monthDuration": 6,
+                            "startDate": "2017-07-01",
+                            "endDate": "2017-12-31"
+                        }
+                    ],
+        
+                    "bailTenantIncentiveOption": true,
+                    "bailTenantIncentiveNumber": 1,
+                    "bailTenantIncentiveNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+        
+                    "bailDepositOption": true,
+                    "bailDepositOption_DEVNOTE": "IS SELECT BETWEEN bailDeposit (TRUE) / bailCaution (FALSE)",
+                    "bailDeposit": {
+                        "month": 12,
+                        "ttc": true,
+                        "ttc_DEVNOTE": "FALSE MEANS HT",
+                        "amount": 10000,
+                        "amount_DEVNOTE": "SAVED AND CALCULATED to DB; See Rules"
+                    },
+                    "bailCaution": {
+                        "startDate": "2017-01-01",
+                        "month": 12,
+                        "endDate": "2017-12-31",
+                        "endDate_DEVNOTE": "PROCESSED ON BACKEND, THUS IGNOREING endDate. See Rules.",
+                        "amount": 100000
+                    }
+                }
+            },
+            "step5": {
+                "bailCharge": {
+                    "landTaxOption": true,
+                    "garbageTaxOption": true,
+                    "officeTaxOption": true,
+                    "additionalTaxOption": true,
+                    "cvaeOption": true,
+                    "civilCode605Option": true,
+                    "civilCode606Option": false,
+                    "buildingInsuranceOption": true,
+                    "administrativeFeeOption": true,
+                    "technicalFeeOption": true,
+                    "defaultInterestOption": true,
+                    "defaultInterestComment": "default interest comment here",
+                    "myreOption": true
+                }
+            },
+            "step6": {
+                "noticePeriodDuration": 3,
+                "terminationNoticeDate": "2017-07-29 00:00:00",
+                "terminationReason": "termination reason here",
+                "terminationPenaltyFeeOption": true,
+                "terminationPenaltyFeeAmount": 3,
+                "terminationPenaltyFeeComment": "termination penalty fee comment here",
+                "tenantMoveOutDate": "2017-07-29 00:00:00",
+                "departureInventoryOption": true,
+                "refurbishmentOption": true,
+                "refurbishmentAmount": 3,
+                "rentalDeductionOption": true,
+                "rentalDeductionAmount": 3,
+                "disputeOption": true,
+                "disputeComment": "dispute comment here",
+                "cancelationClauseOption": true
+            },
+            "step7": {
+                "additionalComment": "Additional Comment Text"
+            }
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "step1": {
+                        "id": 1,
+                        "code": "AZERTY",
+                        "contractType" : {
+                            "id": 1,
+                            "_DEVNOTE": "Object of BailType"
+                        },
+                        "usagePrincipal" : {
+                            "id": 1,
+                            "_DEVNOTE": "Object of Typology"
+                        },
+                        "leaseExecutionDate" : "2017-01-02",
+                        "leaseStartDate" : "2017-01-02",
+                        "leaseAvailabilityOption" : true,
+                        "leaseAvailabilityDate" : "2017-01-02",
+                        "chargeRecoverableOption" : true,
+                        "inventoryFixtureOption" : true,
+                        "leaseEndDate" : "2017-01-02",
+                        "leaseDuration" : 12,
+                        "bailFixedTerms": [
+                            {
+                                "id": 1,
+                                "duration": 3,
+                                "endDate": "2017-04-02"
+                            },
+                            {
+                                "id": 2,
+                                "duration": 2,
+                                "endDate": "2017-06-02"
+                            }
+                        ],
+                        "subleaseOption" : true,
+                        "sublease" : "Sublease comment",
+                        "leaseTransferOption" : true,
+                        "leaseTransfer" : "Lease transfer comment",
+                        "tenantFirstRefusalRightOption" : true,
+                        "tenantFirstRefusalRight" : "tenant_first_refusal_right comment",
+                        "tenantFirstRefusalPreemptiveRightOption" : true,
+                        "environmentalAppendixOption" : true,
+                        "greenLeaseOption" : true,
+                        "icpeOption" : true
+                    },
+                    "step2": {
+                        "tenant": {
+                            "id": 1,
+                            "fullName": "Jemi Hendrix",
+                            "raisonSociale": {
+                                "id": 1,
+                                "_DEVNOTE": "Object of Typology"
+                            },
+                            "vatOption": true,
+                            "vat": "CA90210",
+                            "addressOption": true,
+                            "addresses": [
+                                {
+                                    "id": 1,
+                                    "addressType": "headquarter",
+                                    "address": {
+                                        "id": 1,
+                                        "address1": "West Lane 12",
+                                        "address2": null,
+                                        "zipcode": "14123",
+                                        "city": "Vancouver",
+                                        "country": "CANADA",
+                                        "lat": 49.2827291,
+                                        "lng": -123.1207375
+                                    }
+                                },
+                                {
+                                    "id": 2,
+                                    "addressType": "billing",
+                                    "address": {
+                                        "id": 2,
+                                        "address1": "West Lane 12",
+                                        "address2": null,
+                                        "zipcode": "14123",
+                                        "city": "Vancouver",
+                                        "country": "CANADA",
+                                        "lat": 49.2827291,
+                                        "lng": -123.1207375
+                                    }
+                                }
+                            ],
+                            "siren": "111111111",
+                            "bankDetails": "ZERO",
+                            "bankAccountName": "Mat Dower",
+                            "iban": "IBAN111111111",
+                            "swift": "SWIFT",
+                            "contactJobTitle": "Job Title",
+                            "contactCivility": "mr.",
+                            "contactLastName": "McKendrik",
+                            "contactFirstName": "Alessia",
+                            "contactEmail": "hendy.yanuar+alessia@wgs.co.id",
+                            "contactOfficePhone": "+19283718246"
+                        }
+                    },
+                    "step3": {
+                        "buildingList": [
+                            {
+                                "id": 1,
+                                "lot": [
+                                    {
+                                        "id": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "step4": {
+                        "loyer": {
+                            "id": 1,
+                            "loyerFacialAnnuel": 100.00,
+                            "loyerFacialAnnuelM2": 100.00,
+                            "loyerFacialParking": 100.00,
+                            "loyerFacialParkingPerUnit": 100.00,
+                            "loyerFacialRIE": 100.00,
+                            "loyerFacialRIEPerUnit": 100.00,
+                
+                            "bailPlafonOption": true,
+                            "bailPlafon": [
+                                {
+                                    "id": 1,
+                                    "typology": {
+                                        "id": 1,
+                                        "_DEVNOTE": "Object of Typology"
+                                    },
+                                    "area": 123,
+                                    "area_DEVNOTE": "IS READONLY, CALCULATED FROM SELECTED LOT OF THE SAME TYPOLOGY, NOT SAVED TO DB",
+                                    "cap": 100.00
+                                }
+                            ],
+                
+                            "bailLevelOption": true,
+                            "bailLevelIndexReferenceOption": true,
+                            "bailLevelNumber": 1,
+                            "bailLevelNumber_DEVNOTE": "IS READONLY, NOT SAVED TO DB",
+                            "bailLevel": [
+                                {
+                                    "id": 1,
+                                    "startDate": "2017-01-01",
+                                    "endDate": "2017-01-01",
+                                    "amount": 100.00,
+                                    "amountM2": 100.00
+                                }
+                            ],
+                
+                            "invoicingPeriod": 6,
+                            "invoicingInterval": "month",
+                            "paidInAdvance": true,
+                
+                            "indexReference": {
+                                "id": 1,
+                                "value": 108.94,
+                                "type": "ILAT",
+                                "periode": "2016-10-01",
+                                "_DEVNOTE": "OBJECT OF indexReference / indice_reference, SELECTABLE FROM API"
+                            },
+                            "indexReferenceMixed": "MIXED INDEX REFERENCE",
+                            "indexReferenceFirstDate": "2017-07-01",
+                
+                            "bailFreeRentOption": true,
+                            "bailFreeRentDuration": 12,
+                            "freeRentPeriodSpreadOption": true,
+                            "freeRentPeriodSpreadOption_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                            "freeRentPeriodNumber": true,
+                            "freeRentPeriodNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                            "bailFreeRent": [
+                                {
+                                    "id": 1,
+                                    "monthDuration": 6,
+                                    "startDate": "2017-01-01",
+                                    "endDate": "2017-06-30"
+                                },
+                                {
+                                    "id": 1,
+                                    "monthDuration": 6,
+                                    "startDate": "2017-07-01",
+                                    "endDate": "2017-12-31"
+                                }
+                            ],
+                
+                            "bailTenantIncentiveOption": true,
+                            "bailTenantIncentiveNumber": 1,
+                            "bailTenantIncentiveNumber_DEVNOTE": "IS READONLY, CALCULATED ON ENTRY, NOT SAVED TO DB",
+                
+                            "bailDepositOption": true,
+                            "bailDepositOption_DEVNOTE": "IS SELECT BETWEEN bailDeposit (TRUE) / bailCaution (FALSE)",
+                            "bailDeposit": {
+                                "id": 1,
+                                "month": 12,
+                                "ttc": true,
+                                "ttc_DEVNOTE": "FALSE MEANS HT",
+                                "amount": 10000,
+                                "amount_DEVNOTE": "SAVED AND CALCULATED to DB; See Rules"
+                            },
+                            "bailCaution": {
+                                "id": 1,
+                                "startDate": "2017-01-01",
+                                "month": 12,
+                                "endDate": "2017-12-31",
+                                "endDate_DEVNOTE": "PROCESSED ON BACKEND, THUS IGNOREING endDate. See Rules.",
+                                "amount": 100000
+                            }
+                        }
+                    },
+                    "step5": {
+                        "bailCharge": {
+                            "id": 1,
+                            "landTaxOption": true,
+                            "garbageTaxOption": true,
+                            "officeTaxOption": true,
+                            "additionalTaxOption": true,
+                            "cvaeOption": true,
+                            "civilCode605Option": true,
+                            "civilCode606Option": false,
+                            "buildingInsuranceOption": true,
+                            "administrativeFeeOption": true,
+                            "technicalFeeOption": true,
+                            "defaultInterestOption": true,
+                            "defaultInterestComment": "default interest comment here",
+                            "myreOption": true
+                        }
+                    },
+                    "step6": {
+                        "noticePeriodDuration": 3,
+                        "terminationNoticeDate": "2017-07-29 00:00:00",
+                        "terminationReason": "termination reason here",
+                        "terminationPenaltyFeeOption": true,
+                        "terminationPenaltyFeeAmount": 3,
+                        "terminationPenaltyFeeComment": "termination penalty fee comment here",
+                        "tenantMoveOutDate": "2017-07-29 00:00:00",
+                        "departureInventoryOption": true,
+                        "refurbishmentOption": true,
+                        "refurbishmentAmount": 3,
+                        "rentalDeductionOption": true,
+                        "rentalDeductionAmount": 3,
+                        "disputeOption": true,
+                        "disputeComment": "dispute comment here",
+                        "cancelationClauseOption": true
+                    },
+                    "step7": {
+                        "additionalComment": "Additional Comment Text"
+                    }
+                }
+            }
+
 ## Group CRM Prospect
 
 `token` is required.
