@@ -9472,7 +9472,7 @@ Create new Mandate. `documentPath` is generated using upload API. `propertyId` w
 ## Group Dataroom
 `token` is required.
 
-## Dataroom List [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms]
+## Dataroom List [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms?]
 ### Dataroom List [GET]
 Get Dataroom list
 
@@ -10479,7 +10479,117 @@ Get Dataroom parent list
                 }
             }
 
-## Dataroom Generate [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/datarooms/generate]
+## Dataroom Create [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms]
+### Dataroom Create [POST]
+Create Dataroom
+
++ Request (application/json)
+
+        {
+            "parentId": 7,
+            "isFolder": true,
+            "label": "Lorem",
+            "description": "Ipsum"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 772,
+                    "label": "Lorem",
+                    "description": "Ipsum",
+                    "level": "II.A.1.3.",
+                    "filePath": null,
+                    "isFolder": 1,
+                    "parentFolder": {
+                        "id": 7,
+                        "level": "II.A.1."
+                    },
+                    "propertyId": 7
+                }
+            }
+
+## Dataroom Edit/Update [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}]
+### Dataroom Edit/Update [POST]
+Update Dataroom.
+Rules: Dataroom Node of `id` must be a document, and `placedAfterId` is selected node with the same parent Id as Edited Dataroom Node.
+
++ Request (application/json)
+
+        {
+            "placedAfterId": 7,
+            "label": "Lorem",
+            "description": "Ipsum"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 772,
+                    "label": "Lorem",
+                    "description": "Ipsum",
+                    "level": "II.A.1.3.",
+                    "filePath": null,
+                    "isFolder": 1,
+                    "parentFolder": {
+                        "id": 7,
+                        "level": "II.A.1."
+                    },
+                    "propertyId": 7
+                }
+            }
+
+## Dataroom Order/Drag-Drop [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}/order]
+### Dataroom Order/Drag-Drop [POST]
+Update Dataroom Order with Drag & Drop method.
+
+Conditions:
+- If `parentId` and `dropNodeId` is null, error will be thrown.
+- If `parentId` is null, then `dropNodeId` must be filled.
+- If `parentId` is not a folder, Parent Node will be converted to a Folder.
+- If Node of `parentId` OR Node of `dropNodeId` level is TOP Level (i.e I, II, III, ...) error will be thrown.
+- Dragged Node will have it's level text re-sorted according to parent level.
+
++ Request (application/json)
+
+        {
+            "parentId": null,
+            "dropNodeId": 5
+        }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 772,
+                    "label": "Lorem",
+                    "description": "Ipsum",
+                    "level": "II.A.1.",
+                    "filePath": null,
+                    "isFolder": 1,
+                    "parentFolder": {
+                        "id": 5,
+                        "level": "II.A."
+                    },
+                    "propertyId": 7
+                }
+            }
+
+## Dataroom Generate [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/generate]
 ### Dataroom Generate [POST]
 Generate dataroom
 
