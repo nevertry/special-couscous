@@ -10479,8 +10479,8 @@ Get Dataroom parent list
                 }
             }
 
-## Dataroom Create [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms]
-### Dataroom Create [POST]
+## Dataroom Node Create [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms]
+### Dataroom Node Create [POST]
 Create Dataroom
 
 + Request (application/json)
@@ -10514,10 +10514,12 @@ Create Dataroom
                 }
             }
 
-## Dataroom Edit/Update [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}]
-### Dataroom Edit/Update [POST]
-Update Dataroom.
-Rules: Dataroom Node of `id` must be a document, and `placedAfterId` is selected node with the same parent Id as Edited Dataroom Node.
+## Dataroom Node Edit/Update [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}]
+### Dataroom Node Edit/Update [POST]
+Update Dataroom node.
+
+Rules:
+- Dataroom Node of `id` must be a document, and `placedAfterId` is selected node with the same parent Id as Edited Dataroom Node.
 
 + Request (application/json)
 
@@ -10549,9 +10551,9 @@ Rules: Dataroom Node of `id` must be a document, and `placedAfterId` is selected
                 }
             }
 
-## Dataroom Order/Drag-Drop [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}/order]
-### Dataroom Order/Drag-Drop [POST]
-Update Dataroom Order with Drag & Drop method.
+## Dataroom Node Order/Drag-Drop [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}/order]
+### Dataroom Node Order/Drag-Drop [POST]
+Update Dataroom Node Order with Drag & Drop method.
 
 Conditions:
 - If `parentId` and `dropNodeId` is null, error will be thrown.
@@ -10587,6 +10589,25 @@ Conditions:
                     },
                     "propertyId": 7
                 }
+            }
+
+## Dataroom Node Delete [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}/delete-node]
+### Dataroom Node Delete [POST]
+Delete dataroom node.
+
+Rules:
+- to be able to delete node: `parent_id` OR `property_id` must NOT null
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 772
             }
 
 ## Dataroom Generate [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/generate]
