@@ -10553,20 +10553,23 @@ Rules:
 
 ## Dataroom Node Order/Drag-Drop [/api/v1/portfolios/{portfolioId}/properties/{propertyId}/datarooms/{id}/order]
 ### Dataroom Node Order/Drag-Drop [POST]
-Update Dataroom Node Order with Drag & Drop method.
+Update Dataroom Node Order with Drag & Drop method. Dragged Node will have it's level and nodes below of same level node and their child label.
+Terms:
+- `dropNodeId` is ID of node being dragged to. This value is mandatory.
+- `placeAfterNodeId` is ID of node before of node being dragged to. If null dragged node will be placed at first.
 
 Conditions:
-- If `parentId` and `dropNodeId` is null, error will be thrown.
-- If `parentId` is null, then `dropNodeId` must be filled.
-- If `parentId` is not a folder, Parent Node will be converted to a Folder.
-- If Node of `parentId` OR Node of `dropNodeId` level is TOP Level (i.e I, II, III, ...) error will be thrown.
-- Dragged Node will have it's level text re-sorted according to parent level.
+- if `dropNodeId` is null, throw error `ErrorInvalidDropNode`.
+- if `dropNodeId` is Top Level Node, throw error `ErrorInvalidDropNode`.
+- if `placeAfterNodeId` is Top Level Node, throw error `ErrorInvalidPlaceAfterNode`.
+- if `placeAfterNodeId` is not a child of `dropNodeId`, throw error `ErrorInvalidChildNode`.
+- if `placeAfterNodeId` is null, will be considered as dropNodeId first Child.
 
 + Request (application/json)
 
         {
-            "parentId": null,
-            "dropNodeId": 5
+            "dropNodeId": 5,
+            "placeAfterNodeId": null
         }
 
 + Response 200 (application/json)
