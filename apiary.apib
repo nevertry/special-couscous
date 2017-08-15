@@ -5425,6 +5425,204 @@ Get Typology List.
                 ]
             }
             
+## Group Lot/Suites
+`token` is required.
+`permission:property.*`
+
+## Lot/Suite List [/portfolios/{portfolioId}/properties/{propertyId}/suites?]
+### Lot/Suite List [GET]
+Get Suite List of a Property
+`permission:property.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    [
+                        {
+                            "id": 1,
+                            "building": {
+                                "id": 1,
+                                "__DEVNOTE": "BUILDING OBJECT"
+                            },
+                            "code": "COM01",
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "hasLoyer": true
+                            },
+                            "floor": 1,
+                            "etage": 10,
+                            "comment": "Good view",
+                            "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                        }
+                    ]
+                }
+            }
+
+## Lot/Suite Detail [/portfolios/{portfolioId}/properties/{propertyId}/suites/{suiteId}?]
+### Lot/Suite Detail [GET]
+Get Suite Detail of a Property
+`permission:property.read` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "building": {
+                        "id": 1,
+                        "__DEVNOTE": "BUILDING OBJECT"
+                    },
+                    "code": "COM01",
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "hasLoyer": true
+                    },
+                    "floor": 1,
+                    "etage": 10,
+                    "comment": "Good view",
+                    "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                }
+            }
+
+## Lot/Suite Creation [/portfolios/{portfolioId}/properties/{propertyId}/suites]
+### Lot/Suite Creation [POST]
+Create Suite of a Property
+`permission:property.create` is required.
+
++ Request (application/json)
+
+        {
+            "building": {
+                "id": 1,
+                "__DEVNOTE": "BUILDING OBJECT"
+            },
+            "code": "COM01",
+            "typology": {
+                "id": 1,
+                "label": "Commerce",
+                "code": "1",
+                "hasLoyer": true
+            },
+            "floor": 1,
+            "etage": 10,
+            "comment": "Good view",
+            "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "building": {
+                        "id": 1,
+                        "__DEVNOTE": "BUILDING OBJECT"
+                    },
+                    "code": "COM01",
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "hasLoyer": true
+                    },
+                    "floor": 1,
+                    "etage": 10,
+                    "comment": "Good view",
+                    "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                }
+            }
+
+## Lot/Suite Update [/portfolios/{portfolioId}/properties/{propertyId}/suites/{suiteId}]
+### Lot/Suite Update [POST]
+Update Suite of a Property. Suite that already contracted cannot be updated.
+`permission:property.update` is required.
+
++ Request (application/json)
+
+        {
+            "id": 1,
+            "building": {
+                "id": 1,
+                "__DEVNOTE": "BUILDING OBJECT"
+            },
+            "code": "COM01",
+            "typology": {
+                "id": 1,
+                "label": "Commerce",
+                "code": "1",
+                "hasLoyer": true
+            },
+            "floor": 1,
+            "etage": 10,
+            "comment": "Good view",
+            "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "id": 1,
+                    "building": {
+                        "id": 1,
+                        "__DEVNOTE": "BUILDING OBJECT"
+                    },
+                    "code": "COM01",
+                    "typology": {
+                        "id": 1,
+                        "label": "Commerce",
+                        "code": "1",
+                        "hasLoyer": true
+                    },
+                    "floor": 1,
+                    "etage": 10,
+                    "comment": "Good view",
+                    "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                }
+            }
+
+## Lot/Suite Delete [/portfolios/{portfolioId}/properties/{propertyId}/suites/{suiteId}/delete]
+### Lot/Suite Delete [POST]
+Delete Suite of a Property. Suite that already contracted cannot be deleted.
+`permission:property.delete` is required.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "code": 0,
+                "message": "Success",
+                "data": 1
+            }
+
 ## Group Upload
 `token` is required.
 
@@ -10555,7 +10753,7 @@ Rules:
 ### Dataroom Node Order/Drag-Drop [POST]
 Update Dataroom Node Order with Drag & Drop method. Dragged Node will have it's level and nodes below of same level node and their child label.
 Terms:
-- `dropNodeId` is ID of node being dragged to. This value is mandatory.
+- `dropNodeId` is ID of node being dragged to. This value is *mandatory*.
 - `placeAfterNodeId` is ID of node before of node being dragged to. If null dragged node will be placed at first.
 
 Conditions:
