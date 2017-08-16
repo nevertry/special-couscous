@@ -10948,3 +10948,401 @@ Generate dataroom
                     "web": "2017-07-16 10:44:21"
                 }
             }
+
+## Group Public Page
+
+Resource related to Public Page.
+`token` is NOT required.
+
+## Public Page List [/public-pages?search=name:The]
+### Public Page List [GET]
+To display list of Properties with `public_page_option` set to TRUE.
+Stacking plan does not show contract or tenant name, only vacant or rented status.
+Can Be search by Property name.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "step1": {
+                            "name": "The Great Property",
+                            "code": "TGP",
+                            "address": {
+                                "address1": "Park Habio",
+                                "address2": "",
+                                "zipcode": "14123",
+                                "city": "Shinjuku",
+                                "country": "JAPAN",
+                                "lat": 36.2048,
+                                "lng": 138.2529
+                            },
+                            "images": [
+                                "/property/1499992213_8b1a9953c4611296a827abf8c47804d7.jpg"
+                            ],
+                            "unit": "feet",
+                            "currency": {
+                                "id": 2,
+                                "code": "$"
+                            },
+                            "constructionYear": "2000-01-01",
+                            "restructurationYear": [
+                                "2005-01-01",
+                                "2010-01-01"
+                            ],
+                            "typology": {
+                                "id": 1,
+                                "label": "Commerce",
+                                "code": "1",
+                                "hasLoyer": true
+                            },
+                            "sdp": 100,
+                            "numberOfParking": 50
+                        },
+                        "step2": {
+                            "company": {
+                                "siren": "S00N6K412",
+                                "fullName": "Intrambo",
+                                "raisonSociale": {
+                                    "id": 5,
+                                    "code": "M14",
+                                    "label": "EURL"
+                                },
+                                "vatOption": true,
+                                "vat": 2,
+                                "intercommunityVat": "20000000Х-29999999Х",
+                                "address": {
+                                    "address1": "Domaine De Roque Haute",
+                                    "address2": "Park",
+                                    "city": "Portiragnes",
+                                    "country": "FRANCE",
+                                    "zipcode": "34420",
+                                    "lat": 43.30042,
+                                    "lng": 3.3658699999999726
+                                }
+                            }
+                        },
+                        "step3": {
+                            "coPro": true,
+                    
+                            "coProCompanyName": "Skyent",
+                            "coProContactName": "Kathryn J. Childers",
+                            "coProContactEmail": "KathrynJChilders@dayrep.com",
+                            "coProContactPhone": "631-412-3898",
+                            "volumeDivided": true,
+                            "asl": true,
+                            "aful": true,
+                            "servitude": true,
+                            "zac": true,
+                            "igh": true,
+                            "erp": true,
+                            "icpe": true,
+                            "rie": true,
+                            "subdivision": true,
+                            "commercialUrbanism": true,
+                            "expertiseCIBE": true,
+                            "cotationCIBE": 7,
+                            "expertiseCELOG": true,
+                            "cotationCELOG": 8,
+                    
+                            "hqe": true,
+                            "leed": true,
+                            "breaam": true,
+                        },
+                        "step4": {
+                            "buildingOption": true,
+                            "numberBuilding": 1,
+                            "buildingList": [
+                                {
+                                    "name": "Mother Building",
+                                    "floor": 1,
+                                    "parkingFloor": 1,
+                                    "surfaceSUBL": 100.25,
+                                    "parkingNumber": 10,
+                                    "mainUsage": {
+                                        "id": 1,
+                                        "label": "Commerce",
+                                        "code": "1",
+                                        "hasLoyer": true
+                                    },
+                                    "lots": [
+                                        {
+                                            "code": "COM01",
+                                            "typology": {
+                                                "id": 1,
+                                                "label": "Commerce",
+                                                "code": "1",
+                                                "hasLoyer": true
+                                            },
+                                            "floor": 1,
+                                            "etage": 10,
+                                            "comment": "Good view",
+                                            "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                                        }
+                                    ]
+                                },
+                            ]        
+                        },
+                        "step5": {
+                            "publicPageOption": true,
+                            "publicPage": {
+                                "imagesActive": true,
+                                "buildingAddressActive": true,
+                                "buildingAddress": "4th Avenue Cafe Birmingham UK",
+                                "googleEarthLinkActive": true,
+                                "googleEarthLink": "http://goo.gl/googleEarthLink",
+                                "geolocActive": true,
+                                "geolocLat": 36.2048,
+                                "geolocLng": 138.252,
+                                "buildingDescriptionActive": true,
+                                "buildingDescription": "Good building",
+                                "buildingZoneDescriptionActive": true,
+                                "buildingZoneDescription": "Very crowded zone",
+                                "publicTransportationAccessActive": true,
+                                "publicTransportationAccess": "Land, Water, Air transportation",
+                                "amenitiesActive": true,
+                                "amenitiesConference": true,
+                                "amenitiesElectricalPlug": true,
+                                "amenitiesGarden": true,
+                                "amenitiesCorporateRestaurant": true,
+                                "amenitiesCafetaria": true,
+                                "amenitiesBikeRoom": true,
+                                "amenitiesFitnessCenter": true,
+                                "amenitiesRetail": true,
+                                "amenitiesConciergeServices": true,
+                                "amenitiesErp": true,
+                                "lettableAreaActive": true,
+                                "lettableArea": 100,
+                                "lettableAreaDetailsActive": true,
+                                "lettableAreaDetails": "Very vast area",
+                                "propertyValueActive": true,
+                                "propertyValue": "2B",
+                                "occupationRateActive": true,
+                                "occupationRate": 25.5,
+                                "occupiedSpacesActive": true,
+                                "occupiedSpaces": 30,
+                                "vacantSpacesActive": true,
+                                "vacantSpaces": 70,
+                                "averageFloorAreaActive": true,
+                                "averageFloorArea": 12,
+                                "numberOfFloorActive": true,
+                                "numberOfFloor": 10,
+                                "stackingPlanActive": true,
+                                "brokerActive": true,
+                                "propertyManagerActive": true,
+                                "assetManagerActive": true,
+                                "websiteActive": true,
+                                "website": "http://goo.gl/website"
+                            }
+                        },
+                        "step6": {
+                            "tempValue": "2-9B$",
+                            "tempDebt": "0.5B$",
+                            "tempCapex": "3 Capex Program",
+                            "tempCharges": "6 recoverable tax",
+                            "tempErv": "ERV information"
+                        }
+                    }
+                ]
+            }
+
+## Public Page Detail [/public-pages/{propertyId}?]
+### Public Page Detail [GET]
+To detail of Property with `public_page_option` set to TRUE.
+Stacking plan does not show contract or tenant name, only vacant or rented status.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "code": 0,
+                "message": "Success",
+                "data": {
+                    "step1": {
+                        "name": "The Great Property",
+                        "code": "TGP",
+                        "address": {
+                            "address1": "Park Habio",
+                            "address2": "",
+                            "zipcode": "14123",
+                            "city": "Shinjuku",
+                            "country": "JAPAN",
+                            "lat": 36.2048,
+                            "lng": 138.2529
+                        },
+                        "images": [
+                            "/property/1499992213_8b1a9953c4611296a827abf8c47804d7.jpg"
+                        ],
+                        "unit": "feet",
+                        "currency": {
+                            "id": 2,
+                            "code": "$"
+                        },
+                        "constructionYear": "2000-01-01",
+                        "restructurationYear": [
+                            "2005-01-01",
+                            "2010-01-01"
+                        ],
+                        "typology": {
+                            "id": 1,
+                            "label": "Commerce",
+                            "code": "1",
+                            "hasLoyer": true
+                        },
+                        "sdp": 100,
+                        "numberOfParking": 50
+                    },
+                    "step2": {
+                        "company": {
+                            "siren": "S00N6K412",
+                            "fullName": "Intrambo",
+                            "raisonSociale": {
+                                "id": 5,
+                                "code": "M14",
+                                "label": "EURL"
+                            },
+                            "vatOption": true,
+                            "vat": 2,
+                            "intercommunityVat": "20000000Х-29999999Х",
+                            "address": {
+                                "address1": "Domaine De Roque Haute",
+                                "address2": "Park",
+                                "city": "Portiragnes",
+                                "country": "FRANCE",
+                                "zipcode": "34420",
+                                "lat": 43.30042,
+                                "lng": 3.3658699999999726
+                            }
+                        }
+                    },
+                    "step3": {
+                        "coPro": true,
+                
+                        "coProCompanyName": "Skyent",
+                        "coProContactName": "Kathryn J. Childers",
+                        "coProContactEmail": "KathrynJChilders@dayrep.com",
+                        "coProContactPhone": "631-412-3898",
+                        "volumeDivided": true,
+                        "asl": true,
+                        "aful": true,
+                        "servitude": true,
+                        "zac": true,
+                        "igh": true,
+                        "erp": true,
+                        "icpe": true,
+                        "rie": true,
+                        "subdivision": true,
+                        "commercialUrbanism": true,
+                        "expertiseCIBE": true,
+                        "cotationCIBE": 7,
+                        "expertiseCELOG": true,
+                        "cotationCELOG": 8,
+                
+                        "hqe": true,
+                        "leed": true,
+                        "breaam": true,
+                    },
+                    "step4": {
+                        "buildingOption": true,
+                        "numberBuilding": 1,
+                        "buildingList": [
+                            {
+                                "name": "Mother Building",
+                                "floor": 1,
+                                "parkingFloor": 1,
+                                "surfaceSUBL": 100.25,
+                                "parkingNumber": 10,
+                                "mainUsage": {
+                                    "id": 1,
+                                    "label": "Commerce",
+                                    "code": "1",
+                                    "hasLoyer": true
+                                },
+                                "lots": [
+                                    {
+                                        "code": "COM01",
+                                        "typology": {
+                                            "id": 1,
+                                            "label": "Commerce",
+                                            "code": "1",
+                                            "hasLoyer": true
+                                        },
+                                        "floor": 1,
+                                        "etage": 10,
+                                        "comment": "Good view",
+                                        "duplicateGroup": "GRPCOM01-IS-GENERATED-CLIENTSIDE-WHEN-duplicate-is-TRUE | otherwise: empty/null"
+                                    }
+                                ]
+                            },
+                        ]        
+                    },
+                    "step5": {
+                        "publicPageOption": true,
+                        "publicPage": {
+                            "imagesActive": true,
+                            "buildingAddressActive": true,
+                            "buildingAddress": "4th Avenue Cafe Birmingham UK",
+                            "googleEarthLinkActive": true,
+                            "googleEarthLink": "http://goo.gl/googleEarthLink",
+                            "geolocActive": true,
+                            "geolocLat": 36.2048,
+                            "geolocLng": 138.252,
+                            "buildingDescriptionActive": true,
+                            "buildingDescription": "Good building",
+                            "buildingZoneDescriptionActive": true,
+                            "buildingZoneDescription": "Very crowded zone",
+                            "publicTransportationAccessActive": true,
+                            "publicTransportationAccess": "Land, Water, Air transportation",
+                            "amenitiesActive": true,
+                            "amenitiesConference": true,
+                            "amenitiesElectricalPlug": true,
+                            "amenitiesGarden": true,
+                            "amenitiesCorporateRestaurant": true,
+                            "amenitiesCafetaria": true,
+                            "amenitiesBikeRoom": true,
+                            "amenitiesFitnessCenter": true,
+                            "amenitiesRetail": true,
+                            "amenitiesConciergeServices": true,
+                            "amenitiesErp": true,
+                            "lettableAreaActive": true,
+                            "lettableArea": 100,
+                            "lettableAreaDetailsActive": true,
+                            "lettableAreaDetails": "Very vast area",
+                            "propertyValueActive": true,
+                            "propertyValue": "2B",
+                            "occupationRateActive": true,
+                            "occupationRate": 25.5,
+                            "occupiedSpacesActive": true,
+                            "occupiedSpaces": 30,
+                            "vacantSpacesActive": true,
+                            "vacantSpaces": 70,
+                            "averageFloorAreaActive": true,
+                            "averageFloorArea": 12,
+                            "numberOfFloorActive": true,
+                            "numberOfFloor": 10,
+                            "stackingPlanActive": true,
+                            "brokerActive": true,
+                            "propertyManagerActive": true,
+                            "assetManagerActive": true,
+                            "websiteActive": true,
+                            "website": "http://goo.gl/website"
+                        }
+                    },
+                    "step6": {
+                        "tempValue": "2-9B$",
+                        "tempDebt": "0.5B$",
+                        "tempCapex": "3 Capex Program",
+                        "tempCharges": "6 recoverable tax",
+                        "tempErv": "ERV information"
+                    }
+                }
+            }
