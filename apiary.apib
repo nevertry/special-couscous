@@ -5392,7 +5392,7 @@ Get Property KPI.
 
 ## Typology list [/typologies?]
 ### Typology list [GET]
-Get Typology List.
+Get All Typology List.
 
 + Request (application/json)
 
@@ -5424,7 +5424,77 @@ Get Typology List.
                     }
                 ]
             }
-            
+
+## Typology list Of Main Usage [/main-usages?]
+### Typology list Of Main Usage [GET]
+Get All Typology List for main usages.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "code": "1",
+                        "hasLoyer": true,
+                        "label": "Commerce"
+                    },
+                    {
+                        "id": 2,
+                        "code": "2",
+                        "hasLoyer": true,
+                        "label": "Bureau"
+                    },
+                    {
+                        "id": 3,
+                        "code": "2A",
+                        "hasLoyer": false,
+                        "label": "Bureau classique"
+                    }
+                ]
+            }
+
+## Typology list Of Main Item [/typologies/main-items?]
+### Typology list Of Main Items [GET]
+Get All Typology List for main items (for lot type).
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+                "code": 0,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": 1,
+                        "code": "1",
+                        "hasLoyer": true,
+                        "label": "Commerce"
+                    },
+                    {
+                        "id": 2,
+                        "code": "2",
+                        "hasLoyer": true,
+                        "label": "Bureau"
+                    },
+                    {
+                        "id": 3,
+                        "code": "2A",
+                        "hasLoyer": false,
+                        "label": "Bureau classique"
+                    }
+                ]
+            }
+
 ## Group Lot/Suites
 `token` is required.
 `permission:property.*`
